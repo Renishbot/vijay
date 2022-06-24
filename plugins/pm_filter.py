@@ -755,20 +755,43 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('ᴍᴀɴᴜᴇʟ ғɪʟᴛᴇʀ', callback_data='manuelfilter'),
-            InlineKeyboardButton('ᴀᴜᴛᴏ ғɪʟᴛᴇʀ', callback_data='autofilter'),
+            InlineKeyboardButton('ᴀᴜᴅɪᴏ-ʙᴏᴏᴋ', callback_data='abook'),
+            InlineKeyboardButton(('ᴀᴜᴛᴏ ғɪʟᴛᴇʀ', callback_data='autofilter'),
+            InlineKeyboardButton('Bot Status', callback_data='restatus'),
+            InlineKeyboardButton('Carbon', callback_data='carbon'),
             InlineKeyboardButton('ᴄᴏɴɴᴇᴄᴛɪᴏɴs', callback_data='coct'),
+            InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra'),
+            InlineKeyboardButton('ғɪʟᴇ-sᴛᴏʀᴇ', callback_data='newdata'),
+            InlineKeyboardButton('ғᴜɴ', callback_data='fun'), 
+            InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
+            InlineKeyboardButton("ɪᴍᴀɢᴇ", callback_data='image'),
             ],[
+            InlineKeyboardButton('IP Address', callback_data='ip'), 
+            InlineKeyboardButton('ᴊsᴏɴ', callback_data='son'),
+            ],[
+            InlineKeyboardButton('ᴋɪᴄᴋ', callback_data='zombies'),
+            ],[
+            InlineKeyboardButton('Lyrics', callback_data='lyrics'),
+            ],[
+            InlineKeyboardButton(' ᴍᴀʟᴜ ᴀᴜɴᴛʏ', callback_data='aunty'),
+            InlineKeyboardButton('Manual filter ', callback_data='manuelfilter'),
+            InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric'),
+            InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='pastes'),
+            InlineKeyboardButton('ᴘɪɴ', callback_data='pin'),
+            InlineKeyboardButton('ᴘɪɴɢ', callback_data='pings'),
+            InlineKeyboardBut     
+            InlineKeyboardButton
+            
+            
             InlineKeyboardButton('sᴏɴɢ', callback_data='songs'),
             InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra'),
             InlineKeyboardButton("ᴠɪᴅᴇᴏ", callback_data='video'),
             ],[
             InlineKeyboardButton('ᴘɪɴ', callback_data='pin'), 
             InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='pastes'),
-            InlineKeyboardButton("ɪᴍᴀɢᴇ", callback_data='image'),
-            ],[
+            
             InlineKeyboardButton('ғᴜɴ', callback_data='fun'), 
-            InlineKeyboardButton('ᴊsᴏɴ', callback_data='son'),
+            
             InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
             ],[
             InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purges'),
@@ -777,33 +800,29 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton('ᴡʜᴏɪs', callback_data='whois'),
             InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric'),
-            InlineKeyboardButton('ᴋɪᴄᴋ', callback_data='zombies'),
-            ],[
+            
             InlineKeyboardButton('ʀᴇᴘᴏʀᴛ', callback_data='report'),
             InlineKeyboardButton('ʏᴛ-ᴛʜᴜᴍʙ', callback_data='ytthumb'),
             InlineKeyboardButton('sᴛɪᴄᴋᴇʀ-ɪᴅ', callback_data='sticker'),
             ],[
-            InlineKeyboardButton('ᴄᴏᴠɪᴅ', callback_data='corona'),
+            
             InlineKeyboardButton('ᴀᴜᴅɪᴏ-ʙᴏᴏᴋ', callback_data='abook'),
             InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛ', callback_data='urlshort'),
             ],[
-            InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
-            InlineKeyboardButton('ғɪʟᴇ-sᴛᴏʀᴇ', callback_data='newdata'),
+            
             InlineKeyboardButton('sʜᴀʀᴇ-ᴛᴇxᴛ', callback_data='sharetext'),
             ],[
             InlineKeyboardButton('ᴘᴀssᴡᴏʀᴅ-ɢᴇɴ', callback_data='genpassword'),
             InlineKeyboardButton('ᴛᴏʀʀᴇɴᴛ', callback_data='torrent'),
-            InlineKeyboardButton('ᴍᴀʟʟᴜ ᴀᴜɴᴛʏ', callback_data='aunty'),
-            ],[
+            
             InlineKeyboardButton('ᴍᴀᴍᴍᴏᴋᴀ', callback_data='mammoka'),
-            InlineKeyboardButton('Bot Status', callback_data='restatus'),
+            
             InlineKeyboardButton('Text To Img', callback_data='img'),
             ],[
             InlineKeyboardButton('ՏTYᒪIՏᕼ ᖴOᑎTՏ', callback_data='fonts'),
             InlineKeyboardButton('Carbon', callback_data='carbon'),
-            InlineKeyboardButton('Lyrics', callback_data='lyrics'),
-            ],[
-            InlineKeyboardButton('IP Address', callback_data='ip'),
+            
+            
             InlineKeyboardButton('Shazam', callback_data='shazam'),
             InlineKeyboardButton('Wikipedia', callback_data='wikipedia'),
             ],[
