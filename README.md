@@ -1,4 +1,4 @@
-# 𝐓𝐈𝐆𝐄𝐑 𝐒𝐇𝐑𝐎𝐅𝐅
+# Vijay
 Very Advance Auto Filter bot
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=welcome+To+TigerShroff!;created+by+༒Crazyboss卂乃卄丨丂卄乇Ҝ༒;A+simple+autofilter+Bot!;Auto+filter+with+double+button!;start+message+with+pic!;and+all+futures!)
 </p>
@@ -57,7 +57,7 @@ You can deploy this bot anywhere.
 <details><summary>Deploy To Heroku</summary>
 <p>
 <br>
-<a href="https://heroku.com/deploy?template=https://github.com/200920082007/TigerShroff">
+<a href="https://heroku.com/deploy?template=https://github.com/Naveen-TG/VijayFilter-TG">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 </p>
