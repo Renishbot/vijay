@@ -791,10 +791,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('sᴛɪᴄᴋᴇʀ-ɪᴅ', callback_data='sticker'),
             ],
             InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
-            
-            InlineKeyboardButton('ғᴜɴ', callback_data='fun'), 
-            
-            InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
+         
             InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele'),
             ],[
             InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛ', callback_data='urlshort'),
@@ -803,7 +800,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             
 
             ],[
-            InlineKeyboardButton('ᴡʜᴏɪs', callback_data='whois'),
+            
             InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric'),
             
             InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra'),
