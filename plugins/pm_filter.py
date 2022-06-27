@@ -778,35 +778,43 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric'),
             InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='pastes'),
             InlineKeyboardButton('ᴘɪɴ', callback_data='pin'),
-            InlineKeyboardButton('ᴘɪɴɢ', callback_data='pings'),
+            InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purges'),
+            InlineKeyboardButton('ᴘɪɴɢ', callback_data='pings),
+            InlineKeyboardButton('ʀᴇᴘᴏʀᴛ', callback_data='report'),
             InlineKeyboardButton('sᴏɴɢ', callback_data='songs'),
-            InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra'),
-            InlineKeyboardButton("ᴠɪᴅᴇᴏ", callback_data='video'),
+            
             ],[
-            InlineKeyboardButton('ᴘɪɴ', callback_data='pin'), 
-            InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='pastes'),
+            InlineKeyboardButton('sʜᴀʀᴇ-ᴛᴇxᴛ', callback_data='sharetext'),
+             
+            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
+            InlineKeyboardButton('Shazam', callback_data='shazam'),
+            InlineKeyboardButton('sᴛɪᴄᴋᴇʀ-ɪᴅ', callback_data='sticker'),
+            ],
+            InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
             
             InlineKeyboardButton('ғᴜɴ', callback_data='fun'), 
             
             InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
-            ],[
-            InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purges'),
-            InlineKeyboardButton('ᴘɪɴɢ', callback_data='pings'),
             InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele'),
+            ],[
+            InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛ', callback_data='urlshort'),
+            InlineKeyboardButton("ᴠɪᴅᴇᴏ", callback_data='video'),
+            InlineKeyboardButton('ᴡʜᴏɪs', callback_data='whois'),
+            
+
             ],[
             InlineKeyboardButton('ᴡʜᴏɪs', callback_data='whois'),
             InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric'),
             
-            InlineKeyboardButton('ʀᴇᴘᴏʀᴛ', callback_data='report'),
+            InlineKeyboardButton('ᴇxᴛʀᴀ', callback_data='extra'),
             InlineKeyboardButton('ʏᴛ-ᴛʜᴜᴍʙ', callback_data='ytthumb'),
-            InlineKeyboardButton('sᴛɪᴄᴋᴇʀ-ɪᴅ', callback_data='sticker'),
-            ],[
+            [
             
             InlineKeyboardButton('ᴀᴜᴅɪᴏ-ʙᴏᴏᴋ', callback_data='abook'),
             InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛ', callback_data='urlshort'),
             ],[
             
-            InlineKeyboardButton('sʜᴀʀᴇ-ᴛᴇxᴛ', callback_data='sharetext'),
+            
             ],[
             InlineKeyboardButton('ᴘᴀssᴡᴏʀᴅ-ɢᴇɴ', callback_data='genpassword'),
             InlineKeyboardButton('ᴛᴏʀʀᴇɴᴛ', callback_data='torrent'),
@@ -819,7 +827,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Carbon', callback_data='carbon'),
             
             
-            InlineKeyboardButton('Shazam', callback_data='shazam'),
+            ,
             InlineKeyboardButton('Wikipedia', callback_data='wikipedia'),
             ],[
             InlineKeyboardButton('Warns', callback_data='warn'),
