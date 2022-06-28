@@ -865,7 +865,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('Shazam', callback_data='shazam'),
             InlineKeyboardButton('sᴛɪᴄᴋᴇʀ-ɪᴅ', callback_data='sticker'),
             InlineKeyboardButton('ՏTYᒪIՏᕼ ᖴOᑎTՏ', callback_data='fonts'),
-            ],
+            ],[
             InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
          
             InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele'),
@@ -887,7 +887,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
             InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
             InlineKeyboardButton('ᴄʟᴏsᴇ x', callback_data='close_data')
-        ]]
+        ]]]
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await query.message.reply_text("● ◌ ◌")
         n=await m.edit("● ● ◌")
