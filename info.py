@@ -131,3 +131,5 @@ LOG_STR += f"Your Currect IMDB template is {IMDB_TEMPLATE}"
 LOG_STR += ("auto delete is active , bot will be deleting movie results when {DELETE_TIME} \n")
 
 DATABASE_URI = environ.get('DATABASE_URI')
+
+pymongo.MongoClient(DATABASE_URI)['notes']['notes']
