@@ -11,52 +11,70 @@ i𝗍𝗌 𝖾𝖺𝗌𝗒 𝗍𝗈 𝗎𝗌𝖾 𝗆𝖾; 𝗃𝗎𝗌𝗍 𝖺
 /start - 𝖼𝗁𝖾𝖼𝗄 𝗐𝗁𝖾𝗍𝗁𝖾𝗋 𝗂𝗆 𝗈𝗇𝗅𝗂𝗇𝖾 
 /help - 𝗀𝖾𝗍 𝗍𝗁𝗂𝗌 𝗁𝖾𝗅𝗉 𝗆𝖾𝗌𝗌𝖺𝗀𝖾
 /about - 𝖺𝖻𝗈𝗎𝗍 𝗆𝖾"""
-    ABOUT_TXT = """
-╔══════════════════❍
-║╭━━━━━━━━━━━━━━━➣ 
-║➠ 𝙼𝚈 𝙽𝙰𝙼𝙴 -  Tiger Shroff
-║➠ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁 - :<a href='tg://user?id=1951205538'><b>༒ᶜʳᵃᶻʸᴮᴼˢˢ卂乃卄丨丂卄乇Ҝ༒</b></a>
-║➠ 𝙲𝚁𝙴𝙳𝙸𝚃𝚂 - <a href='https://t.me/Abhisheksvlog'>Everyone in this journey </a>
-║➠ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴 - <a href='https://docs.pyrogram.org/'>𝑷𝒚𝒕𝒉𝒐𝒏 3 </a>
-║➠ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈 - <a href='https://docs.pyrogram.org/'>𝑷ʏʀᴏɢʀᴀᴍ </a>
-║➠ 𝙲𝙻𝙾𝙽𝙴𝙳 𝙵𝚁𝙾𝙼 - EvaMaria
-║➠ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴 -  <a href='https://dashboard.heroku.com/apps'>𝑯𝒆𝒓𝒐𝒌𝒖</a>
-║➠ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂 - <a href='https://t.me/TigerShroffimdbot'>𝒗8.7.2[𝑴𝒂𝒋𝒐𝒓]</a>
-║➠ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴 - <a href='https://github.com/200920082007/TigerShroff'>𝑪𝒍𝒊𝒄𝒌 𝑯𝒆𝒓𝒆</a>
-║╰━━━━━━━━━━━━━━━➣ ╚══════════════════❍
     
+    ABOUT_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 : {}
 
+➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Y2say'>Dhanush-TG</a>
 
-🔖 𝑸𝒖𝒐𝒕𝒆 : ആരും പേടിക്കേണ്ട എല്ലാവർക്കും കിട്ടും ™️"""
+➥ 𝙇𝙞𝙗𝙧𝙖𝙧𝙮 : <a href='https://docs.pyrogram.org/'>Pyrogram</a>
 
-    WIKIPEDIA_TXT = """❍ /wiki <ϙᴜᴇʀʏ><b>: ᴡɪᴋɪᴘᴇᴅɪᴀ ʏᴏᴜʀ ϙᴜᴇʀʏ
-*Wᴀʟʟᴘᴀᴘᴇʀs:</b>"""
+➥ 𝙇𝙖𝙣𝙜𝙪𝙖𝙜𝙚 : Python 𝟹
+
+➥ 𝘿𝙖𝙩𝙖 𝘽𝙖𝙨𝙚 : <a href='https://www.mongodb.com/'>MongoDB</a>
+
+➥ 𝘽𝙤𝙩 𝙎𝙚𝙧𝙫𝙚𝙧 : <a href='https://heroku.com'>Heroku</a>
+
+➥ 𝘽𝙪𝙞𝙡𝙙 𝙎𝙩𝙖𝙩𝙪𝙨 : v2.0.1 [ Beta ]"""
+
+    WIKIPEDIA_TXT = """Help: <b>Wikipedia</b>
+
+<b>Commands and Usage:</b>
+
+- Use /wiki < Query > To Get the Information about the query"""
 
     SHAZAM_TXT = """<b>Shazam Music Founder Module</b>
-- <b>help=</b> Helps You To Recognize | Discover A Song
-- <b>Use=</b> Send /Shazam (Reply To A Song File)
+
+<b>Usages</b>
+
+- Helps You To Recognize | Discover a Song
+
+<b>Commands</b>
+
+- Send /Shazam (Reply To A Song File)
 
 <b>Problems</b>
+
 -If The feature is not working in your bot pls contact him :<a href='tg://user?id=1951205538'><b>Click Here</b></a>
 
 <b> What's The Use </b>
+
 - Do You Want To Know A Song Name So You Can Hear It 
 Don't Worry Send /shazam"""
 
     IP_TXT = """<b>IP Address Finder Module</b>
+
 - if you want to Find Details of a IP Address Use the Module
+
 <b>Command</b>
+
 - /ip [Ip address]
 - ex /ip 192.180.0.1"""
 
     LYRICS_TXT = """<b>Lyrics 𝖣𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖬𝗈𝖽𝗎𝗅𝖾</b>
+
 - 𝖨𝖿 𝗒𝗈𝗎 𝗐𝖺𝗇𝗍 𝗍𝗈 𝖽𝗈𝗐𝗇𝗅𝗈𝖺𝖽 𝖺 lyric, 𝖽𝗈𝗇'𝗍 𝗌𝖾𝖺𝗋𝖼𝗁 𝖿𝗈𝗋 𝗈𝗍𝗁𝖾𝗋 𝖻𝗈𝗍 𝗁𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖺𝗅𝗅 𝗂𝗇 𝗈𝗇𝖾 𝖻𝗈𝗍
+
 <b>𝖢𝗈𝗆𝗆𝖺𝗇𝖽</b>
+
 - /lyrics [Song Name] - 𝖳𝗈 𝗀𝖾𝗍 𝗍𝗁𝖾 lyrics
+
 <b>Usage</b>
+
 - 𝖢𝖺𝗇 𝖻𝖾 𝗎𝗌𝖾𝖽 𝖻𝗒 𝖾𝗏𝖾𝗋𝗒 𝗈𝗇𝖾
 - 𝖶𝗈𝗋𝗄𝗌 𝗈𝗇𝗅𝗒 𝗂𝗇 𝖻𝗈𝗍𝗌 𝗉𝗆
+
 <b>𝖡𝗎𝗀</b>
+
 𝖲𝗈𝗆𝖾𝗍𝗂𝗆𝖾𝗌 𝗂𝗍 𝗐𝗂𝗅𝗅 𝗌𝗁𝗈𝗐 𝖺𝗇 𝖾𝗋𝗋𝗈𝗋!"""
 
     CARBON_TXT = """Reply To a Message To Make CarBon use /carbon for using this Module"""
@@ -83,7 +101,7 @@ Don't Worry Send /shazam"""
  
  Tʜᴇɴ Mᴀʟʟᴜ Aᴜɴᴛʏ Wɪʟʟ Tᴇxᴛ Yᴏᴜ Sᴏᴍᴇ Jᴏᴋᴇs 😂😂 """
 
-    ABOUTME_TXT = """➢ 𝐌𝐲 𝐍𝐚𝐦𝐞: <a href='http://t.me/TigerShroffImdbot'>𝑇𝑖𝑔𝑒𝑟 𝑆𝒉𝑟𝑜𝑓𝑓 </a>
+    ABOUTME_TXT = """➢ 𝐌𝐲 𝐍𝐚𝐦𝐞: <a href='http://t.me/VijayFilterTG_BoT'>𝙏𝙝𝙖𝙡𝙖𝙥𝙖𝙩𝙝𝙪 𝙑𝙞𝙟𝙖𝙮</a>
     
 ➢ 𝐌𝐲 𝐂𝐫𝐞𝐚𝐭𝐨𝐫: <a href='tg://user?id=1951205538'><b>༒ᶜʳᵃᶻʸᴮᴼˢˢ卂乃卄丨丂卄乇Ҝ༒</b></a>
 
