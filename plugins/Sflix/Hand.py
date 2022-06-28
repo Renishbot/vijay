@@ -29,7 +29,7 @@ async def text(bot, message):
         await bot.send_photo(
             chat_id=chat_id,
             photo=file_name,
-            caption="Here is Your Hand {`msg.txt`} {}"
+            caption="Here is Your Hand {msg.txt} for Hand 👈"
         )
         await txt.delete()
         os.remove(file_name)
