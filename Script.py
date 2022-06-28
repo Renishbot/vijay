@@ -108,9 +108,8 @@ Don't Worry Send /shazam"""
 ➥ 𝘽𝙤𝙩 𝙎𝙚𝙧𝙫𝙚𝙧 : <a href='https://heroku.com'>Heroku</a>
 
 ➥ 𝘽𝙪𝙞𝙡𝙙 𝙎𝙩𝙖𝙩𝙪𝙨 : v2.0.1 [ Beta ]"""
-
     
-➤ 𝙸𝚏 𝚢𝚘𝚞 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜 𝚋𝚘𝚝 𝚙𝚕𝚎𝚊𝚜𝚎 𝚜𝚑𝚊𝚛𝚎 𝚊𝚗𝚍 𝚜𝚞𝚙𝚙𝚘𝚛𝚝 𝚞𝚜 ⚡"""
+➤ 𝙸𝚏 𝚢𝚘𝚞 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜 𝚋𝚘𝚝 𝚙𝚕𝚎𝚊𝚜𝚎 𝚜𝚑𝚊𝚛𝚎 𝚊𝚗𝚍 𝚜𝚞𝚙𝚙𝚘𝚛𝚝 𝚞𝚜 ❤️⚡"""
 
     NEXT_TXT = """Welcome To My Second Help Module"""
 
@@ -138,12 +137,19 @@ If you're looking for automated warnings, read about the blacklist module!
 -> /warn @user For disobeying the rules"""
 
     URL_TXT = """Help: <b>URL Shortner</b>
+
 Some URLs is Shortner
+
 <b>Commands and Usage:</b>
+
 • /short <code>(link)</code> - I will send the shorted links.
+
 <b>Example:</b>
-<code>/short https://t.me/josprojects</code>
+
+<code>/short https://t.me/TamilMV_Collections</code>
+
 <b>NOTE:</b>
+
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
@@ -151,9 +157,11 @@ Some URLs is Shortner
     TORRENT_TXT = """Help: <b>Torrent Search</b>
 
 <b>Commands and Usage</b>:
+
 • /torrent or /tor : Get Your Torrent Link From Various Resource.
 
 <b>NOTE:</b>
+
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
@@ -163,6 +171,7 @@ Some URLs is Shortner
 This allows you to disable some commonly used commands, so noone can use them. It'll also allow you to autodelete them, stopping people from bluetexting.
 
 <b>Admin commands</b>:
+
 × /disable <commandname>: Stop users from using commandname in this group.
 × /enable <item name>: Allow users from using commandname in this group.
 × /disableable: List all disableable commands.
@@ -170,15 +179,20 @@ This allows you to disable some commonly used commands, so noone can use them. I
 × /disabled: List the disabled commands in this chat.
 
 <b>Note</b>:
+
 When disabling a command, the command only gets disabled for non-admins. All admins can still use those commands.
 Disabled commands are still accessible through the /connect feature. If you would be interested to see this disabled too, let me know in the support chat."""
     
     RULES_TXT = """Here is the help for the <b>Rules</b> module:
 
 Every chat works with different rules; this module will help make those rules clearer!
+
 <b>User commands</b>:
+
 × /rules: Check the current chat rules.
+
 <b>Admin commands</b>:
+
 × /setrules <text>: Set the rules for this chat.
 × /privaterules <yes/no/on/off>: Enable/disable whether the rules should be sent in private.
 × /resetrules: Reset the chat rules to default
@@ -191,9 +205,12 @@ Every chat works with different rules; this module will help make those rules cl
 Save data for future users with notes!
 Notes are great to save random tidbits of information; a phone number, a nice gif, a funny picture - anything!
 User commands:
+
 - /get <notename>: Get a note.
 - #notename: Same as /get.
+
 <b>Admin commands</b>:
+
 - /save <notename> <note text>: Save a new note called "word". Replying to a message will save that message. Even works on media!
 - /clear <notename>: Delete the associated note.
 - /notes: List all notes in the current chat.
@@ -204,10 +221,12 @@ User commands:
     PURGE_TXT = """Here is the help for the <b>Purges</b> module:
 
 <b>Admin only</b>:
+
 - /purge: deletes all messages between this and the replied to message.
 - /del: deletes the message you replied to.
 
 <b>Examples</b>:
+
 - Delete all messages from the replied to message, until now.
 -> /purge"""
 
@@ -221,16 +240,19 @@ That's what approvals are for - approve of trustworthy users to allow them to se
 × /approval: Check a user's approval status in this chat.
 
 <b>Admin Commands</b>:
+
 × /approve: Approve of a user. Locks, blacklists, and antiflood won't apply to them anymore.
 × /unapprove: Unapprove of a user. They will now be subject to locks, blacklists, and antiflood again.
 × /approved: List all approved users.
 
 <b>Group Owner Commands</b>:
+
 × /unapproveall: Unapprove ALL users in a chat. This cannot be undone."""
 
     LOCK_TXT = """Here is the help for the <b>Locks</b> module:
 
 <b>Admin only</b>:
+
 × /lock <permission>: Lock Chat permission..
 × /unlock <permission>: Unlock Chat permission.
 × /locks: View Chat permission.
@@ -241,6 +263,7 @@ Locking urls will auto-delete all messages with urls, locking stickers will dele
 Locking bots will stop non-admins from adding bots to the chat.
 
 Example:
+
 /lock media: this locks all the media messages in the chat."""
     FILE_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝐅𝐢𝐥𝐞 𝐒𝐭𝐨𝐫𝐞 𝐌𝐨𝐝𝐮𝐥𝐞../
 
