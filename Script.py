@@ -95,30 +95,21 @@ Don't Worry Send /shazam"""
     
     """
 
-    AUNTY_TXT ="""<b>THE GREAT MALLU AUNTY</b>
-   
- Sᴇɴᴅ /aunty, 
- 
- Tʜᴇɴ Mᴀʟʟᴜ Aᴜɴᴛʏ Wɪʟʟ Tᴇxᴛ Yᴏᴜ Sᴏᴍᴇ Jᴏᴋᴇs 😂😂 """
+    ABOUTIME_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 : {}
 
-    ABOUTME_TXT = """➢ 𝐌𝐲 𝐍𝐚𝐦𝐞: <a href='http://t.me/VijayFilterTG_BoT'>𝙏𝙝𝙖𝙡𝙖𝙥𝙖𝙩𝙝𝙪 𝙑𝙞𝙟𝙖𝙮</a>
+➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Y2say'>Dhanush-TG</a>
+
+➥ 𝙇𝙞𝙗𝙧𝙖𝙧𝙮 : <a href='https://docs.pyrogram.org/'>Pyrogram</a>
+
+➥ 𝙇𝙖𝙣𝙜𝙪𝙖𝙜𝙚 : Python 𝟹
+
+➥ 𝘿𝙖𝙩𝙖 𝘽𝙖𝙨𝙚 : <a href='https://www.mongodb.com/'>MongoDB</a>
+
+➥ 𝘽𝙤𝙩 𝙎𝙚𝙧𝙫𝙚𝙧 : <a href='https://heroku.com'>Heroku</a>
+
+➥ 𝘽𝙪𝙞𝙡𝙙 𝙎𝙩𝙖𝙩𝙪𝙨 : v2.0.1 [ Beta ]"""
+
     
-➢ 𝐌𝐲 𝐂𝐫𝐞𝐚𝐭𝐨𝐫: <a href='tg://user?id=1951205538'><b>༒ᶜʳᵃᶻʸᴮᴼˢˢ卂乃卄丨丂卄乇Ҝ༒</b></a>
-
-➢ 𝐌𝐲 𝐒𝐨𝐮𝐫𝐜𝐞: <a href='https://github.com/200920082007/TigerShroff'><b>TigerShroff</b></a>
-
-➢ 𝐌𝐲 𝐋𝐢𝐛𝐫𝐚𝐫𝐲: <a href='https://docs.pyrogram.org/'>𝖯𝗒𝗋𝗈𝗀𝗋𝖺𝗆</a>
-
-➢ 𝐌𝐲 𝐋𝐚𝐧𝐠𝐮𝐚𝐠𝐞: <a href='https://docs.pyrogram.org/'>𝖯𝗒𝗍𝗁𝗈𝗇3</a>
-
-➢ 𝐌𝐲 𝐃𝐚𝐭𝐚𝐛𝐚𝐬𝐞: <a href='https://www.mongodb.com'>𝖬𝗈𝗇𝗀𝗈 𝖣𝖡</a> 
-
-➢ 𝐌𝐲 𝐒𝐞𝐫𝐯𝐞𝐫: <a href='https://dashboard.heroku.com/apps'>𝖧𝖾𝗋𝗈𝗄𝗎</a>
-
-➢ 𝐌𝐲 𝐔𝐩𝐝𝐚𝐭𝐞𝐬: <a href='https://Github.com/200920082007'>Movie Hub</a>
-
-➢ 𝐌𝐲 𝐒𝐮𝐩𝐩𝐨𝐫𝐭: <a href='https://t.me/tigershroffimdb'>𝖲𝗎𝗉𝗉𝗈𝗋𝗍</a>
-
 ➤ 𝙸𝚏 𝚢𝚘𝚞 𝚕𝚒𝚔𝚎 𝚝𝚑𝚒𝚜 𝚋𝚘𝚝 𝚙𝚕𝚎𝚊𝚜𝚎 𝚜𝚑𝚊𝚛𝚎 𝚊𝚗𝚍 𝚜𝚞𝚙𝚙𝚘𝚛𝚝 𝚞𝚜 ⚡"""
 
     NEXT_TXT = """Welcome To My Second Help Module"""
