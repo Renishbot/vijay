@@ -1,5 +1,5 @@
 import pymongo
-from nksama.db import MONGO_URL as db_url
+from info import MONGO_URI as db_url
 from plugins import help_message
 from pyrogram import filters, Client
 from plugins.admin import is_admin
