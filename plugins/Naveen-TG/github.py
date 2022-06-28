@@ -1,10 +1,10 @@
 import os
 from requests import get
 from pyrogram import filters
-from nksama import bot
+from pyrogram import Client
 
 
-@bot.on_message(filters.command(['git', 'github']))
+@Client.on_message(filters.command(['git', 'github']))
 def git(_, message):
     user = message.text.split(' ')[1]
     res = get(f'https://api.github.com/users/{user}').json()
