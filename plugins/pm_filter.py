@@ -826,8 +826,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             parse_mode='html'
         )
     elif query.data == "help":
-        buttons = [
-
+        buttons = [[
             InlineKeyboardButton('ᴀᴜᴅɪᴏ-ʙᴏᴏᴋ', callback_data='abook'),
             InlineKeyboardButton(('ᴀᴜᴛᴏ ғɪʟᴛᴇʀ', callback_data='autofilter'),
             InlineKeyboardButton('Bot Status', callback_data='restatus')
@@ -845,14 +844,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴊsᴏɴ', callback_data='son')
             ],[
             InlineKeyboardButton('ᴋɪᴄᴋ', callback_data='zombies'),
-            InlineKeyboardButton('Lyrics', callback_data='lyrics'),
-            InlineKeyboardButton('Locks', callback_data='lock')
+            InlineKeyboardButton('Locks', callback_data='lock'),
+            InlineKeyboardButton('Lyrics', callback_data='lyrics')
             ],[
             InlineKeyboardButton(' ᴍᴀʟᴜ ᴀᴜɴᴛʏ', callback_data='aunty'),
-            InlineKeyboardButton('Manual filter ', callback_data='manuelfilter'),
-            InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric')
-            ],[
             InlineKeyboardButton('ᴍᴀᴍᴍᴏᴋᴀ', callback_data='mammoka'),
+            InlineKeyboardButton('Manual filter ', callback_data='manuelfilter')
+            ],[
+            InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric'),
             InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='pastes'),
             InlineKeyboardButton('ᴘɪɴ', callback_data='pin')
             ],[
