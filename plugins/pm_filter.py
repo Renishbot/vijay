@@ -813,7 +813,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton(text="𝖱𝖾𝗆𝗈𝗏𝖾 𝖡𝖦", callback_data="removebg")
             ],[
             InlineKeyboardButton(text="𝖢𝗅𝗈𝗌𝖾", callback_data="close_data")
-        ]]
+        ],]
         m=await query.message.reply_text("● ◌ ◌")
         n=await m.edit("● ● ◌")
         o=await n.edit("● ● ●")
