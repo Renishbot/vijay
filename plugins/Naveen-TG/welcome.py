@@ -1,8 +1,8 @@
 import pymongo
 from nksama.db import MONGO_URL as db_url
-from nksama import bot, help_message
-from pyrogram import filters
-from nksama.plugins.admin import is_admin
+from plugins import help_message
+from pyrogram import filters, Client
+from plugins.admin import is_admin
 
 welcome_db = pymongo.MongoClient(db_url)['Welcome']['WelcomeX']
 
