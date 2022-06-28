@@ -1,5 +1,5 @@
 import pymongo
-from info import MONGO_URI as db_url
+from info import DATABASE_URI as db_url
 from plugins import help_message
 from pyrogram import filters, Client
 from plugins.admin import is_admin
@@ -7,7 +7,7 @@ from plugins.admin import is_admin
 welcome_db = pymongo.MongoClient(db_url)['Welcome']['WelcomeX']
 
 
-@bot.on_message(filters.command('setwelcome'))
+@Client.on_message(filters.command('setwelcome'))
 def setwelcome(_, message):
     if is_admin(message.chat.id, message.from_user.id):
         try:
@@ -31,14 +31,14 @@ def setwelcome(_, message):
             bot.send_message(-1001646296281, f"error in setwelcome:\n]n{e}")
 
 
-@bot.on_message(filters.command("clearwelcome"))
+@Client.on_message(filters.command("clearwelcome"))
 def clearwelcome(_, message):
     if is_admin(message.chat.id, message.from_user.id):
         welcome_db.delete_many({"chat_id": message.chat.id})
         message.reply("Ok!")
 
 
-@bot.on_message(filters.new_chat_members)
+@Client.on_message(filters.new_chat_members)
 def welcome(_, message):
     try:
         welcome_msg = welcome_db.find_one({"chat_id": message.chat.id
@@ -51,6 +51,3 @@ def welcome(_, message):
 
     except Exception as e:
         bot.send_message(-1001646296281, f"error in welcome:\n]n{e}")
-
-
-help_message.append({"Module_Name": "welcome"})
