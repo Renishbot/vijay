@@ -101,6 +101,9 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 #Downloader
 DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 
+#greetings
+WELCOME_DELAY_KICK_SEC = WELCOME_DELAY_KICK_SEC
+
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TIGERSHROFFIMDB')
