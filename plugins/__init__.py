@@ -1,3 +1,2 @@
 help_message = []
 
-WELCOME_DELAY_KICK_SEC = WELCOME_DELAY_KICK_SEC
