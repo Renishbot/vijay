@@ -27,6 +27,7 @@ import os
 from datetime import datetime
 from random import shuffle
 
+from pyrogram import Client
 from pyrogram import filters
 from pyrogram.errors.exceptions.bad_request_400 import (
     ChatAdminRequired,
@@ -42,10 +43,10 @@ from pyrogram.types import (
 )
 
 from info import SUDO_USERS, WELCOME_DELAY_KICK_SEC
-from wbb.core.decorators.errors import capture_err
-from wbb.core.decorators.permissions import adminsOnly
-from wbb.core.keyboard import ikb
-from wbb.utils.dbfunctions import (
+from plugins.Naveen-TG.masterolic.errors import capture_err
+from plugins.Naveen-TG.masterolic.permissions import adminsOnly
+from plugins.Naveen-TG.masterolic.keyboard import ikb
+from plugins.Naveen-TG.masterolic.Telegram.dbfunctions import (
     captcha_off,
     captcha_on,
     del_welcome,
@@ -59,7 +60,7 @@ from wbb.utils.dbfunctions import (
     update_captcha_cache,
 )
 from wbb.utils.filter_groups import welcome_captcha_group
-from wbb.utils.functions import extract_text_and_keyb, generate_captcha
+from plugins.Naveen-TG.masterolic.Telegram.functions import extract_text_and_keyb, generate_captcha
 
 __MODULE__ = "Greetings"
 __HELP__ = """
@@ -106,7 +107,7 @@ async def get_initial_captcha_cache():
 loop.create_task(get_initial_captcha_cache())
 
 
-@app.on_message(filters.new_chat_members, group=welcome_captcha_group)
+@Client.on_message(filters.new_chat_members, group=welcome_captcha_group)
 @capture_err
 async def welcome(_, message: Message):
     global answers_dicc
@@ -242,7 +243,7 @@ async def send_welcome_message(chat: Chat, user_id: int, delete: bool = False):
     asyncio.create_task(_send_wait_delete())
 
 
-@app.on_callback_query(filters.regex("pressed_button"))
+@Client.on_callback_query(filters.regex("pressed_button"))
 async def callback_query_welcome_button(_, callback_query):
     """After the new member presses the correct button,
     set his permissions to chat permissions,
@@ -360,7 +361,7 @@ async def _ban_restricted_user_until_date(
         pass
 
 
-@app.on_message(
+@Client.on_message(
     filters.command("captcha") & ~filters.private & ~filters.edited)
 @adminsOnly("can_restrict_members")
 async def captcha_state(_, message):
@@ -384,7 +385,7 @@ async def captcha_state(_, message):
 # WELCOME MESSAGE
 
 
-@app.on_message(
+@Client.on_message(
     filters.command("set_welcome") & ~filters.private & ~filters.edited)
 @adminsOnly("can_change_info")
 async def set_welcome_func(_, message):
@@ -403,7 +404,7 @@ async def set_welcome_func(_, message):
     await message.reply_text("Welcome message has been successfully set.")
 
 
-@app.on_message(
+@Client.on_message(
     filters.command("del_welcome") & ~filters.private & ~filters.edited)
 @adminsOnly("can_change_info")
 async def del_welcome_func(_, message):
@@ -412,7 +413,7 @@ async def del_welcome_func(_, message):
     await message.reply_text("Welcome message has been deleted.")
 
 
-@app.on_message(
+@Client.on_message(
     filters.command("get_welcome") & ~filters.private & ~filters.edited)
 @adminsOnly("can_change_info")
 async def get_welcome_func(_, message):
