@@ -36,7 +36,7 @@ import speedtest
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from pyrogram.types import Message
 
-from wbb import aiohttpsession as aiosession
+from info import aiohttpsession as aiosession
 from plugins.Naveen-TG.masterolic.Telegram.dbfunctions import start_restart_stage
 from plugins.Naveen-TG.masterolic.Telegram.http import get, post
 
