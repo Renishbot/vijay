@@ -103,7 +103,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 
 #greetings
-WELCOME_DELAY_KICK_SEC = WELCOME_DELAY_KICK_SEC
+WELCOME_DELAY_KICK_SEC = int(environ.get("WELCOME_DELAY_KICK_SEC", None))
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
