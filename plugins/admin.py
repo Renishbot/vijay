@@ -1,3 +1,34 @@
+import asyncio
+import re
+
+from time import time
+from pyrogram.errors import FloodWait
+from pyrogram import filters
+from pyrogram.types import (
+    CallbackQuery,
+    ChatMemberUpdated,
+    ChatPermissions,
+    Message,
+)
+
+from wbb import BOT_ID, SUDOERS, app, log
+from wbb.core.decorators.errors import capture_err
+from wbb.core.keyboard import ikb
+from plugins.Naveen.Masterolic.Telegram.dbfunctions import (
+    add_warn,
+    get_warn,
+    int_to_alpha,
+    remove_warns,
+    save_filter,
+)
+from plugins.Naveen.Masterolic.functions import (
+    extract_user,
+    extract_user_and_reason,
+    time_converter,
+)
+
+from plugins.Naveen.Masterolic.permissions import adminsOnly
+
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
     try:
