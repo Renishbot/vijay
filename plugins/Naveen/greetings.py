@@ -44,10 +44,10 @@ from pyrogram.types import (
 
 from info import WELCOME_DELAY_KICK_SEC
 from info import SUDO_USERS
-from plugins.Naveen.masterolic.errors import capture_err
-from plugins.Naveen.masterolic.permissions import adminsOnly
-from plugins.Naveen.masterolic.keyboard import ikb
-from plugins.Naveen.masterolic.Telegram.dbfunctions import (
+from plugins.Naveen.Masterolic.errors import capture_err
+from plugins.Naveen.Masterolic.permissions import adminsOnly
+from plugins.Naveen.Masterolic.keyboard import ikb
+from plugins.Naveen.Masterolic.Telegram.dbfunctions import (
     captcha_off,
     captcha_on,
     del_welcome,
@@ -60,8 +60,8 @@ from plugins.Naveen.masterolic.Telegram.dbfunctions import (
     set_welcome,
     update_captcha_cache,
 )
-from plugins.Naveen.masterolic.Telegram.filter_groups import welcome_captcha_group
-from plugins.Naveen.masterolic.Telegram.functions import extract_text_and_keyb, generate_captcha
+from plugins.Naveen.Masterolic.Telegram.filter_groups import welcome_captcha_group
+from plugins.Naveen.Masterolic.Telegram.functions import extract_text_and_keyb, generate_captcha
 
 __plugins__ = "Greetings"
 __HELP__ = """
