@@ -37,8 +37,8 @@ from PIL import Image, ImageDraw, ImageFilter, ImageFont
 from pyrogram.types import Message
 
 from info import aiohttpsession as aiosession
-from plugins.Naveen-TG.masterolic.Telegram.dbfunctions import start_restart_stage
-from plugins.Naveen-TG.masterolic.Telegram.http import get, post
+from plugins.Naveen.Masterolic.Telegram.dbfunctions import start_restart_stage
+from plugins.Naveen.Masterolic.Telegram.http import get, post
 
 
 async def restart(m: Message):
