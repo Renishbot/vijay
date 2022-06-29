@@ -135,6 +135,8 @@ LOG_STR += (f"MAX_LIST_ELM Found, long list will be shortened to first {MAX_LIST
 LOG_STR += f"Your Currect IMDB template is {IMDB_TEMPLATE}"
 LOG_STR += ("auto delete is active , bot will be deleting movie results when {DELETE_TIME} \n")
 
+log = Log(True, "bot.log")
+
 # MongoDB client
 log.info("Initializing MongoDB client")
 mongo_client = MongoClient(DATABASE_URI)
