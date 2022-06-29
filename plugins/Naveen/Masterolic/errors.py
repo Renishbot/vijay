@@ -6,7 +6,7 @@ from functools import wraps
 
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 
-from wbb import LOG_GROUP_ID
+from info import LOG_CHANNEL as LOG_GROUP_ID
 
 
 def split_limits(text):
