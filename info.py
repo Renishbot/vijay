@@ -9,7 +9,7 @@ from pyrogram import Client
 from prettyconf import Configuration
 from logging import WARNING, getLogger
 from prettyconf.loaders import EnvFile, Environment
-
+from aiohttp import ClientSession
 
 
 env_file = f"{getcwd()}/.env"
@@ -69,6 +69,7 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 USE_AS_BOT = environ.get("USE_AS_BOT", True)
 
+aiohttpsession = ClientSession()
 
 # maximum message length in Telegram
 MAX_MESSAGE_LENGTH = 4096
