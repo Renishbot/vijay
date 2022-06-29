@@ -59,10 +59,10 @@ from plugins.Naveen-TG.masterolic.Telegram.dbfunctions import (
     set_welcome,
     update_captcha_cache,
 )
-from wbb.utils.filter_groups import welcome_captcha_group
+from plugins.Naveen-TG.masterolic.Telegram.filter_groups import welcome_captcha_group
 from plugins.Naveen-TG.masterolic.Telegram.functions import extract_text_and_keyb, generate_captcha
 
-__MODULE__ = "Greetings"
+__plugins__ = "Greetings"
 __HELP__ = """
 /captcha [ENABLE|DISABLE] - Enable/Disable captcha.
 
