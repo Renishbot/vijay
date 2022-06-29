@@ -27,10 +27,6 @@ from plugins.Naveen.Masterolic.Telegram.functions import (
     time_converter,
 )
 
-from plugins.Naveen.Masterolic.permissions import adminsOnly
-
-admins_in_chat = {}
-
 async def member_permissions(chat_id: int, user_id: int):
     perms = []
     try:
