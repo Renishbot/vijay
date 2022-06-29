@@ -5,6 +5,7 @@ import time
 import json
 import pymongo
 from collections import defaultdict
+from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from typing import Dict, List, Union
 from pyrogram import Client
 from prettyconf import Configuration
