@@ -42,7 +42,7 @@ from pyrogram.types import (
     User,
 )
 
-from plugins import WELCOME_DELAY_KICK_SEC
+from info import WELCOME_DELAY_KICK_SEC
 from info import SUDO_USERS
 from plugins.Naveen-TG.masterolic.errors import capture_err
 from plugins.Naveen-TG.masterolic.permissions import adminsOnly
