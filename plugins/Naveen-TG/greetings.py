@@ -42,7 +42,8 @@ from pyrogram.types import (
     User,
 )
 
-from info import SUDO_USERS, WELCOME_DELAY_KICK_SEC
+from plugins import WELCOME_DELAY_KICK_SEC
+from info import SUDO_USERS
 from plugins.Naveen-TG.masterolic.errors import capture_err
 from plugins.Naveen-TG.masterolic.permissions import adminsOnly
 from plugins.Naveen-TG.masterolic.keyboard import ikb
