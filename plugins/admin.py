@@ -11,9 +11,9 @@ from pyrogram.types import (
     Message,
 )
 
-from wbb import BOT_ID, SUDOERS, app, log
-from wbb.core.decorators.errors import capture_err
-from wbb.core.keyboard import ikb
+from info import BOT_ID, SUDO_USERS,
+from plugins.Naveen.Masterolic.errors import capture_err
+from plugins.Naveen.Masterolic.keyboard import ikb
 from plugins.Naveen.Masterolic.Telegram.dbfunctions import (
     add_warn,
     get_warn,
@@ -21,7 +21,7 @@ from plugins.Naveen.Masterolic.Telegram.dbfunctions import (
     remove_warns,
     save_filter,
 )
-from plugins.Naveen.Masterolic.functions import (
+from plugins.Naveen.Masterolic.Telegram.functions import (
     extract_user,
     extract_user_and_reason,
     time_converter,
