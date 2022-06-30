@@ -1,9 +1,9 @@
 from pyrogram import filters
-from pyrogram import Client
+from pyrogram import Client as bot
 from pyrogram.types import *
 import os
             
-@Client.on_message(filters.command(["setgtitle","setchattitle"]))
+@bot.on_message(filters.command(["setgtitle","setchattitle"]))
 async def setgrouptitle(_, m):
      reply = m.reply_to_message
      user = m.from_user
@@ -27,7 +27,7 @@ async def setgrouptitle(_, m):
                await m.chat.set_title(new_title)
                await m.reply_text(f"Successfully set {new_title} as new chat title!")
 
-@Client.on_message(filters.command(["setgpic","setchatpic"]))
+@bot.on_message(filters.command(["setgpic","setchatpic"]))
 async def setgrouptitle(_, m):
      reply = m.reply_to_message
      user = m.from_user
