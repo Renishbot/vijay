@@ -8,7 +8,6 @@ import time
 OWNER_ID = 2107036689
 
 from datetime import datetime
-from nandhabot import dev_user as DEV_USERS
 from nandhabot import TEMP_DOWNLOAD_DIRECTORY as path
 water = "./plugins/Naveen/IMG_20220625_144547_141.jpg"
 
@@ -16,7 +15,7 @@ client = tbot
 
 @register(pattern=r"^/pyupload ?(.*)")
 async def Prof(event):
-    if event.sender_id == OWNER_ID or event.sender_id == DEV_USERS:
+    if event.sender_id == OWNER_ID:
         pass
     else:
         return
