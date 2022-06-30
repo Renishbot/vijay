@@ -1,4 +1,5 @@
 from info import tbot 
+from plugins.events import register
 import os
 import asyncio
 import os
@@ -9,8 +10,8 @@ OWNER_ID = 2107036689
 from datetime import datetime
 from nandhabot import dev_user as DEV_USERS
 from nandhabot import TEMP_DOWNLOAD_DIRECTORY as path
-from datetime import datetime
-water = "./nandhabot/nandha/images/IMG_20220623_062017_889.jpg"
+water = "./plugins/IMG_20220623_062017_889.jpg"
+
 client = tbot
 
 @register(pattern=r"^/pyupload ?(.*)")
