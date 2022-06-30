@@ -12,6 +12,7 @@ from prettyconf import Configuration
 from logging import WARNING, getLogger
 from prettyconf.loaders import EnvFile, Environment
 from aiohttp import ClientSession
+from telethon import TelegramClient
 
 
 env_file = f"{getcwd()}/.env"
@@ -71,6 +72,8 @@ SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
+
+tbot = TelegramClient("naveentg", API_ID, API_HASH)
 
 # Bot settings
 WELCOME_DELAY_KICK_SEC = int(environ.get('WELCOME_DELAY_KICK_SEC', 300))
@@ -160,3 +163,5 @@ log = Log(True, "bot.log")
 log.info("Initializing MongoDB client")
 mongo_client = MongoClient(DATABASE_URI)
 db = mongo_client.wbb
+
+tbot.start(bot_token=BOT_TOKEN)
