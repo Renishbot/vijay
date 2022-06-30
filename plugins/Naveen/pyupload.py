@@ -10,7 +10,7 @@ OWNER_ID = 2107036689
 from datetime import datetime
 from nandhabot import dev_user as DEV_USERS
 from nandhabot import TEMP_DOWNLOAD_DIRECTORY as path
-water = "./plugins/IMG_20220623_062017_889.jpg"
+water = "./plugins/Naveen/IMG_20220625_144547_141.jpg"
 
 client = tbot
 
@@ -23,7 +23,7 @@ async def Prof(event):
     thumb = water
     message_id = event.message.id
     input_str = event.pattern_match.group(1)
-    the_plugin_file = "./nandhabot/plugins/{}.py".format(input_str)
+    the_plugin_file = "./plugins/Naveen/{}.py".format(input_str)
     if os.path.exists(the_plugin_file):
      message_id = event.message.id
      await event.client.send_file(
