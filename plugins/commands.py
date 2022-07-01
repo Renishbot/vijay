@@ -352,6 +352,14 @@ async def delete(bot, message):
                 await msg.edit('File not found in database')
 
 
+@Client.on_message(filters.command('bugs') & filters.user(ADMINS))
+async def log_file(bot, message):
+    """Send log file"""
+    try:
+        await message.reply_document('TelegramBot.log')
+    except Exception as e:
+        await message.reply(str(e))
+
 @Client.on_message(filters.command('deleteall') & filters.user(ADMINS))
 async def delete_all_index(bot, message):
     await message.reply_text(
