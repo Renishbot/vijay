@@ -14,7 +14,7 @@ from pyrogram.types import (
 )
 from requests import post
 
-from info import dev_user
+from info import DEV_USERS
 from info import OWNER_ID
 from pyrogram import bot as Client
 
@@ -41,8 +41,8 @@ def get_readable_time(seconds: int) -> str:
 
 @Client.on_message(filters.command('devlist'))
 def devlist(_, m):
-      if m.from_user.id in dev_user:
-         m.reply(str(dev_user))
+      if m.from_user.id in DEV_USERS:
+         m.reply(str(DEV_USERS))
       else:
           m.reply("only Devs can access this command!")
   
