@@ -30,6 +30,25 @@ def is_enabled(value, default):
     else:
         return default
 
+async def load_sudo_users():
+    global SUDO_USERS
+    log.info("Loading sudo_users")
+    sudo_usersdb = db.sudo_users
+    sudo_users = await sudoersdb.find_one({"sudo": "sudo"})
+    sudo_users = [] if not sudo_users else sudo_users["sudo_users"]
+    for user_id in SUDO_USERS_ID:
+        SUDO_USERS.add(user_id)
+        if user_id not in sudo_users:
+            sudo_users.append(user_id)
+            await sudo_usersdb.update_one(
+                {"sudo": "sudo"},
+                {"$set": {"sudoers": sudoers}},
+                upsert=True,
+            )
+    if sudo_users:
+        for user_id in sudo_users:
+            SUDO_USERS.add(user_id)
+
 class evamaria(Client):
     filterstore: Dict[str, Dict[str, str]] = defaultdict(dict)
     warndatastore: Dict[
