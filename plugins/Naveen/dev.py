@@ -29,3 +29,23 @@ def sh(_, m):
     else:
         m.reply("only Devs can access this command!")
 
+def paste(text):
+    url = "https://spaceb.in/api/v1/documents/"
+    res = post(url, data={"content": text, "extension": "txt"})
+    return f"https://spaceb.in/{res.json()['payload']['id']}"
+
+
+@Client.on_message(
+    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(dev_user)
+)
+def sendlogs(_, m: Message):
+    logs = run("tail logs.txt")
+    x = paste(logs)
+    keyb = [
+        [
+            InlineKeyboardButton("Link", url=x),
+            InlineKeyboardButton("File", callback_data="sendfile"),
+        ],
+    ]
+    m.reply(x, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(keyb))
+
