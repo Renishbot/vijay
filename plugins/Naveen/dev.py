@@ -14,10 +14,9 @@ from pyrogram.types import (
 )
 from requests import post
 
-from nksama import dev_user
-from nksama.config import OWNER_ID
-from nksama import bot as app
-from nksama import bot
+from info import dev_user
+from info import OWNER_ID
+from pyrogram import bot as Client
 
 
 def get_readable_time(seconds: int) -> str:
@@ -40,7 +39,7 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
     return ping_time
 
-@bot.on_message(filters.command('devlist'))
+@Client.on_message(filters.command('devlist'))
 def devlist(_, m):
       if m.from_user.id in dev_user:
          m.reply(str(dev_user))
@@ -48,7 +47,7 @@ def devlist(_, m):
           m.reply("only Devs can access this command!")
   
         
-@app.on_message(filters.user(OWNER_ID) & filters.command("sh", prefixes=['/', '.', '?', '-']))
+@Client.on_message(filters.user(OWNER_ID) & filters.command("sh", prefixes=['/', '.', '?', '-']))
 def sh(_, m):
     if m.from_user.id in dev_user:
         code = m.text.replace(m.text.split(" ")[0], "")
