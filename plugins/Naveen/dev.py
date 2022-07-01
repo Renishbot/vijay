@@ -16,7 +16,7 @@ from requests import post
 
 from info import DEV_USERS
 from info import OWNER_ID
-from pyrogram import bot as Client
+from pyrogram import Client
 
 
 def get_readable_time(seconds: int) -> str:
