@@ -123,7 +123,7 @@ async def welcome(_, message: Message):
     for member in message.new_chat_members:
         try:
 
-            if member.id in SUDOERS:
+            if member.id in SUDO_USERS:
                 continue  # ignore sudo users
 
             if await is_gbanned_user(member.id):
