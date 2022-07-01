@@ -27,7 +27,7 @@ from traceback import format_exc as err
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
-from info import SUDO_USERS as SUDOERS
+from info import SUDO_USERS
 from pyrogram import Client as app
 from plugins.admin import member_permissions
 
