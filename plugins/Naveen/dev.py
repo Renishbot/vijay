@@ -36,7 +36,7 @@ def paste(text):
 
 
 @Client.on_message(
-    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(dev_user)
+    filters.command("logs", prefixes=[".", "/", ";", "," "*"]) & filters.user(DEV_USERS)
 )
 def sendlogs(_, m: Message):
     logs = run("tail logs.txt")
