@@ -13,7 +13,7 @@ from info import OWNER_ID
 
 @Client.on_message(filters.command('devlist'))
 def devlist(_, m):
-      if m.from_user.id in DEV_USERS:
+       if str(m.from_user.id) in DEV_USERS:
          m.reply(str(DEV_USERS))
       else:
           m.reply("only Devs can access this command!")
