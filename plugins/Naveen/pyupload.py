@@ -9,7 +9,7 @@ OWNER_ID = 2107036689
 
 from datetime import datetime
 path = TEMP_DOWNLOAD_DIRECTORY = "./"
-water = "./plugins/Naveen/IMG_20220625_144547_141.jpg"
+water = "./plugins/Naveen/photo_2022-07-01_15-09-19.jpg"
 
 client = tbot
 
