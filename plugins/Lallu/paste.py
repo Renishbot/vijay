@@ -16,33 +16,30 @@ headers = {
 }
 
 #Pastebins
-async def p_paste(message, extension=None):
-    siteurl = "https://pasty.lus.pm/api/v1/pastes"
-    data = {"content": message}
+async def s_paste(message, extension="txt"):
+    siteurl = "https://spaceb.in/api/v1/documents/"
     try:
-        response = requests.post(url=siteurl, data=json.dumps(data), headers=headers)
+        response = requests.post(
+            siteurl, data={"content": message, "extension": extension}
+        )
     except Exception as e:
         return {"error": str(e)}
     if response.ok:
         response = response.json()
-        purl = (
-            f"https://pasty.lus.pm/{response['id']}.{extension}"
-            if extension
-            else f"https://pasty.lus.pm/{response['id']}.txt"
-        )
+        if response["error"] != "" and response["status"] < 400:
+            return {"error": response["error"]}
         return {
-            "url": purl,
-            "raw": f"https://pasty.lus.pm/{response['id']}/raw",
-            "bin": "Pasty",
+            "url": f"https://spaceb.in/{response['payload']['id']}",
+            "raw": f"{siteurl}{response['payload']['id']}/raw",
+            "bin": "Spacebin",
         }
-    return {"error": "Unable to reach pasty.lus.pm"}
+    return {"error": "Unable to reach spacebin."}
 
 
 
 
 
-
-@Client.on_message(filters.command(["tgpaste", "pasty", "paste"]))
+@Client.on_message(filters.command("paste"))
 async def pasty(client, message):
     pablo = await message.reply_text("`Please wait...`")
     tex_t = message.text
