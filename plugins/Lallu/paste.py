@@ -42,7 +42,7 @@ async def p_paste(message, extension="txt"):
 @Client.on_message(filters.command("paste"))
 async def pasty(client, message):
     pablo = await message.reply_text("`Please wait...`")
-    tex_t = message.text
+    tex_t = message.text.split(None, 1)[1]
     message_s = tex_t
     if not tex_t:
         if not message.reply_to_message:
@@ -53,7 +53,7 @@ async def pasty(client, message):
             m_list = open(file, "r").read()
             message_s = m_list
             os.remove(file)
-        elif message.reply_to_message.text:
+        else:
             message_s = message.reply_to_message.text
 
     ext = "py"
