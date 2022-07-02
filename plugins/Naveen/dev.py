@@ -13,11 +13,10 @@ from info import OWNER_ID
 
 @Client.on_message(filters.command('devlist'))
 def devlist(_, m):
-       if str(m.from_user.id) in DEV_USERS:
-         m.reply(str(DEV_USERS))
-      else:
-          m.reply("only Devs can access this command!")
-  
+    if str(m.from_user.id) in DEV_USERS:
+        m.reply(str(DEV_USERS))
+    else:
+        m.reply("only Devs can access this command!")
         
 @Client.on_message(filters.user(DEV_USERS) & filters.command("sh", prefixes=['/', '.', '?', '-']))
 def sh(_, m):
