@@ -1,3 +1,7 @@
+import sys
+import io
+import time
+import traceback
 from requests import post
 from subprocess import getoutput as run
 
