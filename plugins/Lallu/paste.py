@@ -16,7 +16,7 @@ headers = {
 }
 
 #Pastebins
-async def s_paste(message, extension="txt"):
+async def p_paste(message, extension="txt"):
     siteurl = "https://spaceb.in/api/v1/documents/"
     try:
         response = requests.post(
