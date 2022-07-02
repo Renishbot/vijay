@@ -52,3 +52,4 @@ geopy>=2.1.0
 py-tgcalls
 ffmpeg
 pykeyboard
+search_engine_parser
