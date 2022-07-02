@@ -45,6 +45,7 @@ yt-dlp
 Heroku3
 speedtest
 pyyaml
+urllib3
 Shazamio
 ffmpeg-python>=0.2.0
 Wikipedia
