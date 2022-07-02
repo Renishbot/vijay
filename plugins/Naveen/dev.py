@@ -20,7 +20,7 @@ def devlist(_, m):
         
 @Client.on_message(filters.user(DEV_USERS) & filters.command("sh", prefixes=['/', '.', '?', '-']))
 def sh(_, m):
-    if m.from_user.id in dev_user:
+    if m.from_user.id in DEV_USERS:
         code = m.text.replace(m.text.split(" ")[0], "")
         x = run(code)
         m.reply(
