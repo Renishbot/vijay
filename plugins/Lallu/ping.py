@@ -8,8 +8,8 @@ from info import COMMAND_HAND_LER
 from plugins.helper_functions.cust_p_filters import f_onw_fliter
 
 # -- Constants -- #
-ALIVE = "ചത്തിട്ടില്ല മുത്തേ ഇവിടെ തന്നെ ഉണ്ട്.. നിനക്ക് ഇപ്പൊ എന്നോട് ഒരു സ്നേഹവും ഇല്ല. കൊള്ളാം.. നീ പാഴെ പോലെയേ അല്ല മാറിപോയി..😔 ഇടക്ക് എങ്കിലും ചുമ്മാ ഒന്ന് Start ചെയ്തു നോക്ക്..🙂" 
-HELP = "Help ഒന്നും ഇല്ല ഓടിക്കോ......"
+ALIVE = "Iam Not Dead still Alive.. You have no love on me now. Good.. You are not the same as you were before.‌‌.🙂‌" 
+HELP = "Help! am in Shooting right NOW ......"
 REPO = "Oops The repo is Vanished Because of CopyCats"
 # -- Constants End -- #
 
