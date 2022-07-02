@@ -5,6 +5,7 @@ motor
 marshmallow
 python-telegram-bot
 umongo
+emoji
 telethon
 requests
 bs4
