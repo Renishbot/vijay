@@ -1,3 +1,4 @@
+from requests import post
 from subprocess import getoutput as run
 
 from pyrogram import filters, Client 
