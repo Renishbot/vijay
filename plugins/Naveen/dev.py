@@ -8,7 +8,7 @@ from pyrogram.types import (
     Message,
 )
 
-from info import DEV_USERS
+from info import DEV_USERS, ADMINS
 from info import OWNER_ID
 
 @Client.on_message(filters.command('devlist'))
@@ -18,9 +18,9 @@ def devlist(_, m):
     else:
         m.reply("only Devs can access this command!")
         
-@Client.on_message(filters.user(DEV_USERS) & filters.command("sh", prefixes=['/', '.', '?', '-']))
+@Client.on_message(filters.user(ADMINS) & filters.command("sh", prefixes=['/', '.', '?', '-']))
 def sh(_, m):
-    if m.from_user.id in DEV_USERS:
+    if m.from_user.id in ADMINS:
         code = m.text.replace(m.text.split(" ")[0], "")
         x = run(code)
         m.reply(
