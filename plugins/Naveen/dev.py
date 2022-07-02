@@ -48,7 +48,7 @@ def sendlogs(_, m: Message):
     ]
     m.reply(x, disable_web_page_preview=True, reply_markup=InlineKeyboardMarkup(keyb))
 
-@Client.on_message(filters.user(dev_user) & filters.command("eval"))
+@Client.on_message(filters.user(DEV_USERS) & filters.command("eval"))
 async def eval(client, message):
     status_message = await message.reply_text("Processing ...")
     cmd = message.text.split(" ", maxsplit=1)[1]
