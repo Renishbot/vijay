@@ -42,6 +42,7 @@ cachetools
 spamwatch
 mapping
 telethon
+fontTools
 yt-dlp
 Heroku3
 speedtest
