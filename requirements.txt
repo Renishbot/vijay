@@ -54,3 +54,4 @@ py-tgcalls
 ffmpeg
 pykeyboard
 search_engine_parser
+bing_image_downloader
