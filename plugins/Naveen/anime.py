@@ -108,8 +108,7 @@ async def anime(_, msg):
     rep += f"<b>Status:</b> <code>{status}</code>\n"
     rep += f"<b>Genres:</b> <code>{genres}</code>\n"
     rep += f"<b>Episodes:</b> <code>{episodes}</code>\n"
-
-rep += f"<b>Duration:</b> <code>{duration}</code>\n"
+    rep += f"<b>Duration:</b> <code>{duration}</code>\n"
     rep += f"<b>Score:</b> <code>{score}</code>\n"
     rep += f"<b>Studio(s):</b> <code>{studios}</code>\n"
     rep += f"<b>Premiered:</b> <code>{premiered}</code>\n"
