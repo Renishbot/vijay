@@ -17,6 +17,7 @@ telegraph
 beautifulsoup4
 aiohttp
 gTTS
+jikanpy
 googletrans
 NumPy
 glitch_this
