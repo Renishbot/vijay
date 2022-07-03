@@ -9,7 +9,7 @@ from telegram.error import BadRequest
 from telegram.ext import MessageHandler, Filters, CommandHandler, run_async, CallbackQueryHandler
 from telegram.utils.helpers import mention_markdown, mention_html, escape_markdown
 
-import cinderella.modules.sql.welcome_sql as sql
+import plugins.Masterolic.welcome_sql as sql
 import cinderella.modules.sql.global_bans_sql as gbansql
 import cinderella.modules.sql.users_sql as userssql
 import cinderella.modules.sql.feds_sql as feds_sql
