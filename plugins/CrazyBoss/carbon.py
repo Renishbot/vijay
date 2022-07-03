@@ -5,7 +5,7 @@ from plugins.CrazyBoss.function import make_carbon
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 aiohttpsession = ClientSession()
 
-C = "**Made by {message.from_user.mention}**"
+
 F = InlineKeyboardMarkup(
 [[
      InlineKeyboardButton("Made By Me", url="https://t.me/VijayFilterTG_Bot")
@@ -29,6 +29,7 @@ async def carbon_func(_, message):
     m = await message.reply_text("ᴘʀᴏᴄᴇssɪɴɢ...")
     carbon = await make_carbon(message.reply_to_message.text)
     await m.edit("ᴜᴘʟᴏᴀᴅɪɴɢ..")
+    C = f"**Made for {m.from_user.mention}**"
     await message.reply_photo(
         photo=carbon,
         caption=C,
