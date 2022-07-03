@@ -190,7 +190,7 @@ async def short(link):
     
     # Send the text
     try:
-        shorten_urls += "\n\nMade by {query.from_user.mention}"
+        shorten_urls += f"\n\nMade for {message.from_user.mention}"
         return shorten_urls
     except Exception as error:
         return error
