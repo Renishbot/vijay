@@ -1,3 +1,4 @@
+import shlex
 from __future__ import unicode_literals
 from shazamio import Shazam
 import math
