@@ -42,6 +42,14 @@ async def shazam(file):
     title = track.get("title")
     return image, by, title
 
+async def convert_to_audio(vid_path):
+    stark_cmd = f"ffmpeg -i {vid_path} -map 0:a friday.mp3"
+    await runcmd(stark_cmd)
+    final_warner = "friday.mp3"
+    if not os.path.exists(final_warner):
+        return None
+    return final_warner
+
 
 @Client.on_message(filters.command(["find", "shazam"]))
 async def shazam_(client, message):
