@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, BigInteger
 
-from cinderella.modules.helper_funcs.msg_types import Types
-from cinderella.modules.sql import SESSION, BASE
+from pyrogram import Types
+from plugins.Naveen.Masterolic.__init__ import SESSION, BASE
 
 DEFAULT_WELCOME = "Hey {first}, Welcome to {chatname}! How are you?"
 DEFAULT_GOODBYE = "Nice knowing ya!"
