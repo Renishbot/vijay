@@ -5,10 +5,10 @@ from plugins.CrazyBoss.function import make_carbon
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 aiohttpsession = ClientSession()
 
-C = "**Made by @The_obanai_bot**"
+C = "**Made by {msg.user.mentuin**"
 F = InlineKeyboardMarkup(
 [[
-     InlineKeyboardButton("Bot", url="https://t.me/tigershroffimdbot")
+     InlineKeyboardButton("Made By Me", url="https://t.me/VijayFilterTG_Bot")
 ]]
 )
 
