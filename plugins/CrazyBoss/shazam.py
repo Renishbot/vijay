@@ -7,6 +7,7 @@ import aiofiles
 import aiohttp
 import wget
 import os
+from plugins import run_cmd
 import datetime
 from json import JSONDecodeError
 import requests
@@ -42,20 +43,6 @@ async def shazam(file):
     by = track.get("subtitle")
     title = track.get("title")
     return image, by, title
-
-async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
-    """Run Commands"""
-    args = shlex.split(cmd)
-    process = await asyncio.create_subprocess_exec(
-        *args, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-    )
-    stdout, stderr = await process.communicate()
-    return (
-        stdout.decode("utf-8", "replace").strip(),
-        stderr.decode("utf-8", "replace").strip(),
-        process.returncode,
-        process.pid,
-    )
 
 async def convert_to_audio(vid_path):
     stark_cmd = f"ffmpeg -i {vid_path} -map 0:a friday.mp3"
