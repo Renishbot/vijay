@@ -2,7 +2,7 @@ import html, time
 import re
 from typing import Optional, List
 
-import cinderella.modules.helper_funcs.cas_api as cas
+imprt plugins.helper_functions.cas_api as cas
 
 from telegram import Message, Chat, Update, Bot, User, CallbackQuery, ChatMember, ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, MessageEntity
 from telegram.error import BadRequest
