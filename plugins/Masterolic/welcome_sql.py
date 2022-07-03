@@ -3,7 +3,7 @@ import threading
 from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, BigInteger
 
 from pyrogram import Types
-from plugins.Naveen.Masterolic.__init__ import SESSION, BASE
+from plugins.Masterolic.__init__ import SESSION, BASE
 
 DEFAULT_WELCOME = "Hey {first}, Welcome to {chatname}! How are you?"
 DEFAULT_GOODBYE = "Nice knowing ya!"
