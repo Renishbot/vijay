@@ -17,6 +17,7 @@ from youtubesearchpython import VideosSearch
 import yt_dlp
 from youtube_search import YoutubeSearch
 import requests
+from typing import Tuple
 from pyrogram import filters
 from pyrogram import Client
 from plugins.CrazyBoss.friday import humanbytes, edit_or_reply, fetch_audio
