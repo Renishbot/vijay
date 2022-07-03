@@ -7,7 +7,7 @@ import aiofiles
 import aiohttp
 import wget
 import os
-from plugins import run_cmd
+from plugins.__init__ import run_cmd
 import datetime
 from json import JSONDecodeError
 import requests
