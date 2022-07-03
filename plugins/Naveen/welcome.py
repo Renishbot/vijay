@@ -11,8 +11,8 @@ from telegram.utils.helpers import mention_markdown, mention_html, escape_markdo
 
 import plugins.Masterolic.welcome_sql as sql
 import plugins.Masterolic.global_bans_sql as gbansql
-import plugins.Masterolic.sql.users_sql as userssql
-import cinderella.modules.sql.feds_sql as feds_sql
+import plugins.Masterolic.users_sql as userssql
+import plugins.Masterolic.feds_sql as feds_sql
 
 from cinderella import dispatcher, OWNER_ID, LOGGER, SUDO_USERS, SUPPORT_USERS, DEV_USERS, WHITELIST_USERS, MESSAGE_DUMP
 from cinderella.modules.helper_funcs.chat_status import user_admin, can_delete, is_user_ban_protected
