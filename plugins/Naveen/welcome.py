@@ -16,14 +16,14 @@ import plugins.Masterolic.users_sql as userssql
 import plugins.Masterolic.feds_sql as feds_sql
 
 from info import OWNER_ID, LOGGER, SUDO_USERS, SUPPORT_USERS, DEV_USERS, WHITELIST_USERS, MESSAGE_DUMP
-from cinderella.modules.helper_funcs.chat_status import user_admin, can_delete, is_user_ban_protected
-from cinderella.modules.helper_funcs.misc import build_keyboard, revert_buttons, send_to_list
-from cinderella.modules.helper_funcs.msg_types import get_welcome_type
-from cinderella.modules.helper_funcs.extraction import extract_user
+from plugins.helper_funcs.chat_status import user_admin, can_delete, is_user_ban_protected
+from plugins.helper_funcs.misc import build_keyboard, revert_buttons, send_to_list
+from plugins.helper_funcs.msg_types import get_welcome_type
+from plugins.helper_funcs.extraction import extract_user
 from cinderella.modules.disable import DisableAbleCommandHandler
-from cinderella.modules.helper_funcs.filters import CustomFilters
-from cinderella.modules.helper_funcs.string_handling import markdown_parser, escape_invalid_curly_brackets
-from cinderella.modules.log_channel import loggable
+from plugins.helper_funcs.filters import CustomFilters
+from plugins.helper_funcs.string_handling import markdown_parser, escape_invalid_curly_brackets
+from plugins.log_channel import loggable
 
 VALID_WELCOME_FORMATTERS = ['first', 'last', 'fullname', 'username', 'id', 'count', 'chatname', 'mention']
 
