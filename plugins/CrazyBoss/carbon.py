@@ -29,7 +29,7 @@ async def carbon_func(_, message):
     m = await message.reply_text("ᴘʀᴏᴄᴇssɪɴɢ...")
     carbon = await make_carbon(message.reply_to_message.text)
     await m.edit("ᴜᴘʟᴏᴀᴅɪɴɢ..")
-    C = f"**Made for {m.from_user.mention}**"
+    C = f"**Made for {message.from_user.mention}**"
     await message.reply_photo(
         photo=carbon,
         caption=C,
