@@ -14,7 +14,7 @@ import plugins.Masterolic.global_bans_sql as gbansql
 import plugins.Masterolic.users_sql as userssql
 import plugins.Masterolic.feds_sql as feds_sql
 
-from cinderella import dispatcher, OWNER_ID, LOGGER, SUDO_USERS, SUPPORT_USERS, DEV_USERS, WHITELIST_USERS, MESSAGE_DUMP
+from info import dispatcher, OWNER_ID, LOGGER, SUDO_USERS, SUPPORT_USERS, DEV_USERS, WHITELIST_USERS, MESSAGE_DUMP
 from cinderella.modules.helper_funcs.chat_status import user_admin, can_delete, is_user_ban_protected
 from cinderella.modules.helper_funcs.misc import build_keyboard, revert_buttons, send_to_list
 from cinderella.modules.helper_funcs.msg_types import get_welcome_type
