@@ -10,7 +10,7 @@ from telegram.ext import MessageHandler, Filters, CommandHandler, run_async, Cal
 from telegram.utils.helpers import mention_markdown, mention_html, escape_markdown
 
 import plugins.Masterolic.welcome_sql as sql
-import cinderella.modules.sql.global_bans_sql as gbansql
+import plugins.Masterolic.sql.global_bans_sql as gbansql
 import cinderella.modules.sql.users_sql as userssql
 import cinderella.modules.sql.feds_sql as feds_sql
 
