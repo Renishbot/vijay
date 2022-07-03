@@ -1,9 +1,9 @@
-import shlex
 from __future__ import unicode_literals
 from shazamio import Shazam
 import math
 import asyncio
 import time
+import shlex
 import aiofiles
 import aiohttp
 import wget
