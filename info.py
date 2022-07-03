@@ -147,8 +147,8 @@ DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 #greetings
 WELCOME_DELAY_KICK_SEC = WELCOME_DELAY_KICK_SEC
 
-#whistlists
-WHITELIST_USERS
+#messagedump
+MESSAGE_DUMP = environ.get("MESSAGE_DUMP", "")
 
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
