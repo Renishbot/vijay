@@ -147,6 +147,9 @@ DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 #greetings
 WELCOME_DELAY_KICK_SEC = WELCOME_DELAY_KICK_SEC
 
+#whistlists
+WHITELIST_USERS
+
 # Others
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TIGERSHROFFIMDB')
@@ -186,3 +189,5 @@ db = mongo_client.wbb
 tbot.start(bot_token=BOT_TOKEN)
 
 telethn = TelegramClient("Zeus", API_ID, API_HASH)
+
+WHITELIST_USERS = list(WHITELIST_USERS)
