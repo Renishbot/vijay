@@ -20,7 +20,7 @@ from plugins.helper_funcs.chat_status import user_admin, can_delete, is_user_ban
 from plugins.helper_funcs.misc import build_keyboard, revert_buttons, send_to_list
 from plugins.helper_funcs.msg_types import get_welcome_type
 from plugins.helper_funcs.extraction import extract_user
-from cinderella.modules.disable import DisableAbleCommandHandler
+from plugins.disable import DisableAbleCommandHandler
 from plugins.helper_funcs.filters import CustomFilters
 from plugins.helper_funcs.string_handling import markdown_parser, escape_invalid_curly_brackets
 from plugins.log_channel import loggable
