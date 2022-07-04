@@ -4,7 +4,7 @@ import re
 import time
 from functools import partial
 
-import database.sql.sql.welcome_sql as sql
+import database.sql.welcome_sql as sql
 from database import (sw, dispatcher)
 from plugins.helper_functions.chat_status import (
     is_user_ban_protected,
