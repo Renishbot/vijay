@@ -39,6 +39,10 @@
             "description": "Username or ID of Admin. Separate multiple Admins by space.",
             "required": true
         },
+        "ENV": {
+            "description": "Setting this to ANYTHING will enable environment variables.",
+            "value": "ANYTHING"
+        },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
             "required": false
@@ -47,6 +51,11 @@
             "description": "Bot Logs,Give a channel id with -100xxxxxxx",
             "required": true       
         },
+        "SQLALCHEMY_DATABASE_URI": {
+            "description": "Your postgres sql db, empty this field if you dont have one.",
+            "required": false,
+            "value": "sqldbtype://username:pw@hostname:port/db_name"
+        },      
         "SUPPORT_CHAT": {
             "description": "Username of a Support Group / ADMIN. ( Should be username without @ and not ID)",
             "required": false
