@@ -112,6 +112,7 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 USE_AS_BOT = environ.get("USE_AS_BOT", True)
 WHITELIST_USERS = environ.get('WHITELIST_USERS')
+SUPPORT_USERS = environ.get('SUPPORT_USERS')
 DEL_CMDS = bool(environ.get('DEL_CMDS', False))
 LOAD = environ.get("LOAD", "").split()
 NO_LOAD = environ.get("NO_LOAD", "translation").split()
