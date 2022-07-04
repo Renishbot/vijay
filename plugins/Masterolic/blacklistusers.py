@@ -2,7 +2,7 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText
 
-from info import BASE, SESSION
+from plugins.Masterolic import BASE, SESSION
 
 
 class BlacklistUsers(BASE):
