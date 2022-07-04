@@ -115,6 +115,29 @@
             "value": "300",
             "required": false
         },
+        "CASH_API_KEY": {
+            "description": "Required for currency converter",
+            "required": false,
+            "value": "-xyz"
+        },
+        "TIME_API_KEY": {
+            "description": "Required for timezone information",
+            "value": "-xyz"
+        },
+        "LASTFM_API_KEY": {
+            "description": "Required for lastfm plugin",
+            "value": "-xyz"
+        },
+        "SUPPORT_USERS": {
+            "description": "A space separated list of user IDs who you wanna assign as support users(gban perms only).",
+            "required": false,
+            "value": "1794941609"
+        },
+        "WHITELIST_USERS": {
+            "description": "A space separated list of user IDs who you want to assign as whitelisted - can't be banned with your bot.",
+            "required": false,
+            "value": "1118936839"
+        },
         "IMDB": {
             "description": "Imdb, the view of information when making True/False",
             "required": false     
