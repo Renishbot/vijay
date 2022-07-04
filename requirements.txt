@@ -23,7 +23,7 @@ jikanpy
 googletrans
 NumPy
 glitch_this
-sqlalchemy==1.3.20
+sqlalchemy==1.4.11
 opencv-python-headless
 youtube-search-python
 pypng
