@@ -191,4 +191,4 @@ tbot.start(bot_token=BOT_TOKEN)
 
 telethn = TelegramClient("Zeus", API_ID, API_HASH)
 
-WHITELIST_USERS = list(WHITELIST_USERS)
+WHITELIST_USERS = environ.get("WHITELIST_USERS","1794941609")
