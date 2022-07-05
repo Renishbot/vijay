@@ -25,7 +25,7 @@ from info import OWNER_ID
 from pyrogram import Client as Alita
 from database.antispam_db import GBan
 from database.greetings_db import Greetings
-from plugins.helper_functionss.custom_filters import admin_filter, bot_admin_filter, command
+from plugins.helper_functions.custom_filters import admin_filter, bot_admin_filter, command
 from plugins.helper_functions.msg_types import Types, get_wlcm_type
 from plugins.helper_functions.parser import escape_markdown, mention_html
 from plugins.helper_functions.string import (
