@@ -1,5 +1,5 @@
 import pymongo
-from info import DATABASE_URL as db_url
+from info import DATABASE_URI as db_url
 from plugins import help_message
 from pyrogram import Client as bot 
 from pyrogram import filters
