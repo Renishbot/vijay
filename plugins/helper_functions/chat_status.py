@@ -309,5 +309,5 @@ def connection_status(func):
 
 
 #Workaround for circular import with connection.py
-from plugins.connections import connection
+from plugins.connection import connection
 connected = connection.connected
