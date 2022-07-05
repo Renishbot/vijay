@@ -27,7 +27,7 @@ from info import DEV_USERS, OWNER_ID, SUDO_USERS
 from database.disable_db import DISABLED_CMDS
 from plugins.Group.tr_engine import tlang
 from plugins.helper_functions.caching import ADMIN_CACHE, admin_cache_reload
-from plugins.vars import Config
+from info import Config
 
 SUDO_LEVEL = set(SUDO_USERS + DEV_USERS + [int(OWNER_ID)])
 DEV_LEVEL = set(DEV_USERS + [int(OWNER_ID)])
