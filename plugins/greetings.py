@@ -22,13 +22,13 @@ from pyrogram.errors import ChatAdminRequired, RPCError
 from pyrogram.types import ChatMemberUpdated, InlineKeyboardMarkup, Message
 
 from info import OWNER_ID
-from plugins.bot_class import Alita
+from pyrogram import Client as Alita
 from database.antispam_db import GBan
 from database.greetings_db import Greetings
-from plugins.utils.custom_filters import admin_filter, bot_admin_filter, command
-from plugins.utils.msg_types import Types, get_wlcm_type
-from plugins.utils.parser import escape_markdown, mention_html
-from plugins.utils.string import (
+from plugins.helper_functionss.custom_filters import admin_filter, bot_admin_filter, command
+from plugins.helper_functions.msg_types import Types, get_wlcm_type
+from plugins.helper_functions.parser import escape_markdown, mention_html
+from plugins.helper_functions.string import (
     build_keyboard,
     escape_invalid_curly_brackets,
     parse_button,
