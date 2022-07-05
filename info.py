@@ -116,6 +116,7 @@ SUPPORT_USERS = environ.get('SUPPORT_USERS')
 DEL_CMDS = bool(environ.get('DEL_CMDS', False))
 LOAD = environ.get("LOAD", "").split()
 NO_LOAD = environ.get("NO_LOAD", "translation").split()
+config = Configuration(loaders=[Environment(), EnvFile(filename=env_file)])
 
 # maximum message length in Telegram
 MAX_MESSAGE_LENGTH = 4096
@@ -196,3 +197,6 @@ def spamfilters(text, user_id, chat_id):
         return True
     else:
         return False
+
+class Config:
+    """Config class for variables."""
