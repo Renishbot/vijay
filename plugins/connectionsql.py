@@ -8,7 +8,7 @@ from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CommandHandler, CallbackQueryHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from pyrogram import disappointed 
+from pyrogram import dispatcher 
 import database.sql.connection_sql as sql
 from info import SUDO_USERS, DEV_USERS, spamfilters
 from plugins.helper_funcs import chat_status
