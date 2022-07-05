@@ -21,19 +21,19 @@ from pyrogram import filters
 from pyrogram.errors import ChatAdminRequired, RPCError
 from pyrogram.types import ChatMemberUpdated, InlineKeyboardMarkup, Message
 
-from alita import OWNER_ID
-from alita.bot_class import Alita
-from alita.database.antispam_db import GBan
-from alita.database.greetings_db import Greetings
-from alita.utils.custom_filters import admin_filter, bot_admin_filter, command
-from alita.utils.msg_types import Types, get_wlcm_type
-from alita.utils.parser import escape_markdown, mention_html
-from alita.utils.string import (
+from info import OWNER_ID
+from plugins.bot_class import Alita
+from database.antispam_db import GBan
+from database.greetings_db import Greetings
+from plugins.utils.custom_filters import admin_filter, bot_admin_filter, command
+from plugins.utils.msg_types import Types, get_wlcm_type
+from plugins.utils.parser import escape_markdown, mention_html
+from plugins.utils.string import (
     build_keyboard,
     escape_invalid_curly_brackets,
     parse_button,
 )
-from alita.vars import Config
+from plugins.vars import Config
 
 # Initialize
 gdb = GBan()
