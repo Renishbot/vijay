@@ -29,8 +29,8 @@ from plugins.Group.tr_engine import tlang
 from plugins.helper_functions.caching import ADMIN_CACHE, admin_cache_reload
 from info import Config
 
-SUDO_LEVEL = set(SUDO_USERS + DEV_USERS + (int(OWNER_ID)))
-DEV_LEVEL = set(DEV_USERS + (int(OWNER_ID)))
+SUDO_LEVEL = set(SUDO_USERS + DEV_USERS + [int(OWNER_ID)])
+DEV_LEVEL = set(DEV_USERS + [int(OWNER_ID)])
 
 
 def command(
