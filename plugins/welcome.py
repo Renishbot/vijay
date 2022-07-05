@@ -3,7 +3,7 @@ from info import DATABASE_URI as db_url
 from plugins import help_message
 from pyrogram import Client as bot 
 from pyrogram import filters
-from nksama.plugins.admin import is_admin
+from plugins.admin import is_admin
 
 welcome_db = pymongo.MongoClient(db_url)['Welcome']['WelcomeX']
 
