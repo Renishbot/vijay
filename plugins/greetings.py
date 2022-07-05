@@ -33,7 +33,7 @@ from plugins.helper_functions.string import (
     escape_invalid_curly_brackets,
     parse_button,
 )
-from plugins.vars import Config
+from info import Config
 
 # Initialize
 gdb = GBan()
