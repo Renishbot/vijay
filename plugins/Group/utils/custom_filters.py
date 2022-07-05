@@ -5,7 +5,7 @@ from typing import List, Union
 from pyrogram.errors import RPCError, UserNotParticipant
 from pyrogram.filters import create
 from pyrogram.types import CallbackQuery, Message
-from info import BOT_ID, OWNER_ID
+from info import BOT_ID, OWNER_ID, BOT_USERNAME
 from plugins.Group.database.disable_db import DISABLED_CMDS
 from plugins.Group.utils.caching import ADMIN_CACHE, admin_cache_reload
 
@@ -34,7 +34,7 @@ def command(
             return False
         regex = r"^[{prefix}](\w+)(@{bot_name})?(?: |$)(.*)".format(
             prefix="|".join(escape(x) for x in PREFIX_HANDLER),
-            bot_name="Phil_Coulson_Sflix_bot",
+            bot_name="TigerShroffImdbot",
         )
         matches = compile_re(regex).search(text)
         if matches:
