@@ -20,9 +20,9 @@ from pyrogram import Client as Alita
 
 from info import LOGGER
 from plugins.Group.database.rules_db import Rules
-from plugins.Group.tr_engine import tlang
 from plugins.Group.utils.custom_filters import admin_filter, command
 from plugins.Group.utils.kbhelpers import ikb
+from plugins.Group.tr_engine import tlang
 
 
 @Alita.on_message(command("rules") & filters.group)
@@ -62,11 +62,17 @@ async def get_rules(_, m: Message):
         return
 
     formated = rules
-    chat_title = m.chat.title
-    await m.reply_text("rules.get_rules").format(
-            chat_title, rules=formated)
-    
 
+        await m.reply_text("rules.get_rules").format(
+            chat=f"<b>{m.chat.title}</b>",
+            rules=formated,
+        ),
+        disable_web_page_preview=True,
+        reply_to_message_id=msg_id,
+    )
+    return
+    
+     
 @Alita.on_message(command("setrules") & admin_filter)
 async def set_rules(_, m: Message):
     db = Rules(m.chat.id)
