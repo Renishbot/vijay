@@ -219,15 +219,6 @@ async def next_page(bot, query):
                 InlineKeyboardButton(f"💠ᴘᴀɢᴇ💠 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("ɴᴇxᴛ 🛡️", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
-    btn.insert(0,
-            [
-                InlineKeyboardButton("⭕️ ɢʀᴏᴜᴘ ⭕️", url="https://t.me/cinemaenglish123"),
-                InlineKeyboardButton("⭕️ ᴅᴇᴠ ⭕️", url="https://t.me/abhisheksvlog")
-            ])
-
-    btn.insert(0, [
-        InlineKeyboardButton("🎀 ᴄʜᴇᴄᴋ ʙᴏᴛ ᴘᴍ ғɪʀsᴛ 🎀", url=f"https://t.me/{temp.U_NAME}")
-    ])
     try:
         await query.edit_message_reply_markup(
             reply_markup=InlineKeyboardMarkup(btn)
