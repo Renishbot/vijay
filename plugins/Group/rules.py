@@ -53,7 +53,9 @@ async def get_rules(_, m: Message):
                 ],
             ],
         )
-        await m.reply_text("rules.pm_me"),
+        await m.reply_text(
+            (tlang(m, "rules.pm_me")),
+            quote=True,
             reply_markup=pm_kb,
             reply_to_message_id=msg_id,
         )
