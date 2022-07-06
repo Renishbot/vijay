@@ -100,7 +100,7 @@ async def report_watcher(c: Alita, m: Message):
             await m.reply_text("Nice try.")
             return
 
-        if reported_user.id in SUPPORT_STAFF:
+        if str(reported_user.id) in SUPPORT_STAFF:
             await m.reply_text("Uh? You reporting my support team?")
             return
 
