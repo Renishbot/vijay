@@ -11,7 +11,7 @@ from pyrogram.types import (
 )
 
 from info import LOGGER, BOT_ID, BOT_USERNAME
-from pyrogram import Client as Tiger
+from pyrogram import Client as Vijay
 from plugins.Group.database.rules_db import Rules
 from plugins.Group.database.users_db import Users
 from plugins.Group.database.warns_db import Warns, WarnSettings
@@ -21,7 +21,7 @@ from plugins.Group.utils.extract_user import extract_user
 from plugins.Group.utils.parser import mention_html
 
 
-@Tiger.on_message(
+@Vijay.on_message(
     command(["warn", "swarn", "dwarn"]) & restrict_filter,
 )
 async def warn(c: Tiger, m: Message):
@@ -126,7 +126,7 @@ async def warn(c: Tiger, m: Message):
     await m.stop_propagation()
 
 
-@Tiger.on_message(command("resetwarns") & restrict_filter)
+@Vijay.on_message(command("resetwarns") & restrict_filter)
 async def reset_warn(c: Tiger, m: Message):
 
     if not len(m.command) > 1 and not m.reply_to_message:
@@ -156,7 +156,7 @@ async def reset_warn(c: Tiger, m: Message):
     return
 
 
-@Tiger.on_message(command("warns") & filters.group)
+@Vijay.on_message(command("warns") & filters.group)
 async def list_warns(c: Tiger, m: Message):
 
     user_id, user_first_name, _ = await extract_user(c, m)
@@ -189,7 +189,7 @@ async def list_warns(c: Tiger, m: Message):
     return
 
 
-@Tiger.on_message(
+@Vijay.on_message(
     command(["rmwarn", "removewarn"]) & restrict_filter,
 )
 async def remove_warn(c: Tiger, m: Message):
@@ -233,7 +233,7 @@ async def remove_warn(c: Tiger, m: Message):
     return
 
 
-@Tiger.on_callback_query(filters.regex("^warn."))
+@Vijay.on_callback_query(filters.regex("^warn."))
 async def remove_last_warn_btn(c: Tiger, q: CallbackQuery):
 
     try:
@@ -282,7 +282,7 @@ async def remove_last_warn_btn(c: Tiger, q: CallbackQuery):
     return
 
 
-@Tiger.on_message(command(["warnings", "warnsettings"]) & admin_filter)
+@Vijay.on_message(command(["warnings", "warnsettings"]) & admin_filter)
 async def get_settings(_, m: Message):
     warn_settings_db = WarnSettings(m.chat.id)
     settings = warn_settings_db.get_warnings_settings()
@@ -296,7 +296,7 @@ async def get_settings(_, m: Message):
     return
 
 
-@Tiger.on_message(command("warnmode") & admin_filter)
+@Vijay.on_message(command("warnmode") & admin_filter)
 async def warnmode(_, m: Message):
     warn_settings_db = WarnSettings(m.chat.id)
     if len(m.text.split()) > 1:
@@ -317,7 +317,7 @@ async def warnmode(_, m: Message):
     return
 
 
-@Tiger.on_message(command("warnlimit") & admin_filter)
+@Vijay.on_message(command("warnlimit") & admin_filter)
 async def warnlimit(_, m: Message):
     warn_settings_db = WarnSettings(m.chat.id)
     if len(m.text.split()) > 1:
@@ -334,5 +334,4 @@ async def warnlimit(_, m: Message):
 
 
 __PLUGIN__ = "warnings"
-
 __alt_name__ = ["warn", "warning", "warns"]
