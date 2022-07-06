@@ -64,7 +64,7 @@ async def get_rules(_, m: Message):
     formated = rules
     chat_title = m.chat.title
     await m.reply_text("rules.get_rules").format(
-            chat_title, rules=formated))
+            chat_title, rules=formated)
     
 
 @Alita.on_message(command("setrules") & admin_filter)
