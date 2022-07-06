@@ -131,13 +131,12 @@ async def clear_rules(_, m: Message):
         return
 
     await m.reply_text(
-        rules.cleared"),
+        (tlang(m, "rules.clear_rules")),
         reply_markup=ikb(
             [[("⚠️ Confirm", "clear_rules"), ("❌ Cancel", "close_admin")]],
         ),
     )
-    return
-
+    return  
 
 @Alita.on_callback_query(filters.regex("^clear_rules$"))
 async def clearrules_callback(_, q: CallbackQuery):
