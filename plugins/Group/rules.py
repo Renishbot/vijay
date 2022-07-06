@@ -88,7 +88,7 @@ async def set_rules(_, m: Message):
 
     db.set_rules(rules)
     LOGGER.info(f"{m.from_user.id} set rules in {m.chat.id}")
-    await m.reply_text(tlang(m, "rules.set_rules"))
+    await m.reply_text("Rules Successfully added to this Chat")
     return
 
 
