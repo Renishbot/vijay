@@ -8,16 +8,16 @@ from pyrogram.types import CallbackQuery, InlineKeyboardMarkup, Message
 from info import LOGGER
 from pyrogram import Client as Alita
 from plugins.Group.database.notes_db import Notes, NotesSettings
-from alita.utils.cmd_senders import send_cmd
-from alita.utils.custom_filters import admin_filter, command, owner_filter
-from alita.utils.kbhelpers import ikb
-from alita.utils.msg_types import Types, get_note_type
-from alita.utils.string import (
+from plugins.Group.utils.cmd_senders import send_cmd
+from plugins.Group.utils.custom_filters import admin_filter, command, owner_filter
+from plugins.Group.utils.kbhelpers import ikb
+from plugins.Group.utils.msg_types import Types, get_note_type
+from plugins.Group.utils.string import (
     build_keyboard,
     escape_mentions_using_curly_brackets,
     parse_button,
 )
-from alita.vars import Config
+from plugins.Group.vars import Config
 
 # Initialise
 db = Notes()
