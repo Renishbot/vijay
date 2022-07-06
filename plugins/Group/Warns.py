@@ -24,7 +24,7 @@ from plugins.Group.utils.parser import mention_html
 @Vijay.on_message(
     command(["warn", "swarn", "dwarn"]) & restrict_filter,
 )
-async def warn(c: Tiger, m: Message):
+async def warn(c: Vijay, m: Message):
     if m.reply_to_message:
         r_id = m.reply_to_message.message_id
         if len(m.text.split()) >= 2:
@@ -127,7 +127,7 @@ async def warn(c: Tiger, m: Message):
 
 
 @Vijay.on_message(command("resetwarns") & restrict_filter)
-async def reset_warn(c: Tiger, m: Message):
+async def reset_warn(c: Vijay, m: Message):
 
     if not len(m.command) > 1 and not m.reply_to_message:
         await m.reply_text("I can't warn nothing! Tell me user whom I should warn")
@@ -157,7 +157,7 @@ async def reset_warn(c: Tiger, m: Message):
 
 
 @Vijay.on_message(command("warns") & filters.group)
-async def list_warns(c: Tiger, m: Message):
+async def list_warns(c: Vijay, m: Message):
 
     user_id, user_first_name, _ = await extract_user(c, m)
 
@@ -192,7 +192,7 @@ async def list_warns(c: Tiger, m: Message):
 @Vijay.on_message(
     command(["rmwarn", "removewarn"]) & restrict_filter,
 )
-async def remove_warn(c: Tiger, m: Message):
+async def remove_warn(c: Vijay, m: Message):
 
     if not len(m.command) > 1 and not m.reply_to_message:
         await m.reply_text(
@@ -234,7 +234,7 @@ async def remove_warn(c: Tiger, m: Message):
 
 
 @Vijay.on_callback_query(filters.regex("^warn."))
-async def remove_last_warn_btn(c: Tiger, q: CallbackQuery):
+async def remove_last_warn_btn(c: Vijay, q: CallbackQuery):
 
     try:
         admins_group = {i[0] for i in ADMIN_CACHE[q.message.chat.id]}
