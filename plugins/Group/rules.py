@@ -65,9 +65,10 @@ async def get_rules(_, m: Message):
 
     await m.reply_text("rules.get_rules").format(
             chat=f"<b>{m.chat.title}</b>",
-            rules=formated,
-        disable_web_page_preview=True,
-        reply_to_message_id=msg_id,
+            rules=formated),
+            disable_web_page_preview=True,
+            reply_to_message_id=msg_id,
+    )
     return
 
 
