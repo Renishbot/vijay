@@ -63,7 +63,7 @@ async def get_rules(_, m: Message):
 
     formated = rules
     chat_title = m.chat.title
-    await m.reply_to_message.reply_text("rules.get_rules").format(
+    await m.reply_text("rules.get_rules").format(
             chat_title, rules=formated))
     
 
