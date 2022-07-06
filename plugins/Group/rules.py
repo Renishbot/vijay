@@ -139,7 +139,7 @@ async def clear_rules(_, m: Message):
 
     rules = db.get_rules()
     if not rules:
-        await m.reply_text(tlang(m, "rules.no_rules"))
+        await m.reply_text("Rules Cleared from this Chat")
         return
 
     await m.reply_text(
