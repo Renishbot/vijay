@@ -36,8 +36,7 @@ async def get_rules(_, m: Message):
         return
 
     if not rules:
-        await m.reply_text("rules.no_rules"),
-            quote=True
+        await m.reply_text("No Rules added in this Chat"),
         return
 
     priv_rules_status = db.get_privrules()
