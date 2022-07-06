@@ -17,7 +17,7 @@ from plugins.Group.utils.string import (
     escape_mentions_using_curly_brackets,
     parse_button,
 )
-from plugins.Group.vars import Config
+from info import Config
 
 # Initialise
 db = Notes()
