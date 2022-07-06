@@ -20,7 +20,7 @@ from pyrogram import Client as Alita
 
 from info import LOGGER
 from plugins.Group.database.rules_db import Rules
-from plugins.Grouo.tr_engine import tlang
+from plugins.Group.tr_engine import tlang
 from plugins.Group.utils.custom_filters import admin_filter, command
 from plugins.Group.utils.kbhelpers import ikb
 
