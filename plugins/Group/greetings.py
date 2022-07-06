@@ -158,7 +158,7 @@ async def save_wlcm(_, m: Message):
         return
 
     db.set_welcome_text(text)
-    await m.reply_text("Saved welcome!")
+    await m.reply_text("welcome Text Successfully Saved for this Chat!")
     return
 
 
@@ -196,7 +196,7 @@ async def save_gdbye(_, m: Message):
         return
 
     db.set_goodbye_text(text)
-    await m.reply_text("Saved goodbye!")
+    await m.reply_text("Goodbye Successfully Saved to this Chat!")
     return
 
 
@@ -205,7 +205,7 @@ async def resetgb(_, m: Message):
     db = Greetings(m.chat.id)
     if m and not m.from_user:
         return
-    text = "Sad to see you leaving {first}.\nTake Care!"
+    text = "Sad to see you leaving {first}.\nTake Care Dear!"
     db.set_goodbye_text(text)
     await m.reply_text("Ok Done!")
     return
