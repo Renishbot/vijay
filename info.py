@@ -11,7 +11,6 @@ from pyrogram import Client
 from prettyconf import Configuration
 from logging import WARNING, getLogger
 from prettyconf.loaders import EnvFile, Environment
-from aiohttp import ClientSession
 from telethon import TelegramClient
 
 
