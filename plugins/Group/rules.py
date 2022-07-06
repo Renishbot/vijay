@@ -130,8 +130,7 @@ async def clear_rules(_, m: Message):
         await m.reply_text("Rules Cleared from this Chat")
         return
 
-    await m.reply_text(
-        (tlang(m, "rules.clear_rules")),
+    await m.reply_text(Rules Successfully Cleared for this Chat")),
         reply_markup=ikb(
             [[("⚠️ Confirm", "clear_rules"), ("❌ Cancel", "close_admin")]],
         ),
