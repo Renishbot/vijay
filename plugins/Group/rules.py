@@ -36,8 +36,7 @@ async def get_rules(_, m: Message):
         return
 
     if not rules:
-        await m.reply_text(
-            (tlang(m, "rules.no_rules")),
+        await m.reply_text("rules.no_rules"),
             quote=True,
         )
         return
