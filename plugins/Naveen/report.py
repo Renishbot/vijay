@@ -140,7 +140,7 @@ async def report_watcher(c: Alita, m: Message):
             if Reporting(admin.user.id).get_settings():
                 try:
                     await c.send_message(
-                        m.user.id,
+                        m.chat.id,
                         msg,
                         reply_markup=reply_markup,
                         disable_web_page_preview=True,
