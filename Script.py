@@ -46,9 +46,17 @@ Thalapathy Vijay is not a Open source project.
 <b>𝖥𝖨𝖫𝖳𝖤𝖱</b> : <a href='https://github.com/TroJanzHEX/Unlimited-Filter-Bot'>𝖴𝗇𝗅𝗂𝗆𝗂𝗍𝖾𝖽 𝖥𝗂𝗅𝗍𝖾𝗋 𝖡𝗈𝗍</a>
 <b>PLUGINS</b> : <a href='https://github.com/ctzfamily/waifuFunBot'>WaifuFunBot</a>
 
-<b>DEVS:</b>
+<b>Onwer:</b>
+- <a href='https://t.me/Naveen_TG'>Naveen-TG</a>
 
-- <a href='https://t.me/Naveen_TG'>Naveen-TG</a>"""
+<b>Devs:</b>
+
+- <a href='https://t.me/rsrmusic'>𝘙𝘚𝘙</a>
+- <a href='https://t.me/NandhaxD'>ナンダ ╰ » Ⓒ︎Ⓣ︎ « ╮ </a>
+- <a href='https://t.me/Masterolic'>▄︻デE̷t̷h̷i̷c̷a̷l̷ ̷ H̷a̷c̷k̷e̷r̷══━一 </a>
+
+
+"""
 
     SHAZAM_TXT = """<b>Shazam Music Founder Module</b>
 
