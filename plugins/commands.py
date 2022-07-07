@@ -56,8 +56,8 @@ async def start(client, message):
         await asyncio.sleep(2)
         await m.delete()
         await message.reply_chat_action("typing")
-        await message.reply_photo(
-            photo=random.choice(PICS),
+        await message.reply_video(
+            video="https://telegra.ph/file/464ed9d54beaaf8d89626.mp4",
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
