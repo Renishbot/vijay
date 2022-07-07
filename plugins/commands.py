@@ -23,11 +23,10 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('ᴜᴘᴅᴀᴛᴇs', url='https://t.me/MovieHubOfficialGroup')
+                InlineKeyboardButton('🤖 𝙐𝙥𝙙𝙖𝙩𝙚𝙨', url='https://t.me/VijayTG_Updates')
             ],
             [
-                InlineKeyboardButton('ʜᴇʟᴘ', callback_data='help'),
-                InlineKeyboardButton('ᴄʟᴏsᴇ ✗', callback_data="close_data"),
+                InlineKeyboardButton('🛠️ 𝙃𝙚𝙡𝙥', callback_data='help')
             ]
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -45,7 +44,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ 𝘼𝙙𝙙 𝙈𝙚 𝙏𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍𝙎𝙚𝙖𝙧𝙘𝙝', switch_inline_query_current_chat='')
+            InlineKeyboardButton('🔍𝙎𝙚𝙖𝙧𝙘𝙝', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 𝙐𝙥𝙙𝙖𝙩𝙚𝙨', url='https://t.me/VijayTG_Updates')
             ],[
             InlineKeyboardButton('🛠️ 𝙃𝙚𝙡𝙥', callback_data='help'),
             InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='about')
@@ -94,7 +94,8 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('➕ 𝘼𝙙𝙙 𝙈𝙚 𝙏𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('🔍𝙎𝙚𝙖𝙧𝙘𝙝', switch_inline_query_current_chat='')
+            InlineKeyboardButton('🔍𝙎𝙚𝙖𝙧𝙘𝙝', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 𝙐𝙥𝙙𝙖𝙩𝙚𝙨', url='https://t.me/VijayTG_Updates')
             ],[
             InlineKeyboardButton('🛠️ 𝙃𝙚𝙡𝙥', callback_data='help'),
             InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='about')
