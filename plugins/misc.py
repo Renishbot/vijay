@@ -202,7 +202,8 @@ async def help(client, message):
 async def aboutme(client, message):
         buttons= [[
             InlineKeyboardButton('𝙂𝙞𝙩𝙝𝙪𝙗', url='https://github.com/200920082007'),
-            InlineKeyboardButton('𝙐𝙥𝙙𝙖𝙩𝙚𝙨', url='https://t.me/VijayTG_Updates')
+            InlineKeyboardButton('𝙐𝙥𝙙𝙖𝙩𝙚𝙨', url='https://t.me/VijayTG_Updates'),
+            InlineKeyboardButton('𝙎𝙩𝙖𝙩𝙨', callback_data='stats')
             ],[
             InlineKeyboardButton('𝘽𝙖𝙘𝙠', callback_data='start'),
             InlineKeyboardButton('𝘾𝙡𝙤𝙨𝙚', callback_data='close_data')
