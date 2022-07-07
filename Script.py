@@ -216,7 +216,7 @@ Every chat works with different rules; this module will help make those rules cl
 
 × /resetrulesbtn: Same as above."""
 
-    NOTE_TXT = """Here is the help for the <b>Notes</b> module:
+    NOTES_TXT = """Here is the help for the <b>Notes</b> module:
 
 Save data for future users with notes!
 Notes are great to save random tidbits of information; a phone number, a nice gif, a funny picture - anything!
