@@ -5,7 +5,7 @@ class script(object):
 
 i𝗍𝗌 𝖾𝖺𝗌𝗒 𝗍𝗈 𝗎𝗌𝖾 𝗆𝖾; 𝗃𝗎𝗌𝗍 𝖺𝖽𝖽 𝗆𝖾 𝗍𝗈 𝗒𝗈𝗎𝗋 𝗀𝗋𝗈𝗎𝗉 𝖺𝗌 𝖺𝖽𝗆𝗂𝗇, 𝗁𝗂𝗍 /help 𝖿𝗈𝗋 𝗆𝗈𝗋𝖾
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-©MᴀɪɴᴛᴀɪɴᴇD Bʏ:<a href='tg://user?id=1951205538'><b>༒ᶜʳᵃᶻʸᴮᴼˢˢ卂乃卄丨丂卄乇Ҝ༒</b></a> .</b>"""
+©MᴀɪɴᴛᴀɪɴᴇD Bʏ:<a href='tg://user?id=2107036689'><b>Naveen-TG</b></a> .</b>"""
 
     HELP_TXT = """<b>𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌</b>: 
 /start - 𝖼𝗁𝖾𝖼𝗄 𝗐𝗁𝖾𝗍𝗁𝖾𝗋 𝗂𝗆 𝗈𝗇𝗅𝗂𝗇𝖾 
@@ -121,19 +121,30 @@ Keep your members in check with warnings; stop them getting out of control!
 If you're looking for automated warnings, read about the blacklist module!
 
 <b>Admin Commands</b>:
+
 - /warn <reason>: Warn a user.
+
 - /dwarn <reason>: Warn a user by reply, and delete their message.
+
 - /swarn <reason>: Silently warn a user, and delete your message.
+
 - /warns: See a user's warnings.
+
 - /rmwarn: Remove a user's latest warning.
+
 - /resetwarn: Reset all of a user's warnings to 0.
+
 - /resetallwarns: Delete all the warnings in a chat. All users return to 0 warns.
+
 - /warnings: Get the chat's warning settings.
+
 - /setwarnmode <ban/kick/mute>: Set the chat's warn mode.
+
 - /setwarnlimit <number>: Set the number of warnings before users are punished.
 
 <b>Examples</b>
-- Warn a user.
+- Warning a user.
+
 -> /warn @user For disobeying the rules"""
 
     URL_TXT = """Help: <b>URL Shortner</b>
@@ -194,10 +205,15 @@ Every chat works with different rules; this module will help make those rules cl
 <b>Admin commands</b>:
 
 × /setrules <text>: Set the rules for this chat.
+
 × /privaterules <yes/no/on/off>: Enable/disable whether the rules should be sent in private.
-× /resetrules: Reset the chat rules to default
+
+× /resetrules: Reset the chat rules to default.
+
 × /rulesbtn <custom text>: Sets the text of rules button.
+
 × /resetrulesbutton: Reset the text of rules button to default.
+
 × /resetrulesbtn: Same as above."""
 
     NOTE_TXT = """Here is the help for the <b>Notes</b> module:
@@ -207,15 +223,21 @@ Notes are great to save random tidbits of information; a phone number, a nice gi
 User commands:
 
 - /get <notename>: Get a note.
+
 - #notename: Same as /get.
 
 <b>Admin commands</b>:
 
 - /save <notename> <note text>: Save a new note called "word". Replying to a message will save that message. Even works on media!
+
 - /clear <notename>: Delete the associated note.
+
 - /notes: List all notes in the current chat.
+
 - /saved: Same as /notes.
+
 - /clearall: Delete ALL notes in a chat. This cannot be undone.
+
 - /privatenotes: Whether or not to send notes in PM. Will send a message with a button which users can click to get the note in PM."""
     
     PURGE_TXT = """Here is the help for the <b>Purges</b> module:
@@ -253,9 +275,12 @@ That's what approvals are for - approve of trustworthy users to allow them to se
 
 <b>Admin only</b>:
 
-× /lock <permission>: Lock Chat permission..
+× /lock <permission>: Lock Chat permission.
+
 × /unlock <permission>: Unlock Chat permission.
+
 × /locks: View Chat permission.
+
 × /locktypes: Check available lock types!
 
 Locks can be used to restrict a group's users.
