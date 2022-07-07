@@ -309,32 +309,48 @@ Example:
 Welcome new members to your groups or say Goodbye after they leave!
 
 <b>Admin Commands</b>:
+
 × /setwelcome <reply/text>: Sets welcome text for group.
+
 × /welcome <yes/no/on/off>: Enables or Disables welcome setting for group.
+
 × /resetwelcome: Resets the welcome message to default.
+
 × /setgoodbye <reply/text>: Sets goodbye text for group.
+
 × /goodbye <yes/no/on/off>: Enables or Disables goodbye setting for group.
+
 × /resetgoodbye: Resets the goodbye message to default.
+
 × /cleanservice <yes/no/on/off>: Delete all service messages such as 'x joined the group' notification.
+
 × /cleanwelcome <yes/no/on/off>: Delete the old welcome message, whenever a new member joins."""
+
     WHOIS_TXT ="""<b>WHOIS MODULE</b>
+
 Note:- Give a user details
+
 •/whois :-give a user full details"""
+
     FUN_TXT ="""<b>Gᴀᴍᴇs</b> 
     
 <b>🎲 NOTHING MUCH JUST SOME FUN THINGS</b>
+
 t𝗋𝗒 𝗍𝗁𝗂𝗌 𝖮𝗎𝗍: 
+
 𝟣. /dice - Roll The Dice 
 𝟤. /Throw 𝗈𝗋 /Dart - 𝖳𝗈 𝖬𝖺𝗄𝖾 Drat 
 3. /Runs - Jokes 
 4. /Goal or /Shoot - To Make A Goal Or Shoot
 5. /luck or /cownd - Spin the Lucky"""
+
     ENGLISH_TXT = """HELP:English
  ❍ /define <text>*:* Tʏᴘᴇ ᴛʜᴇ ᴡᴏʀᴅ ᴏʀ ᴇxᴘʀᴇssɪᴏɴ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴇᴀʀᴄʜ\ɴFᴏʀ ᴇxᴀᴍᴘʟᴇ /define ᴋɪʟʟ
  ❍ /spell*:* ᴡʜɪʟᴇ ʀᴇᴘʟʏɪɴɢ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ, ᴡɪʟʟ ʀᴇᴘʟʏ ᴡɪᴛʜ ᴀ ɢʀᴀᴍᴍᴀʀ ᴄᴏʀʀᴇᴄᴛᴇᴅ ᴠᴇʀsɪᴏɴ
  ❍ /synonyms <word>*:* Fɪɴᴅ ᴛʜᴇ sʏɴᴏɴʏᴍs ᴏғ ᴀ ᴡᴏʀᴅ
  ❍ /antonyms <word>*:* Fɪɴᴅ ᴛʜᴇ ᴀɴᴛᴏɴʏᴍs ᴏғ ᴀ ᴡᴏʀᴅ
 """
+
     SHARE_TXT = """Help: <b>Sharing Text Maker</b>
 a bot to create a link to share text in the telegram.
 <b>Commands and Usage:</b>
@@ -343,10 +359,7 @@ a bot to create a link to share text in the telegram.
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
-    SOURCE_TXT = """<b>Source:</b>
-This bot is a Close source project.But my source code would be here
-Source: <a href='https://Github.com/200920082007/TigerShroff'>Source - Click here 👈</a>"""
-    
+
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
 - Filter is the feature were users can set automated replies for a particular keyword and ᗩᒍᗩ᙭  will respond whenever a keyword is found the message
