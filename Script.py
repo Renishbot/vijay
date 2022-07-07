@@ -52,8 +52,9 @@ Thalapathy Vijay is not a Open source project.
 <b>Devs:</b>
 
 - <a href='https://t.me/rsrmusic'>𝘙𝘚𝘙</a>
-- <a href='https://t.me/NandhaxD'>ナンダ ╰ » Ⓒ︎Ⓣ︎ « ╮ </a>
-- <a href='https://t.me/Masterolic'>▄︻デE̷t̷h̷i̷c̷a̷l̷ ̷ H̷a̷c̷k̷e̷r̷══━一 </a>
+- <a href='https://t.me/NandhaxD'>ナンダ ╰ » Ⓒ︎Ⓣ︎ « ╮</a>
+- <a href='https://t.me/Masterolic'>▄︻デE̷t̷h̷i̷c̷a̷l̷ ̷ H̷a̷c̷k̷e̷r̷══━一</a>
+- <a href='https://t.me/Abhisheksvlog'>༒ᶜʳᵃᶻʸᴮᴼˢˢ卂乃卄丨丂卄乇Ҝ༒</a>
 
 
 """
