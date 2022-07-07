@@ -33,6 +33,20 @@ class script(object):
 
 - Use /wiki < Query > To Get the Information about the query"""
 
+    ABOUTME_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 : {}
+
+➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Y2say'>Dhanush-TG</a>
+
+➥ 𝙇𝙞𝙗𝙧𝙖𝙧𝙮 : <a href='https://docs.pyrogram.org/'>Pyrogram</a>
+
+➥ 𝙇𝙖𝙣𝙜𝙪𝙖𝙜𝙚 : Python 𝟹
+
+➥ 𝘿𝙖𝙩𝙖 𝘽𝙖𝙨𝙚 : <a href='https://www.mongodb.com/'>MongoDB</a>
+
+➥ 𝘽𝙤𝙩 𝙎𝙚𝙧𝙫𝙚𝙧 : <a href='https://heroku.com'>Heroku</a>
+
+➥ 𝘽𝙪𝙞𝙡𝙙 𝙎𝙩𝙖𝙩𝙪𝙨 : v2.0.1 [ Beta ]"""
+
     SOURCE_TXT = """<b>Source:</b>
 
 Thalapathy Vijay is not a Open source project.
