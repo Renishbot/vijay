@@ -201,7 +201,7 @@ async def help(client, message):
 @Client.on_message(filters.command("about"))
 async def aboutme(client, message):
         buttons= [[
-            InlineKeyboardButton('𝙂𝙞𝙩𝙝𝙪𝙗', url='https://github.com/200920082007'),
+            InlineKeyboardButton('𝙂𝙞𝙩𝙝𝙪𝙗', url='https://github.com/Naveen-TG'),
             InlineKeyboardButton('𝙐𝙥𝙙𝙖𝙩𝙚𝙨', url='https://t.me/VijayTG_Updates'),
             InlineKeyboardButton('𝙎𝙩𝙖𝙩𝙨', callback_data='stats')
             ],[
