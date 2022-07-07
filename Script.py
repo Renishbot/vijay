@@ -13,7 +13,7 @@ class script(object):
 /help - 𝗀𝖾𝗍 𝗍𝗁𝗂𝗌 𝗁𝖾𝗅𝗉 𝗆𝖾𝗌𝗌𝖺𝗀𝖾
 /about - 𝖺𝖻𝗈𝗎𝗍 𝗆𝖾"""
     
-    ABOUT_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 : {}
+    ABOUT_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 : <a href='https://t.me/VijayFilterTG_Bot'>𝙏𝙝𝙖𝙡𝙖𝙥𝙖𝙩𝙝𝙮 𝙑𝙞𝙟𝙖𝙮</a>
 
 ➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Y2say'>Dhanush-TG</a>
 
@@ -33,7 +33,7 @@ class script(object):
 
 - Use /wiki < Query > To Get the Information about the query"""
 
-    ABOUTME_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 : {}
+    ABOUTME_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 :  <a href='https://t.me/VijayFilterTG_Bot'>𝙏𝙝𝙖𝙡𝙖𝙥𝙖𝙩𝙝𝙮 𝙑𝙞𝙟𝙖𝙮</a>
 
 ➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Y2say'>Dhanush-TG</a>
 
