@@ -966,20 +966,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons= [[
-            InlineKeyboardButton('ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ᴄʜᴀᴛ', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+            InlineKeyboardButton('➕ 𝘼𝙙𝙙 𝙈𝙚 𝙏𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('ғɪʟᴇ sᴛᴀᴛᴜs', callback_data='stats'),
-            InlineKeyboardButton('sᴏᴜʀᴄᴇ', callback_data='source')
+            InlineKeyboardButton('🔍𝙎𝙚𝙖𝙧𝙘𝙝', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🤖 𝙐𝙥𝙙𝙖𝙩𝙚𝙨', url='https://t.me/VijayTG_Updates')
             ],[
-            InlineKeyboardButton('🔍sᴇᴀʀᴄʜ ᴍᴏᴠɪᴇ🔎', switch_inline_query_current_chat='')
-            ],[
-            InlineKeyboardButton('🍿ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ🍿', url='https://t.me/MovieHubOfficialGroup')
-            ],[
-            InlineKeyboardButton('ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs', callback_data='help')
-            ],[
-            InlineKeyboardButton('« ʙᴀᴄᴋ', callback_data='start'),
-            InlineKeyboardButton('ᴄʟᴏsᴇ ✗', callback_data='close_data'),
-        ]]
+            InlineKeyboardButton('🛠️ 𝙃𝙚𝙡𝙥', callback_data='help'),
+            InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='about')
+        ]]                      
         reply_markup = InlineKeyboardMarkup(buttons)
         m=await query.message.reply_text("● ◌ ◌")
         n=await m.edit("● ● ◌")
