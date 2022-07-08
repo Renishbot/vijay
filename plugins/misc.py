@@ -191,8 +191,8 @@ async def help(client, message):
             InlineKeyboardButton('ᴄʟᴏsᴇ x', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=random.choice(PICS),
+        await message.reply_video(
+            video=random.choice(PICS),
             caption=script.HELP_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -209,8 +209,8 @@ async def aboutme(client, message):
             InlineKeyboardButton('𝘾𝙡𝙤𝙨𝙚', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=random.choice(PICS),
+        await message.reply_video(
+            video=random.choice(PICS),
             caption=script.ABOUTME_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
