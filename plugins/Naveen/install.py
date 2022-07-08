@@ -1,5 +1,5 @@
 import os
-from plugins import Friday_on_cmd
+from plugins import friday_on_cmd
 from plugins.helper_functions.startup_helpers import load_plugin
 from plugins.helper_functions.basic_helpers import edit_or_reply
 
