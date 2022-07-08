@@ -15,7 +15,7 @@ class script(object):
     
     ABOUT_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 : <a href='https://t.me/VijayFilterTG_Bot'>𝙏𝙝𝙖𝙡𝙖𝙥𝙖𝙩𝙝𝙮 𝙑𝙞𝙟𝙖𝙮</a>
 
-➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Y2say'>Dhanush-TG</a>
+➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Dhanush_TG'>Dhanush-TG</a>
 
 ➥ 𝙇𝙞𝙗𝙧𝙖𝙧𝙮 : <a href='https://docs.pyrogram.org/'>Pyrogram</a>
 
@@ -35,7 +35,7 @@ class script(object):
 
     ABOUTME_TXT = """<b>➥ 𝙈𝙮 𝙉𝙖𝙢𝙚 :  <a href='https://t.me/VijayFilterTG_Bot'>𝙏𝙝𝙖𝙡𝙖𝙥𝙖𝙩𝙝𝙮 𝙑𝙞𝙟𝙖𝙮</a>
 
-➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Y2say'>Dhanush-TG</a>
+➥ 𝘾𝙧𝙚𝙖𝙩𝙤𝙧 : <a href='https://t.me/Dhanush_TG'>Dhanush-TG</a>
 
 ➥ 𝙇𝙞𝙗𝙧𝙖𝙧𝙮 : <a href='https://docs.pyrogram.org/'>Pyrogram</a>
 
