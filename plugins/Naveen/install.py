@@ -1,5 +1,5 @@
 import os
-from pyrogram import Client as friday_on_cmd
+from pyrogram import Client as friday
 from plugins.helper_functions.startup_helpers import load_plugin
 from plugins.helper_functions.basic_helpers import edit_or_reply
 
