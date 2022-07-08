@@ -1,5 +1,4 @@
 import os
-from pyrogram import Client as friday
 from plugins.helper_functions.startup_helpers import load_plugin
 from plugins.helper_functions.basic_helpers import edit_or_reply
 
@@ -38,3 +37,40 @@ async def installer(client, message):
         os.remove(Escobar)
         return
     await pablo.edit(engine.get_string("PLUGIN_INSTALLED").format(file_name))
+
+def friday_on_cmd(
+    cmd: list,
+    group: int = 0,
+    pm_only: bool = False,
+    group_only: bool = False,
+    chnnl_only: bool = False,
+    only_if_admin: bool = False,
+    ignore_errors: bool = False,
+    propagate_to_next_handler: bool = True,
+    disable_sudo: bool = False,
+    file_name: str = None,
+    is_official: bool = True,
+    cmd_help: dict = {"help": "No One One Gonna Help You", "example": "{ch}what"},
+):
+    """- Main Decorator To Register Commands. -"""
+    if disable_sudo:
+        filterm = (
+        filters.me
+        & filters.command(cmd, Config.COMMAND_HANDLER)
+        & ~filters.via_bot
+        & ~filters.forwarded
+    )
+    else:
+        filterm = (
+            (filters.me | _sudo)
+            & filters.command(cmd, Config.COMMAND_HANDLER)
+            & ~filters.via_bot
+            & ~filters.forwarded)
+    cmd = list(cmd)
+    add_help_menu(
+        cmd=cmd[0],
+        stack=inspect.stack(),
+        is_official=is_official,
+        cmd_help=cmd_help["help"],
+        example=cmd_help["example"],
+    )
