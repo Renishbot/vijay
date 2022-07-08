@@ -192,7 +192,7 @@ async def help(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_video(
-            video=random.choice(PICS),
+            video="https://telegra.ph/file/dda9d42c0b0c2d9846049.mp4",
             caption=script.HELP_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -210,7 +210,7 @@ async def aboutme(client, message):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_video(
-            video=random.choice(PICS),
+            video="https://telegra.ph/file/09f6001759b82ac9150dd.mp4",
             caption=script.ABOUTME_TXT.format(message.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
