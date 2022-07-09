@@ -9,7 +9,7 @@ from pyrogram import Client, filters
 
 from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
 
-@Client.on_message(filters.command(["duckduckgo","ddg")])
+@Client.on_message(filters.command(["duckduckgo","ddg"]))
 async def duckduckgo(client, message):
     engine = message.Engine
     pablo = await edit_or_reply(message, engine.get_string("PROCESSING"))
@@ -24,7 +24,7 @@ async def duckduckgo(client, message):
     )
 
 
-@Client.on_message(filters.command(["gs","grs","Google")])
+@Client.on_message(filters.command(["gs","grs","Google"]))
 async def grs(client, message):
     engine = message.Engine
     pablo = await edit_or_reply(message, engine.get_string("PROCESSING"))
