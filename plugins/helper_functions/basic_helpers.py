@@ -4,6 +4,7 @@ import math
 import os
 import shlex
 import time
+from database.sudodb import sudo_list
 from info import SUDO_USERS as sudo_users
 from math import ceil
 from traceback import format_exc
