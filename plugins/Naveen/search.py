@@ -12,7 +12,7 @@ from plugins.helper_functions.basic_helpers import get_text
 from plugins.CrazyBoss.friday import edit_or_reply
 @Client.on_message(filters.command(["duckduckgo","ddg"]))
 async def duckduckgo(client, message):
-    pablo = await message.reply_text("Processing..."))
+    pablo = await message.reply_text("Processing...")
     query = get_text(message)
     if not query:
         await pablo.edit("No Input Found")
