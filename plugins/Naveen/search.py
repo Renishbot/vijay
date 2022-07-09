@@ -28,7 +28,7 @@ async def grs(client, message):
     pablo = await message.reply_text("Processing...")
     query = get_text(message)
     if not query:
-        await pablo.edit(engine.get_string("INPUT_REQ").format("query"))
+        await pablo.edit("No Input Found")
         return
     query = urllib.parse.quote_plus(query)
     number_result = 8
