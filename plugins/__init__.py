@@ -23,6 +23,20 @@ from plugins.CrazyBoss.friday import humanbytes, edit_or_reply, fetch_audio
 
 help_message = []
 
+async def _sudo(f, client, message):
+    if not message:
+        return bool(False)
+    if not message.from_user:
+        return bool(False)
+    if not message.from_user.id:
+        return bool(False)
+    if message.from_user.id in sudo_list_.result():
+        return bool(True)
+    return bool(False)
+
+_sudo = filters.create(func=_sudo, name="_sudo")
+
+
 async def run_cmd(cmd: str) -> Tuple[str, str, int, int]:
     """Run Commands"""
     args = shlex.split(cmd)
