@@ -13,7 +13,7 @@ from plugins.CrazyBoss.friday import edit_or_reply
 @Client.on_message(filters.command(["duckduckgo","ddg"]))
 async def duckduckgo(client, message):
     pablo = await message.reply_text("Processing...")
-    query = get_text(message)
+    query = message.text.split(None, 1)[1]
     if not query:
         await pablo.edit("No Input Found")
         return
@@ -26,7 +26,7 @@ async def duckduckgo(client, message):
 @Client.on_message(filters.command(["gs","grs","Google"]))
 async def grs(client, message):
     pablo = await message.reply_text("Processing...")
-    query = get_text(message)
+    query = message.text.split(None, 1)[1]
     if not query:
         await pablo.edit("No Input Found")
         return
