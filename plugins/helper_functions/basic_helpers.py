@@ -25,7 +25,7 @@ async def edit_or_reply(message, text, parse_mode="md"):
         return await message.edit(text, parse_mode=parse_mode)
     if not message.from_user:
         return await message.edit(text, parse_mode=parse_mode)
-    if message.from_user.id in sudo_users:
+    if str(message.from_user.id) in sudo_users:
         if message.reply_to_message:
             return await message.reply_to_message.reply_text(text, parse_mode=parse_mode)
         return await message.reply_text(text, parse_mode=parse_mode)
