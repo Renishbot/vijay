@@ -195,5 +195,5 @@ def spamfilters(text, user_id, chat_id):
     else:
         return False
 
-class Config((object))
+class Config((object)
     COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
