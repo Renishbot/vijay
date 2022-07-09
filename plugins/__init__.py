@@ -11,7 +11,7 @@ import datetime
 from json import JSONDecodeError
 import requests
 import ffmpeg
-from info import Config
+from info import Config, CMD_LIST
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup
 from youtubesearchpython import VideosSearch
