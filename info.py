@@ -85,6 +85,8 @@ class Log:
             with open(self.file_name, "a") as f:
                 f.write(f"[ERROR]({time.ctime(time.time())}): {msg}\n")
 
+mongo_client = motor.motor_asyncio.AsyncIOMotorClient(Config.DATABASE_URI)
+
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ['API_ID'])
