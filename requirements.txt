@@ -22,6 +22,7 @@ gTTS
 jikanpy
 googletrans
 NumPy
+fake_useragent>=0.1.11
 glitch_this
 sqlalchemy==1.4.11
 opencv-python-headless
