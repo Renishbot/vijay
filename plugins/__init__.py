@@ -103,7 +103,7 @@ def add_help_menu(
         if "xtraplugins" in previous_stack_frame.filename:
             is_official = False
         file_name = os.path.basename(previous_stack_frame.filename.replace(".py", ""))
-    cmd_helpz = example.format(ch=Config.COMMAND_HANDLER)
+    cmd_helpz = example.format(ch=Config.COMMAND_HAND_LER)
     cmd_helper = f"**Module Name :** `{file_name.replace('_', ' ').title()}` \n\n**Command :** `{Config.COMMAND_HANDLER}{cmd}` \n**Help :** `{cmd_help}` \n**Example :** `{cmd_helpz}`"
     if is_official:
         if file_name not in CMD_LIST.keys():
@@ -111,11 +111,11 @@ def add_help_menu(
         else:
             CMD_LIST[
                 file_name
-            ] += f"\n\n**Command :** `{Config.COMMAND_HANDLER}{cmd}` \n**Help :** `{cmd_help}` \n**Example :** `{cmd_helpz}`"
+            ] += f"\n\n**Command :** `{Config.COMMAND_HAND_LER}{cmd}` \n**Help :** `{cmd_help}` \n**Example :** `{cmd_helpz}`"
     elif file_name not in XTRA_CMD_LIST.keys():
         XTRA_CMD_LIST[file_name] = cmd_helper
     else:
         XTRA_CMD_LIST[
             file_name
-        ] += f"\n\n**Command :** `{Config.COMMAND_HANDLER}{cmd}` \n**Help :** `{cmd_help}` \n**Example :** `{cmd_helpz}`"
+        ] += f"\n\n**Command :** `{Config.COMMAND_HAND_LER}{cmd}` \n**Help :** `{cmd_help}` \n**Example :** `{cmd_helpz}`"
             
