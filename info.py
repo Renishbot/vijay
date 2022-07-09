@@ -206,3 +206,4 @@ def spamfilters(text, user_id, chat_id):
 
 class Config((object)):
     COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
+    DATABASE_URI = environ.get('DATABASE_URI', "")
