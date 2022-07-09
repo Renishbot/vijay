@@ -4,6 +4,7 @@ import asyncio
 import time
 import json
 import pymongo
+import motor.motor_asyncio
 from collections import defaultdict
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from typing import Dict, List, Union
