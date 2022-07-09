@@ -17,6 +17,7 @@ from info import Config
 from plugins import friday_on_cmd
 from plugins import run_cmd
 from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
+from pyrogram import Client
 
 
 async def create_s_collage(file_path, filename, width, stark_h):
@@ -74,15 +75,7 @@ async def create_s_collage(file_path, filename, width, stark_h):
     return filename
 
 
-
-@friday_on_cmd(
-    ["collage"],
-    cmd_help={
-        "help": "Create Collage From All Images in A Chat.",
-        "example": "{ch}collage (input or current chat will be taken)",
-    },
-)
-
+@Client.on_message(filters.command(["collage"]))
 async def wow_collage(client, message):
     owo = await edit_or_reply(message, "`Making Collage Please Wait.`")
     hmm = get_text(message) or " "
