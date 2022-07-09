@@ -70,14 +70,14 @@ def friday_on_cmd(
     if disable_sudo:
         filterm = (
         filters.me
-        & filters.command(cmd, Config.COMMAND_HANDLER)
+        & filters.command(cmd, Config.COMMAND_HAND_LER)
         & ~filters.via_bot
         & ~filters.forwarded
     )
     else:
         filterm = (
             (filters.me | _sudo)
-            & filters.command(cmd, Config.COMMAND_HANDLER)
+            & filters.command(cmd, Config.COMMAND_HAND_LER)
             & ~filters.via_bot
             & ~filters.forwarded)
     cmd = list(cmd)
