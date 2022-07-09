@@ -7,9 +7,9 @@ from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
 
 @Client.on_message(filters.command('repo'))
 async def git(client, message):
-    pablo = await edit_or_reply(message, "`Processing...`")
-    args = get_text(message)
-    if not args:
+    pablo = await message.reply_text("`Processing...`")
+    args = message.text.split(None, 1)[1]
+    if len(message.command) == 1:
         await pablo.edit("No input found")
         return
     r = requests.get("https://api.github.com/search/repositories", params={"q": args})
