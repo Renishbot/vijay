@@ -82,6 +82,7 @@ async def create_s_collage(file_path, filename, width, stark_h):
         "example": "{ch}collage (input or current chat will be taken)",
     },
 )
+
 async def wow_collage(client, message):
     owo = await edit_or_reply(message, "`Making Collage Please Wait.`")
     hmm = get_text(message) or " "
