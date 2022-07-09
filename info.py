@@ -149,6 +149,9 @@ DOWNLOAD_LOCATION = environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 #greetings
 WELCOME_DELAY_KICK_SEC = WELCOME_DELAY_KICK_SEC
 
+#command_Handler
+COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
+
 #messagedump
 MESSAGE_DUMP = environ.get("MESSAGE_DUMP", "")
 
