@@ -14,7 +14,6 @@ from PIL import Image
 import logging
 import pathlib
 from info import Config
-from plugins import friday_on_cmd
 from plugins import run_cmd
 from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
 from pyrogram import Client
