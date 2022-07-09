@@ -127,9 +127,6 @@ TMP_DOWNLOAD_DIRECTORY = environ.get("TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/")
 # the maximum number of 'selectable' messages in Telegram
 TG_MAX_SELECT_LEN = environ.get("TG_MAX_SELECT_LEN", "100")
 
-# Command
-COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
-
 #CommandsOfGroup
 ENABLED_LOCALES = environ.get("ENABLED_LOCALES", "en")
 BOT_USERNAME = environ.get("BOT_USERNAME", "@TigerShroffimdbot")
@@ -200,3 +197,6 @@ def spamfilters(text, user_id, chat_id):
 
 class Config:
     """Config class for variables."""
+
+class Config((object))
+COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
