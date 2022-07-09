@@ -16,7 +16,7 @@ import pathlib
 from info import Config
 from plugins import run_cmd
 from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
-from pyrogram import Client
+from pyrogram import Client, filters
 
 
 async def create_s_collage(file_path, filename, width, stark_h):
