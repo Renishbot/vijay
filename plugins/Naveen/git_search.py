@@ -2,7 +2,7 @@ import logging
 import os
 import requests
 from pyrogram import Client, filters
-from plugins.helper_functiins.basic_helpers import edit_or_reply, get_text
+from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
 
 
 @Client.on_message(filters.command('git'))
