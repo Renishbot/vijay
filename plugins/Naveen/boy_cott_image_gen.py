@@ -1,6 +1,6 @@
 import os
 
-from pyrogram import Client
+from pyrogram import Client, filters
 from plugins.helper_functions.basic_helpers import edit_or_reply
 from plugins.CrazyBoss.friday import convert_to_image
 from PIL import Image
