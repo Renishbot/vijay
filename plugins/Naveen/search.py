@@ -15,19 +15,17 @@ async def duckduckgo(client, message):
     pablo = await message.reply_text("Processing..."))
     query = get_text(message)
     if not query:
-        await pablo.edit(engine.get_string("INPUT_REQ").format("query"))
+        await pablo.edit("No Input Found")
         return
     sample_url = "https://duckduckgo.com/?q={}".format(query.replace(" ", "+"))
     link = sample_url.rstrip()
-    await pablo.edit(
-        engine.get_string("DUCK_DUCK_GO").format(query, link)
-    )
+    await pablo.edit("File Not Found")
+    return
 
 
 @Client.on_message(filters.command(["gs","grs","Google"]))
 async def grs(client, message):
-    engine = message.Engine
-    pablo = await edit_or_reply(message, engine.get_string("PROCESSING"))
+    pablo = await message.reply_text("Processing...")
     query = get_text(message)
     if not query:
         await pablo.edit(engine.get_string("INPUT_REQ").format("query"))
