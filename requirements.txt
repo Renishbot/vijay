@@ -33,6 +33,7 @@ wget
 aiofiles
 psutil
 wheel
+validators
 humanize
 ytthumb
 pyshorteners
