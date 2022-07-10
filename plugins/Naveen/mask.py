@@ -5,7 +5,7 @@ import time
 
 @Client.on_message(filters.command('mask'))
 async def mask(client, message):
-    pablo = await edit_or_reply(message, "`Processing...`")
+    pablo = await reply_text("Processing...")
     if not message.reply_to_message:
         await pablo.edit("Please Reply To A Image")
         return
