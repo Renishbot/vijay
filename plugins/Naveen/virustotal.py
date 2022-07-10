@@ -13,9 +13,9 @@ from plugins.helper_functions.basic_helpers import (
 
 vak = Config.V_T_KEY
 
-@Client.on_message(filters.command('scan'))              })
+@Client.on_message(filters.command("scan"))
 async def scan_my_file(client, message):
-    ms_ = await edit_or_reply(message, "`Please Wait! Scanning This File`")
+    ms_ = await message.reply_text("Please Wait! Scanning This File")
     if not message.reply_to_message:
       return await ms_.edit("`Please Reply To File To Scan For Viruses`")
     if not message.reply_to_message.document:
