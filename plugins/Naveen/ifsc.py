@@ -6,7 +6,7 @@ from plugins.helper_functions.basic_helpers import edit_or_reply, get_text, edit
 @Client.on_message(filters.command('ifsc'))
 async def geT_if(client, message):
     m_ = await message.reply_text("Please Wait!")
-    input_str = get_text(message)
+    input_str = message.text.split(None, 1)[1]
     if not input_str:
         return await edit("Give Me IFSC Code As Input.")
     IFSC_Code = input_str
