@@ -3,7 +3,7 @@ from pyrogram import Client, filters
 from plugins.helper_functions.basic_helpers import edit_or_reply, get_text, edit_or_send_as_file, get_user
 
 
-@Client.on_message(filters.command("speedtest","st"))
+@Client.on_message(filters.command("speedtest","spt"))
 async def spee_test(client, message):
     ms_g = await message.reply_text("Please Wait, Calculating Server Speed.")
     s = speedtest.Speedtest()
