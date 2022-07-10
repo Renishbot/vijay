@@ -25,7 +25,7 @@ def base64_to_image(base_code):
 
 @Client.on_message(filters.command('zombie'))
 async def make_everyone_a_zombie(client, message):
-    msg_ = await edit_or_reply(message, "`OwO, Making A Blood Sucking Zombie...`")
+    msg_ = await message.reply_text("OwO, Making A Blood Sucking Zombie...")
     if not message.reply_to_message:
         return await msg_.edit("`Please Reply To A Image With A Face.`")
     cool = await convert_to_image(message, client)
