@@ -8,7 +8,7 @@ async def geT_if(client, message):
     m_ = await edit_or_reply(message, "`Please Wait!`")
     input_str = get_text(message)
     if not input_str:
-        return await edit("Give Me IFSC Code As Input.")
+        return await m_.edit("Give Me IFSC Code As Input.")
     IFSC_Code = input_str
     URL = "https://ifsc.razorpay.com/"
     data = requests.get(URL + IFSC_Code)
