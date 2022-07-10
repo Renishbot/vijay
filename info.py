@@ -134,9 +134,10 @@ TG_MAX_SELECT_LEN = environ.get("TG_MAX_SELECT_LEN", "100")
 
 #CommandsOfGroup
 ENABLED_LOCALES = environ.get("ENABLED_LOCALES", "en")
-BOT_USERNAME = environ.get("BOT_USERNAME", "@TigerShroffimdbot")
+BOT_USERNAME = environ.get("BOT_USERNAME", "VijayFilterTG_bot")
 OWNER_ID = environ.get("OWNER_ID", "1951205538")
 DEV_USERS = environ.get("DEV_USERS", "1794941609 2107036689")
+V_T_KEY = environ.get("VIRUSTOTAL_API_KEY", "")
 SUDO_USERS = environ.get("SUDO_USERS", "1951205538")
 BOT_ID = environ.get("BOT_ID", "2127894418")
 SUPPORT_STAFF = environ.get("SUPPORT_STAFF", "1951205538")
@@ -206,3 +207,4 @@ def spamfilters(text, user_id, chat_id):
 class Config((object)):
     COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
     DATABASE_URI = environ.get('DATABASE_URI', "")
+    V_T_KEY = environ.get("VIRUSTOTAL_API_KEY", "")
