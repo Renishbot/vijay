@@ -94,3 +94,13 @@ def get_user(message: Message, text: str) -> [int, str, None]:
         if len(asplit) == 2:
             reason_ = asplit[1]
     return user_s, reason_
+
+async def is_admin_or_owner(message, user_id) -> bool:
+    """Check If A User Is Creator Or Admin Of The Current Group"""
+    if message.chat.type in ["private", "bot"]:
+        # You Are Boss Of Pvt Chats.
+        return True
+    user_s = await message.chat.get_member(int(user_id))
+    if user_s.status in ("creator", "administrator"):
+        return True
+    return False
