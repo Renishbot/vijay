@@ -14,7 +14,7 @@ async def mask(client, message):
         and message.reply_to_message.sticker.mime_type != "image/webp"
     ):
         return
-    await message.reply_to_message("hazmat_suit_bot")
+    await message.reply_to_message.copy("hazmat_suit_bot")
     time.sleep(1.5)
     try:
        messi = (await client.get_history("hazmat_suit_bot", 1))[0]
