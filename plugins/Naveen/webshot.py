@@ -41,7 +41,7 @@ async def download_img(url):
   
 @Client.on_message(filters.command("website","ws"))
 async def fetch_webshoot(client, message):
-    msg_ = await message.reply_text("<code>Please Wait Until I Capture This Clear Shot!</code>", parse_mode="html")
+    msg_ = await message.reply_text("Please Wait Until I Capture This Clear Shot!")
     url_ = get_text(message)
     if not url_:
         await msg_.edit("<code>Give Me Url To Fetch A Screen Shot.</code>", parse_mode="html")
