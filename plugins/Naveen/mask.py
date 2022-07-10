@@ -18,7 +18,7 @@ async def mask(client, message):
     time.sleep(1.5)
     try:
        messi = (await client.get_history("hazmat_suit_bot", 1))[0]
-    except:
-       print(messi)
+    except Exception as messi:
+    print(messi)
     await message.reply_photo(messi.photo.file_id)
     await pablo.delete()
