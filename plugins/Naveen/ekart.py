@@ -6,7 +6,7 @@ from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
 @Client.on_message(filters.command('ekart'))
 async def ekart(client, message):
     pablo = await edit_or_reply(message, "`Processing...`")
-    input_str = message.text.split(None, 1)[1]
+    input_str = get_text(message)
     if not input_str:
         await pablo.edit("`Please Give Me A Valid Input. You Can Check Help Menu To Know More!`")
         return
