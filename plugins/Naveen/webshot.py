@@ -39,15 +39,9 @@ async def download_img(url):
     return file_path
 
   
-@friday_on_cmd(
-    ["webshot", "ws"],
-    cmd_help={
-        "help": "Take A Screen Shot Of A Website.",
-        "example": "{ch}webshot https://www.google.com/",
-    }
-)
+@Client.on_message(filters.command("website","ws"))
 async def fetch_webshoot(client, message):
-    msg_ = await edit_or_reply(message, "<code>Please Wait Until I Capture This Clear Shot!</code>", parse_mode="html")
+    msg_ = await message.reply_text("<code>Please Wait Until I Capture This Clear Shot!</code>", parse_mode="html")
     url_ = get_text(message)
     if not url_:
         await msg_.edit("<code>Give Me Url To Fetch A Screen Shot.</code>", parse_mode="html")
