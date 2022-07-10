@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 from info import Config
 from pyrogram import Client, filters
-from plugins.helper_functions.startup_helpers import run_cmd
+from plugins import run_cmd
 from plugins.helper_functions.basic_helpers import edit_or_reply, get_text, humanbytes
 from hashlib import md5
 import aiofiles
