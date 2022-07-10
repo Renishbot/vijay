@@ -1,6 +1,6 @@
 from info import Config
 from pyrogram import Client, filters
-from plugins.CrazyBoss.friday import run_cmd
+from plugins import run_cmd
 from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
 from plugins.CrazyBoss.friday import convert_to_image
 import requests
