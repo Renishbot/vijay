@@ -142,6 +142,16 @@
             "description": "Imdb, the view of information when making True/False",
             "required": false     
         },
+        "SUPPORT_GROUP": {
+           "description": "Your Telegram support group chat username where user's can contact in case of a problem..",
+           "required": true,
+           "value": "DivideProjects"
+        },
+        "MESSAGE_DUMP": {
+           "description": "Event logs channel where bot will send updates.",
+           "required": true,
+           "value": "-100123456798"
+        },
         "IMDB_TEMPLATE": {
             "description": "Custom IMDB Template",        
             "required": false  
