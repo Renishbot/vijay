@@ -8,8 +8,8 @@ from telegram.ext import run_async
 
 from pyrogram import dispatcher
 from plugins.disable import DisableAbleCommandHandler
-from MashaRoBot.modules.helper_funcs.chat_status import is_user_admin, user_admin
-from MashaRoBot.modules.helper_funcs.extraction import extract_user
+from plugins.helper_functions.chat_status import is_user_admin, user_admin
+from plugins.helper_functions.extraction import extract_user
 
 #sleep how many times after each edit in 'love' 
 EDIT_SLEEP = 1
