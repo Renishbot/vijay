@@ -208,9 +208,5 @@ class Config((object)):
     COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
     DATABASE_URI = environ.get('DATABASE_URI', "")
     V_T_KEY = environ.get("VIRUSTOTAL_API_KEY", "")
-
-
-MESSAGE_DUMP = Config.MESSAGE_DUMP
-SUPPORT_GROUP = Config.SUPPORT_GROUP
-
-SUPPORT_GROUP = config("SUPPORT_GROUP", default="DivideProjectsDiscussion")
+    MESSAGE_DUMP = environ.get("MESSAGE_DUMP", "")
+    SUPPORT_GROUP = environ.get("SUPPORT_GROUP", "")
