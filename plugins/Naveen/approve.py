@@ -8,9 +8,9 @@ from plugins.Group.database.approve_db import Approve
 from plugins.Group.utils.extract_user import extract_user
 from plugins.Group.utils.kbhelpers import ikb
 from plugins.Group.utils.parser import mention_html
-from plugins.Group.utils.custom_filters import admin_filter
+from plugins.Group.utils.custom_filters import admin_filter, command, owner_filters
 
-@Alita.on_message(filters.command("approve") & admin_filter)
+@Alita.on_message(command("approve") & admin_filter)
 async def approve_user(c: Alita, m: Message):
     db = Approve(m.chat.id)
 
@@ -66,7 +66,7 @@ async def approve_user(c: Alita, m: Message):
 
 
 @Alita.on_message(
-    filters.command(["disapprove", "unapprove"]) & admin_filter,
+    command(["disapprove", "unapprove"]) & admin_filter,
 )
 async def disapprove_user(c: Alita, m: Message):
     db = Approve(m.chat.id)
@@ -121,7 +121,7 @@ async def disapprove_user(c: Alita, m: Message):
     return
 
 
-@Alita.on_message(filters.command("approved") & admin_filter)
+@Alita.on_message(command("approved") & admin_filter)
 async def check_approved(_, m: Message):
     db = Approve(m.chat.id)
 
@@ -148,7 +148,7 @@ async def check_approved(_, m: Message):
     return
 
 
-@Alita.on_message(filters.command("approval") & filters.group)
+@Alita.on_message(command("approval") & filters.group)
 async def check_approval(c: Alita, m: Message):
     db = Approve(m.chat.id)
 
@@ -176,7 +176,7 @@ async def check_approval(c: Alita, m: Message):
 
 
 @Alita.on_message(
-    filters.command("unapproveall") & filters.group & owner_filter,
+    command("unapproveall") & filters.group & owner_filter,
 )
 async def unapproveall_users(_, m: Message):
     db = Approve(m.chat.id)
