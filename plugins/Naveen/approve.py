@@ -7,7 +7,7 @@ from pyrogram import Client as Alita
 from plugins.Group.database.approve_db import Approve
 from plugins.Group.utils.extract_user import extract_user
 from plugins.Group.utils.kbhelpers import ikb
-from plugins.Group.utils.parserrser import mention_html
+from plugins.Group.utils.parser import mention_html
 
 
 @Alita.on_message(command("approve") & admin_filter)
