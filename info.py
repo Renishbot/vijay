@@ -208,3 +208,7 @@ class Config((object)):
     COMMAND_HAND_LER = environ.get("COMMAND_HAND_LER", "/")
     DATABASE_URI = environ.get('DATABASE_URI', "")
     V_T_KEY = environ.get("VIRUSTOTAL_API_KEY", "")
+
+
+MESSAGE_DUMP = Config.MESSAGE_DUMP
+SUPPORT_GROUP = Config.SUPPORT_GROUP
