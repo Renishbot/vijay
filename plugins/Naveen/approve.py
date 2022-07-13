@@ -8,7 +8,7 @@ from plugins.Group.database.approve_db import Approve
 from plugins.Group.utils.extract_user import extract_user
 from plugins.Group.utils.kbhelpers import ikb
 from plugins.Group.utils.parser import mention_html
-
+from plugins.Group.utils.custom_filters import admin_filter
 
 @Alita.on_message(filters.command("approve") & admin_filter)
 async def approve_user(c: Alita, m: Message):
