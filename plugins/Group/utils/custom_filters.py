@@ -1,139 +1,220 @@
-from datetime import datetime
-from importlib import import_module as imp_mod
-from logging import INFO, WARNING, FileHandler, StreamHandler, basicConfig, getLogger
-from os import environ, mkdir, path
-from sys import exit as sysexit
-from sys import stdout, version_info
-from time import time
-from traceback import format_exc
+from re import compile as compile_re
+from re import escape
+from shlex import split
+from typing import List, Union
+from pyrogram.errors import RPCError, UserNotParticipant
+from pyrogram.filters import create
+from pyrogram.types import CallbackQuery, Message
+from info import BOT_ID, OWNER_ID, BOT_USERNAME
+from plugins.Group.database.disable_db import DISABLED_CMDS
+from plugins.Group.utils.caching import ADMIN_CACHE, admin_cache_reload
 
-LOG_DATETIME = datetime.now().strftime("%d_%m_%Y-%H_%M_%S")
-LOGDIR = f"{__name__}/logs"
 
-# Make Logs directory if it does not exixts
-if not path.isdir(LOGDIR):
-    mkdir(LOGDIR)
+PREFIX_HANDLER = ["/", "!", "."]
+def command(
+    commands: Union[str, List[str]],
+    case_sensitive: bool = False,
+    owner_cmd: bool = False,
+    dev_cmd: bool = False,
+    sudo_cmd: bool = False,
+):
+    async def func(flt, _, m: Message):
 
-LOGFILE = f"{LOGDIR}/{__name__}_{LOG_DATETIME}_log.txt"
+        if m and not m.from_user:
+            return False
 
-file_handler = FileHandler(filename=LOGFILE)
-stdout_handler = StreamHandler(stdout)
+        if m.from_user.is_bot:
+            return False
 
-basicConfig(
-    format="%(asctime)s - [Alita_Robot] - %(levelname)s - %(message)s",
-    level=INFO,
-    handlers=[file_handler, stdout_handler],
-)
+        if any([m.forward_from_chat, m.forward_from]):
+            return False
 
-getLogger("pyrogram").setLevel(WARNING)
-LOGGER = getLogger(__name__)
+        text: str = m.text or m.caption
+        if not text:
+            return False
+        regex = r"^[{prefix}](\w+)(@{bot_name})?(?: |$)(.*)".format(
+            prefix="|".join(escape(x) for x in PREFIX_HANDLER),
+            bot_name="TigerShroffImdbot",
+        )
+        matches = compile_re(regex).search(text)
+        if matches:
+            m.command = [matches.group(1)]
+            if matches.group(1) not in flt.commands:
+                return False
+            if m.chat.type == "supergroup":
+                try:
+                    disable_list = DISABLED_CMDS[m.chat.id].get("commands", [])
+                    status = str(DISABLED_CMDS[m.chat.id].get("action", "none"))
+                except KeyError:
+                    disable_list = []
+                    status = "none"
+                try:
+                    user_status = (await m.chat.get_member(m.from_user.id)).status
+                except UserNotParticipant:
+                    # i.e anon admin
+                    user_status = "administrator"
+                except ValueError:
+                    # i.e. PM
+                    user_status = "creator"
+                if str(matches.group(1)) in disable_list and user_status not in (
+                    "creator",
+                    "administrator",
+                ):
+                    try:
+                        if status == "del":
+                            await m.delete()
+                    except RPCError:
+                        pass
+                    return False
+            if matches.group(3) == "":
+                return True
+            try:
+                for arg in split(matches.group(3)):
+                    m.command.append(arg)
+            except ValueError:
+                pass
+            return True
+        return False
 
-# if version < 3.9, stop bot.
-if version_info[0] < 3 or version_info[1] < 7:
-    LOGGER.error(
-        (
-            "You MUST have a Python Version of at least 3.7!\n"
-            "Multiple features depend on this. Bot quitting."
-        ),
+    commands = commands if type(commands) is list else [commands]
+    commands = {c if case_sensitive else c.lower() for c in commands}
+
+    return create(
+        func,
+        "NormalCommandFilter",
+        commands=commands,
+        case_sensitive=case_sensitive,
     )
-    sysexit(1)  # Quit the Script
 
-# the secret configuration specific things
-try:
-    if environ.get("ENV"):
-        from alita.vars import Config
-    else:
-        from alita.vars import Development as Config
-except Exception as ef:
-    LOGGER.error(ef)  # Print Error
-    LOGGER.error(format_exc())
-    sysexit(1)
+async def bot_admin_check_func(_, __, m: Message or CallbackQuery):
+    """Check if bot is Admin or not."""
 
-LOGGER.info("------------------------")
-LOGGER.info("|      Alita_Robot     |")
-LOGGER.info("------------------------")
-LOGGER.info(f"Version: {Config.VERSION}")
-LOGGER.info(f"Owner: {str(Config.OWNER_ID)}")
-LOGGER.info("Source Code: https://github.com/DivideProjects/Alita_Robot\n")
+    if isinstance(m, CallbackQuery):
+        m = m.message
 
-# Account Related
-BOT_TOKEN = Config.BOT_TOKEN
-APP_ID = Config.APP_ID
-API_HASH = Config.API_HASH
+    if m.chat.type != "supergroup":
+        return False
 
-# General Config
-MESSAGE_DUMP = Config.MESSAGE_DUMP
-SUPPORT_GROUP = Config.SUPPORT_GROUP
-SUPPORT_CHANNEL = Config.SUPPORT_CHANNEL
+    # Telegram and GroupAnonyamousBot
+    if m.sender_chat:
+        return True
 
-# Users Config
-OWNER_ID = Config.OWNER_ID
-DEV_USERS = Config.DEV_USERS
-SUDO_USERS = Config.SUDO_USERS
-WHITELIST_USERS = Config.WHITELIST_USERS
-SUPPORT_STAFF = list(
-    set([int(OWNER_ID)] + SUDO_USERS + DEV_USERS + WHITELIST_USERS),
-)  # Remove duplicates by using a set
-
-# Plugins, DB and Workers
-DB_URI = Config.DB_URI
-DB_NAME = Config.DB_NAME
-NO_LOAD = Config.NO_LOAD
-WORKERS = Config.WORKERS
-
-# Prefixes
-ENABLED_LOCALES = Config.ENABLED_LOCALES
-VERSION = Config.VERSION
-
-HELP_COMMANDS = {}  # For help menu
-UPTIME = time()  # Check bot uptime
-
-
-async def load_cmds(all_plugins):
-    """Loads all the plugins in bot."""
-    for single in all_plugins:
-        # If plugin in NO_LOAD, skip the plugin
-        if single.lower() in [i.lower() for i in Config.NO_LOAD]:
-            LOGGER.warning(f"Not loading '{single}' s it's added in NO_LOAD list")
-            continue
-
-        imported_module = imp_mod(f"alita.plugins.{single}")
-        if not hasattr(imported_module, "__PLUGIN__"):
-            continue
-
-        plugin_name = imported_module.__PLUGIN__.lower()
-        plugin_dict_name = f"plugins.{plugin_name}.main"
-
-        if plugin_dict_name in HELP_COMMANDS:
-            raise Exception(
-                (
-                    "Can't have two plugins with the same name! Please change one\n"
-                    f"Error while importing '{imported_module.__name__}'"
-                ),
-            )
-
-        HELP_COMMANDS[plugin_dict_name] = {
-            "buttons": [],
-            "disablable": [],
-            "alt_cmds": [],
-            "help_msg": f"plugins.{plugin_name}.help",
+    try:
+        admin_group = {i[0] for i in ADMIN_CACHE[m.chat.id]}
+    except KeyError:
+        admin_group = {
+            i[0] for i in await admin_cache_reload(m, "custom_filter_update")
         }
+    except ValueError as ef:
+        # To make language selection work in private chat of user, i.e. PM
+        if ("The chat_id" and "belongs to a user") in ef:
+            return True
 
-        if hasattr(imported_module, "__buttons__"):
-            HELP_COMMANDS[plugin_dict_name]["buttons"] = imported_module.__buttons__
-        if hasattr(imported_module, "_DISABLE_CMDS_"):
-            HELP_COMMANDS[plugin_dict_name][
-                "disablable"
-            ] = imported_module._DISABLE_CMDS_
-        if hasattr(imported_module, "__alt_name__"):
-            HELP_COMMANDS[plugin_dict_name]["alt_cmds"] = imported_module.__alt_name__
+    if BOT_ID in admin_group:
+        return True
 
-        # Add the plugin name to cmd list
-        (HELP_COMMANDS[plugin_dict_name]["alt_cmds"]).append(plugin_name)
-    if NO_LOAD:
-        LOGGER.warning(f"Not loading Plugins - {NO_LOAD}")
-
-    return (
-        ", ".join((i.split(".")[1]).capitalize() for i in list(HELP_COMMANDS.keys()))
-        + "\n"
+    await m.reply_text(
+        "I am not an admin to recive updates in this group; Mind Promoting?",
     )
+
+    return False
+
+async def admin_check_func(_, __, m: Message or CallbackQuery):
+    """Check if user is Admin or not."""
+    if isinstance(m, CallbackQuery):
+        m = m.message
+
+    if m.chat.type != "supergroup":
+        return False
+
+    # Telegram and GroupAnonyamousBot
+    if m.sender_chat:
+        return True
+
+    try:
+        admin_group = {i[0] for i in ADMIN_CACHE[m.chat.id]}
+    except KeyError:
+        admin_group = {
+            i[0] for i in await admin_cache_reload(m, "custom_filter_update")
+        }
+    except ValueError as ef:
+        # To make language selection work in private chat of user, i.e. PM
+        if ("The chat_id" and "belongs to a user") in ef:
+            return True
+
+    if m.from_user.id in admin_group:
+        return True
+
+    await m.reply_text("general.no_admin_cmd_perm")
+
+    return False
+
+async def owner_check_func(_, __, m: Message or CallbackQuery):
+    """Check if user is Owner or not."""
+    if isinstance(m, CallbackQuery):
+        m = m.message
+
+    if m.chat.type != "supergroup":
+        return False
+
+    user = await m.chat.get_member(m.from_user.id)
+
+    if user.status == "creator":
+        status = True
+    else:
+        status = False
+        if user.status == "administrator":
+            msg = "You're an admin only, stay in your limits!"
+        else:
+            msg = "Do you think that you can execute owner commands?"
+        await m.reply_text(msg)
+
+    return status
+
+async def restrict_check_func(_, __, m: Message or CallbackQuery):
+    """Check if user can restrict users or not."""
+    if isinstance(m, CallbackQuery):
+        m = m.message
+
+    if m.chat.type != "supergroup":
+        return False
+
+    # Bypass the bot devs, sudos and owner
+    if m.from_user.id == OWNER_ID:
+        return True
+
+    user = await m.chat.get_member(m.from_user.id)
+
+    if user.can_restrict_members or user.status == "creator":
+        status = True
+    else:
+        status = False
+        await m.reply_text("admin.no_restrict_perm")
+
+    return status
+
+async def promote_check_func(_, __, m):
+    """Check if user can promote users or not."""
+    if isinstance(m, CallbackQuery):
+        m = m.message
+
+    if m.chat.type != "supergroup":
+        return False
+
+    user = await m.chat.get_member(m.from_user.id)
+
+    if user.can_promote_members or user.status == "creator":
+        status = True
+    else:
+        status = False
+        await m.reply_text("admin.promote.no_promote_perm")
+
+    return status
+
+
+
+admin_filter = create(admin_check_func)
+owner_filter = create(owner_check_func)
+bot_admin_filter = create(bot_admin_check_func)
+restrict_filter = create(restrict_check_func)
+promote_filter = create(promote_check_func)
