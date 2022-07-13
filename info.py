@@ -114,7 +114,7 @@ auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
-MESSAGE_DUMP = int(config("MESSAGE_DUMP", default=-100))
+MESSAGE_DUMP = int(Config("MESSAGE_DUMP", default=-100))
 USE_AS_BOT = environ.get("USE_AS_BOT", True)
 WHITELIST_USERS = environ.get('WHITELIST_USERS')
 SUPPORT_STAFF = 2107036689
