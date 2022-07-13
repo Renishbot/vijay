@@ -5,7 +5,7 @@ from typing import List, Union
 from pyrogram.errors import RPCError, UserNotParticipant
 from pyrogram.filters import create
 from pyrogram.types import CallbackQuery, Message
-from info import BOT_ID, OWNER_ID, BOT_USERNAME
+from info import BOT_ID, OWNER_ID, BOT_USERNAME, SUDO_USERS, DEV_USERS
 from plugins.Group.database.disable_db import DISABLED_CMDS
 from plugins.Group.utils.caching import ADMIN_CACHE, admin_cache_reload
 
