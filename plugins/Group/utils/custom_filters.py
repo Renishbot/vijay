@@ -9,6 +9,8 @@ from info import BOT_ID, OWNER_ID, BOT_USERNAME
 from plugins.Group.database.disable_db import DISABLED_CMDS
 from plugins.Group.utils.caching import ADMIN_CACHE, admin_cache_reload
 
+SUDO_LEVEL = set(SUDO_USERS + DEV_USERS + [int(OWNER_ID)])
+DEV_LEVEL = set(DEV_USERS + [int(OWNER_ID)])
 
 PREFIX_HANDLER = ["/", "!", "."]
 def command(
