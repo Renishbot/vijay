@@ -211,3 +211,7 @@ class Config((object)):
     V_T_KEY = environ.get("VIRUSTOTAL_API_KEY", "")
     MESSAGE_DUMP = environ.get("MESSAGE_DUMP", "")
     SUPPORT_GROUP = environ.get("SUPPORT_GROUP", "")
+
+OWNER_ID = Config.OWNER_ID
+DEV_USERS = Config.DEV_USERS
+SUDO_USERS = Config.SUDO_USERS
