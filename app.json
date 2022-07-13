@@ -145,12 +145,12 @@
         "SUPPORT_GROUP": {
            "description": "Your Telegram support group chat username where user's can contact in case of a problem..",
            "required": true,
-           "value": "DivideProjects"
+           "value": "VijayTG_Support"
         },
         "MESSAGE_DUMP": {
            "description": "Event logs channel where bot will send updates.",
            "required": true,
-           "value": "-100123456798"
+           "value": "-1001676424247"
         },
         "IMDB_TEMPLATE": {
             "description": "Custom IMDB Template",        
