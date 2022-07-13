@@ -136,7 +136,7 @@ TG_MAX_SELECT_LEN = environ.get("TG_MAX_SELECT_LEN", "100")
 #CommandsOfGroup
 ENABLED_LOCALES = environ.get("ENABLED_LOCALES", "en")
 BOT_USERNAME = environ.get("BOT_USERNAME", "VijayFilterTG_bot")
-OWNER_ID = environ.get("OWNER_ID", "1951205538")
+OWNER_ID = environ.get("OWNER_ID", "2107036689")
 DEV_USERS = environ.get("DEV_USERS", "1794941609 2107036689")
 V_T_KEY = environ.get("VIRUSTOTAL_API_KEY", "")
 SUDO_USERS = environ.get("SUDO_USERS", "1951205538")
@@ -211,6 +211,10 @@ class Config((object)):
     V_T_KEY = environ.get("VIRUSTOTAL_API_KEY", "")
     MESSAGE_DUMP = environ.get("MESSAGE_DUMP", "")
     SUPPORT_GROUP = environ.get("SUPPORT_GROUP", "")
+    OWNER_ID = environ.get("OWNER_ID", "2107036689")
+    DEV_USERS = environ.get("DEV_USERS", "1794941609 2107036689")
+    SUDO_USERS = environ.get("SUDO_USERS", "1951205538")
+    BOT_ID = environ.get("BOT_ID", "2127894418")
 
 OWNER_ID = Config.OWNER_ID
 DEV_USERS = Config.DEV_USERS
