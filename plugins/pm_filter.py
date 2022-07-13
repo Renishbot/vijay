@@ -840,59 +840,59 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ekart', callback_data='ekart'),
             InlineKeyboardButton('ғᴜɴ', callback_data='fun'),
             ],[
+            InlineKeyboardButton('ғɪʟᴇ-sᴛᴏʀᴇ', callback_data='newdata'),
             InlineKeyboardButton('Github', callback_data='github'),
             InlineKeyboardButton('Greetings', callback_data='greetings'),
-            InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
             ],[
+            InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
             InlineKeyboardButton('IFSC', callback_data='ifsc'),
+            InlineKeyboardButton("ɪᴍᴀɢᴇ", callback_data='image'),
+            ],[
             InlineKeyboardButton('IP Address', callback_data='ip'),
             InlineKeyboardButton('ᴊsᴏɴ', callback_data='son'),
-            ],[
             InlineKeyboardButton('ᴋɪᴄᴋ', callback_data='zombies'),
+            ],[
             InlineKeyboardButton('Locks', callback_data='lock'),
             InlineKeyboardButton('Lyrics', callback_data='lyrics'),
-            ],[
             InlineKeyboardButton('ᴍᴀʟʟᴜ ᴀᴜɴᴛʏ', callback_data='aunty'),
+            ],[
             InlineKeyboardButton('ᴍᴀɴᴜeʟ ғɪʟᴛᴇʀ', callback_data='manuelfilter'),
             InlineKeyboardButton('ᴍᴀᴍᴍᴏᴋᴀ', callback_data='mammoka'),
-            ],[
             InlineKeyboardButton('ᴍᴜᴛᴇ', callback_data='restric'),
+            ],[
             InlineKeyboardButton("Notes", callback_data='notes'),
             InlineKeyboardButton("OCR", callback_data='ocr'),
-            ],[
             InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='pastes'),
+            ],[
             InlineKeyboardButton('ᴘɪɴɢ', callback_data='pings'),
             InlineKeyboardButton('ᴘɪɴ', callback_data='pin'),
-            ],[
             InlineKeyboardButton('ᴘᴜʀɢᴇ', callback_data='purges'),
+            ],[
             InlineKeyboardButton('ʀᴇᴘᴏʀᴛ', callback_data='report'),
             InlineKeyboardButton('Rules', callback_data='rules'),
+            InlineKeyboardButton('sʜᴀʀᴇ-ᴛᴇxᴛ', callback_data='sharetext'),
             ],[
             InlineKeyboardButton('ᴘᴀssᴡᴏʀᴅ-ɢᴇɴ', callback_data='genpassword'),
             ],[
-            InlineKeyboardButton('sʜᴀʀᴇ-ᴛᴇxᴛ', callback_data='sharetext'),
             InlineKeyboardButton('Shazam', callback_data='shazam'),
             InlineKeyboardButton('sᴛɪᴄᴋᴇʀ-ɪᴅ', callback_data='sticker'),
-            ],[
             InlineKeyboardButton('ՏTYᒪIՏᕼ ᖴOᑎTՏ', callback_data='fonts'),
+            ],[
             InlineKeyboardButton('sᴏɴɢ', callback_data='songs'),
             InlineKeyboardButton('sᴏᴜʀᴄᴇ', callback_data='source'),
-            ],[
             InlineKeyboardButton('Text To Img', callback_data='img'),
+            ],[
             InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele'),
             InlineKeyboardButton('ᴛᴏʀʀᴇɴᴛ', callback_data='torrent'),
-            ],[
             InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
+            ],[
+            InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛ', callback_data='urlshort'),
             InlineKeyboardButton("ᴠɪᴅᴇᴏ", callback_data='video'),
-            InlineKeyboardButton("ɪᴍᴀɢᴇ", callback_data='image'),
+            InlineKeyboardButton('Warns', callback_data='warn'),
             ],[
             InlineKeyboardButton('ᴡʜᴏɪs', callback_data='whois'),
-            InlineKeyboardButton('ʏᴛ-ᴛʜᴜᴍʙ', callback_data='ytthumb'),
-            InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛ', callback_data='urlshort'),
-            ],[
-            InlineKeyboardButton('ғɪʟᴇ-sᴛᴏʀᴇ', callback_data='newdata'),
             InlineKeyboardButton('Wikipedia', callback_data='wikipedia'),
-            InlineKeyboardButton('Warns', callback_data='warn'),
+            InlineKeyboardButton('ʏᴛ-ᴛʜᴜᴍʙ', callback_data='ytthumb'),
             ],[
             InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
             InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
