@@ -5,7 +5,7 @@ from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram.types import Message
 
 from info import SUDO_USERS
-from plugins.admin import member_permissions
+from plugins import member_permissions
 
 
 async def authorised(func, subFunc2, client, message, *args, **kwargs):
