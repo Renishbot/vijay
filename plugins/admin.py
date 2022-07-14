@@ -40,13 +40,13 @@ async def adminlist_show(_, m: Message):
     try:
         try:
             admin_list = ADMIN_CACHE[m.chat.id]
-            note = tlang(m, "admin.adminlist.note_cached")
+            note = "<i>Note:</i> These are cached values!"
         except KeyError:
             admin_list = await admin_cache_reload(m, "adminlist")
-            note = tlang(m, "admin.adminlist.note_updated")
+            note = "<i>Note:</i> These are up-to-date values!"
 
-        adminstr = (tlang(m, "admin.adminlist.adminstr")).format(
-            chat_title=m.chat.title,
+        adminstr = ("Admins in <b>{}</b>:").format(
+            m.chat.title,
         ) + "\n\n"
 
         bot_admins = [i for i in admin_list if (i[1].lower()).endswith("bot")]
@@ -84,15 +84,10 @@ async def adminlist_show(_, m: Message):
 
     except Exception as ef:
         if str(ef) == str(m.chat.id):
-            await m.reply_text(tlang(m, "admin.adminlist.use_admin_cache"))
+            await m.reply_text("Use /admincache to reload admins!")
         else:
             ef = f"{str(ef)}{admin_list}\n"
-            await m.reply_text(
-                (tlang(m, "general.some_error")).format(
-                    SUPPORT_GROUP=SUPPORT_GROUP,
-                    ef=ef,
-                ),
-            )
+            await m.reply_text("Something went wrong!")
         LOGGER.error(ef)
         LOGGER.error(format_exc())
 
@@ -143,12 +138,7 @@ async def reload_admins(_, m: Message):
         await m.reply_text("Successful reloaded the Admincache in this chat")
         LOGGER.info(f"Admincache cmd use in {m.chat.id} by {m.from_user.id}")
     except RPCError as ef:
-        await m.reply_text(
-            (tlang(m, "general.some_error")).format(
-                SUPPORT_GROUP=SUPPORT_GROUP,
-                ef=ef,
-            ),
-        )
+        await m.reply_text("Something went wrong!")
         LOGGER.error(ef)
         LOGGER.error(format_exc())
     return
@@ -248,10 +238,10 @@ async def fullpromote_usr(c: Alita, m: Message):
         )
 
         await m.reply_text(
-            (tlang(m, "admin.promote.promoted_user")).format(
-                promoter=(await mention_html(m.from_user.first_name, m.from_user.id)),
-                promoted=(await mention_html(user_first_name, user_id)),
-                chat_title=f"{escape(m.chat.title)} title set to {title}"
+            ("{} promoted {} in chat <b>{}</b>!").format(
+                (await mention_html(m.from_user.first_name, m.from_user.id)),
+                (await mention_html(user_first_name, user_id)),
+                f"{escape(m.chat.title)} title set to {title}"
                 if title
                 else f"{escape(m.chat.title)} title set to Admin",
             ),
@@ -271,18 +261,13 @@ async def fullpromote_usr(c: Alita, m: Message):
             await admin_cache_reload(m, "promote_key_error")
 
     except ChatAdminRequired:
-        await m.reply_text(tlang(m, "admin.not_admin"))
+        await m.reply_text("I'm not Admin here!")
     except RightForbidden:
-        await m.reply_text(tlang(m, "admin.promote.bot_no_right"))
+        await m.reply_text("I don't have a right!")
     except UserAdminInvalid:
-        await m.reply_text(tlang(m, "admin.user_admin_invalid"))
+        await m.reply_text("Cannot act on this user, maybe I wasn't the one who changed their permissions.")
     except RPCError as e:
-        await m.reply_text(
-            (tlang(m, "general.some_error")).format(
-                SUPPORT_GROUP=SUPPORT_GROUP,
-                ef=e,
-            ),
-        )
+        await m.reply_text("Something went wrong!")
         LOGGER.error(e)
         LOGGER.error(format_exc())
     return
@@ -354,10 +339,10 @@ async def promote_usr(c: Alita, m: Message):
         )
 
         await m.reply_text(
-            (tlang(m, "admin.promote.promoted_user")).format(
-                promoter=(await mention_html(m.from_user.first_name, m.from_user.id)),
-                promoted=(await mention_html(user_first_name, user_id)),
-                chat_title=f"{escape(m.chat.title)} title set to {title}"
+            ("{} promoted {} in chat <b>{}</b>!").format(
+                (await mention_html(m.from_user.first_name, m.from_user.id)),
+                (await mention_html(user_first_name, user_id)),
+                f"{escape(m.chat.title)} title set to {title}"
                 if title
                 else f"{escape(m.chat.title)} title set to Admin",
             ),
@@ -377,18 +362,13 @@ async def promote_usr(c: Alita, m: Message):
             await admin_cache_reload(m, "promote_key_error")
 
     except ChatAdminRequired:
-        await m.reply_text(tlang(m, "admin.not_admin"))
+        await m.reply_text("I'm not Admin here!")
     except RightForbidden:
-        await m.reply_text(tlang(m, "admin.promote.bot_no_right"))
+        await m.reply_text("I don't have a right!")
     except UserAdminInvalid:
-        await m.reply_text(tlang(m, "admin.user_admin_invalid"))
+        await m.reply_text("Cannot act on this user, maybe I wasn't the one who changed their permissions.")
     except RPCError as e:
-        await m.reply_text(
-            (tlang(m, "general.some_error")).format(
-                SUPPORT_GROUP=SUPPORT_GROUP,
-                ef=e,
-            ),
-        )
+        await m.reply_text("Something went wrong!")
         LOGGER.error(e)
         LOGGER.error(format_exc())
     return
@@ -400,7 +380,7 @@ async def demote_usr(c: Alita, m: Message):
     global ADMIN_CACHE
 
     if len(m.text.split()) == 1 and not m.reply_to_message:
-        await m.reply_text(tlang(m, "admin.demote.no_target"))
+        await m.reply_text("I can't demote nothing!")
         return
 
     try:
@@ -450,31 +430,26 @@ async def demote_usr(c: Alita, m: Message):
             await admin_cache_reload(m, "demote_key_stopiter_error")
 
         await m.reply_text(
-            (tlang(m, "admin.demote.demoted_user")).format(
-                demoter=(
+            ("{} demoted {} in <b>{}</b>!").format(
+                (
                     await mention_html(
                         m.from_user.first_name,
                         m.from_user.id,
                     )
                 ),
-                demoted=(await mention_html(user_first_name, user_id)),
-                chat_title=m.chat.title,
+                (await mention_html(user_first_name, user_id)),
+                m.chat.title,
             ),
         )
 
     except ChatAdminRequired:
-        await m.reply_text(tlang(m, "admin.not_admin"))
+        await m.reply_text("I'm not Admin here!")
     except RightForbidden:
-        await m.reply_text(tlang(m, "admin.demote.bot_no_right"))
+        await m.reply_text("I don't have a right!")
     except UserAdminInvalid:
-        await m.reply_text(tlang(m, "admin.user_admin_invalid"))
+        await m.reply_text("Cannot act on this user, maybe I wasn't the one who changed their permissions.")
     except RPCError as ef:
-        await m.reply_text(
-            (tlang(m, "general.some_error")).format(
-                SUPPORT_GROUP=SUPPORT_GROUP,
-                ef=ef,
-            ),
-        )
+        await m.reply_text("Something went wrong!")
         LOGGER.error(ef)
         LOGGER.error(format_exc())
 
