@@ -5,6 +5,7 @@ from functools import wraps
 from pyrogram.errors.exceptions.forbidden_403 import ChatWriteForbidden
 from pyrogram import Client as app
 
+from Wbb.permissions import adminsOnly
 from info import LOG_CHANNEL as LOG_GROUP_ID
 
 
