@@ -140,7 +140,7 @@ async def reload_admins(_, m: Message):
     try:
         await admin_cache_reload(m, "admincache")
         TEMP_ADMIN_CACHE_BLOCK[m.chat.id] = "manualblock"
-        await m.reply_text("Here is the Adminlist")
+        await m.reply_text("Successful reloaded the Admincache in this chat")
         LOGGER.info(f"Admincache cmd use in {m.chat.id} by {m.from_user.id}")
     except RPCError as ef:
         await m.reply_text(
@@ -181,7 +181,7 @@ async def tag_admins(_, m: Message):
 async def fullpromote_usr(c: Alita, m: Message):
 
     if len(m.text.split()) == 1 and not m.reply_to_message:
-        await m.reply_text(tlang(m, "admin.promote.no_target"))
+        await m.reply_text("Mention a User or a Admin to Fully Promote them in this Chat")
         return
 
     try:
@@ -197,7 +197,7 @@ async def fullpromote_usr(c: Alita, m: Message):
 
     if not bot.can_promote_members:
         return await m.reply_text(
-            "I don't have enough permissions!",
+            "I don't have enough permissions to promote Anybody!",
         )  # This should be here
 
     user = await c.get_chat_member(m.chat.id, m.from_user.id)
