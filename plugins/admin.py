@@ -21,7 +21,6 @@ from plugins.Group.database.reporting_db import Reporting
 from plugins.Group.tr_engine import tlang
 from plugins.Group.utils.caching import ADMIN_CACHE, TEMP_ADMIN_CACHE_BLOCK, admin_cache_reload
 from plugins.Group.utils.custom_filters import (
-    DEV_LEVEL,
     admin_filter,
     command,
     owner_filter,
