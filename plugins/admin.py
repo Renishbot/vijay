@@ -14,22 +14,22 @@ from pyrogram.errors import (
 )
 from pyrogram.types import Message
 
-from alita import DEV_USERS, LOGGER, OWNER_ID, SUPPORT_GROUP, SUPPORT_STAFF
-from alita.bot_class import Alita
-from alita.database.approve_db import Approve
-from alita.database.reporting_db import Reporting
-from alita.tr_engine import tlang
-from alita.utils.caching import ADMIN_CACHE, TEMP_ADMIN_CACHE_BLOCK, admin_cache_reload
-from alita.utils.custom_filters import (
+from info import DEV_USERS, LOGGER, OWNER_ID, SUPPORT_GROUP, SUPPORT_STAFF
+from pyrogram import Client as Alita
+from plugins.Group.database.approve_db import Approve
+from plugins.Group.database.reporting_db import Reporting
+from plugins.Group.tr_engine import tlang
+from plugins.Group.utils.caching import ADMIN_CACHE, TEMP_ADMIN_CACHE_BLOCK, admin_cache_reload
+from plugins.Group.utils.custom_filters import (
     DEV_LEVEL,
     admin_filter,
     command,
     owner_filter,
     promote_filter,
 )
-from alita.utils.extract_user import extract_user
-from alita.utils.parser import mention_html
-from alita.vars import Config
+from plugins.Group.utils.extract_user import extract_user
+from plugins.Group.utils.parser import mention_html
+from info import Config
 
 
 @Alita.on_message(command("adminlist"))
@@ -469,45 +469,6 @@ async def demote_usr(c: Alita, m: Message):
         await m.reply_text(tlang(m, "admin.demote.bot_no_right"))
     except UserAdminInvalid:
         await m.reply_text(tlang(m, "admin.user_admin_invalid"))
-    except RPCError as ef:
-        await m.reply_text(
-            (tlang(m, "general.some_error")).format(
-                SUPPORT_GROUP=SUPPORT_GROUP,
-                ef=ef,
-            ),
-        )
-        LOGGER.error(ef)
-        LOGGER.error(format_exc())
-
-    return
-
-
-@Alita.on_message(command("invitelink"))
-async def get_invitelink(c: Alita, m: Message):
-    # Bypass the bot devs, sudos and owner
-    if m.from_user.id not in DEV_LEVEL:
-        user = await m.chat.get_member(m.from_user.id)
-
-        if not user.can_invite_users and user.status != "creator":
-            await m.reply_text(tlang(m, "admin.no_user_invite_perm"))
-            return False
-
-    try:
-        link = await c.export_chat_invite_link(m.chat.id)
-        await m.reply_text(
-            (tlang(m, "admin.invitelink")).format(
-                chat_name=m.chat.id,
-                link=link,
-            ),
-            disable_web_page_preview=True,
-        )
-        LOGGER.info(f"{m.from_user.id} exported invite link in {m.chat.id}")
-    except ChatAdminRequired:
-        await m.reply_text(tlang(m, "admin.not_admin"))
-    except ChatAdminInviteRequired:
-        await m.reply_text(tlang(m, "admin.no_invite_perm"))
-    except RightForbidden:
-        await m.reply_text(tlang(m, "admin.no_user_invite_perm"))
     except RPCError as ef:
         await m.reply_text(
             (tlang(m, "general.some_error")).format(
