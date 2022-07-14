@@ -31,7 +31,7 @@ from plugins.Group.utils.custom_filters import (
 from plugins.Group.utils.extract_user import extract_user
 from plugins.Group.utils.parser import mention_html
 from info import Config
-from Wbb.permission import adminsOnly
+from Wbb.permissions import adminsOnly
 
 @Alita.on_message(command("adminlist"))
 async def adminlist_show(_, m: Message):
