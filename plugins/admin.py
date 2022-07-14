@@ -292,7 +292,7 @@ async def fullpromote_usr(c: Alita, m: Message):
 async def promote_usr(c: Alita, m: Message):
 
     if len(m.text.split()) == 1 and not m.reply_to_message:
-        await m.reply_text(tlang(m, "admin.promote.no_target"))
+        await m.reply_text("admin.promote.no_target")
         return
 
     try:
