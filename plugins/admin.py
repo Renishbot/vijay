@@ -14,7 +14,7 @@ from pyrogram.types import (
 
 from info import BOT_ID, SUDO_USERS
 from plugins.wbb.errors import capture_err
-from plugins.wbb.keyboard import ikb
+from plugins.Group.utils.kbhelpers import ikb
 
 
 @app.on_message(
