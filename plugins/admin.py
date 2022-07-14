@@ -131,7 +131,7 @@ async def reload_admins(_, m: Message):
 
     if (
         (m.chat.id in set(TEMP_ADMIN_CACHE_BLOCK.keys()))
-        and (m.from_user.id not in SUPPORT_STAFF)
+        and (m.from_user.id) not in SUPPORT_STAFF
         and TEMP_ADMIN_CACHE_BLOCK[m.chat.id] == "manualblock"
     ):
         await m.reply_text("Can only reload admin cache once per 10 mins!")
