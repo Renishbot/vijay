@@ -3,7 +3,6 @@ from asyncio import sleep
 from html import escape
 from os import remove
 from traceback import format_exc
-from pyrogram.types import Message as message 
 
 from pyrogram import filters
 from pyrogram.errors import (
@@ -392,7 +391,7 @@ async def setgdes(_, m: Message):
     if len(m.command) < 1:
         return await m.reply_text("Please read /help for using it!")
 
-    desp = message.text.split(None, 1)[1]
+    desp = m.text.split(None, 1)[1]
     try:
         await m.chat.set_description(desp)
     except Exception as e:
