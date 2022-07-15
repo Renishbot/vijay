@@ -169,48 +169,51 @@ async def tag_admins(_, m: Message):
         ),
     )
 
-@Alita.on_message(
-    filters.command(["promote", "fullpromote"])
-    & ~filters.edited
-    & ~filters.private
-)
-@adminsOnly("can_promote_members")
-async def promoteFunc(_, message: Message):
-    user_id = await extract_user(message)
-    umention = (await app.get_users(user_id)).mention
+@Alita.on_command("promote", about={
+    'header': "use this to promote group members",
+    'description': "Provides admin rights to the person in the supergroup.\n"
+                   "you can also add custom title while promoting new admin.\n"
+                   "[NOTE: Requires proper admin rights in the chat!!!]",
+    'examples': [
+        "{tr}promote [username | userid] or [reply to user] :custom title (optional)",
+        "{tr}promote @someusername/userid/replytouser Staff (custom title)"]},
+    allow_channels=False, check_promote_perm=True)
+async def promote_usr(message: Message):
+    """ promote members in tg group """
+    user_id, custom_rank = message.extract_user_and_text
     if not user_id:
-        return await message.reply_text("I can't find that user.")
-    bot = await app.get_chat_member(message.chat.id, BOT_ID)
-    if user_id == BOT_ID:
-        return await message.reply_text("I can't promote myself.")
-    if not bot.can_promote_members:
-        return await message.reply_text("I don't have enough permissions")
-    if message.command[0][0] == "f":
-        await message.chat.promote_member(
-            user_id=user_id,
-            can_change_info=bot.can_change_info,
-            can_invite_users=bot.can_invite_users,
-            can_delete_messages=bot.can_delete_messages,
-            can_restrict_members=bot.can_restrict_members,
-            can_pin_messages=bot.can_pin_messages,
-            can_promote_members=bot.can_promote_members,
-            can_manage_chat=bot.can_manage_chat,
-            can_manage_voice_chats=bot.can_manage_voice_chats,
-        )
-        return await message.reply_text(f"Fully Promoted! {umention}")
+        await message.err("no valid user_id or message specified")
+        return
+    if custom_rank:
+        custom_rank = get_emoji_regexp().sub(u'', custom_rank)
+        if len(custom_rank) > 15:
+            custom_rank = custom_rank[:15]
 
-    await message.chat.promote_member(
-        user_id=user_id,
-        can_change_info=False,
-        can_invite_users=bot.can_invite_users,
-        can_delete_messages=bot.can_delete_messages,
-        can_restrict_members=False,
-        can_pin_messages=False,
-        can_promote_members=False,
-        can_manage_chat=bot.can_manage_chat,
-        can_manage_voice_chats=bot.can_manage_voice_chats,
-    )
-    await message.reply_text(f"Promoted! {umention}")
+    await message.edit("`Trying to Promote User.. Hang on!! ⏳`")
+    chat_id = message.chat.id
+    try:
+        await message.client.promote_chat_member(chat_id, user_id,
+                                                 ChatPrivileges(can_invite_users=True,
+                                                                can_pin_messages=True))
+        if custom_rank:
+            await asyncio.sleep(2)
+            await message.client.set_administrator_title(chat_id, user_id, custom_rank)
+    except UsernameInvalid:
+        await message.err("`invalid username, try again with valid info ⚠`")
+    except PeerIdInvalid:
+        await message.err("invalid username or userid, try again with valid info ⚠")
+    except UserIdInvalid:
+        await message.err("invalid userid, try again with valid info ⚠")
+    except Exception as e_f:
+        await message.err(f"something went wrong! 🤔\n\n`{e_f}`")
+    else:
+        await message.edit("`👑 Promoted Successfully..`", del_in=5)
+        user = await message.client.get_users(user_id)
+        await CHANNEL.log(
+            "#PROMOTE\n\n"
+            f"USER: [{user.first_name}](tg://user?id={user_id}) (`{user_id}`)\n"
+            f"CUSTOM TITLE: `{custom_rank or None}`\n"
+            f"CHAT: `{message.chat.title}` (`{chat_id}`)")
 
 
 @Alita.on_message(command("demote") & promote_filter)
