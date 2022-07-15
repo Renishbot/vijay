@@ -173,7 +173,7 @@ async def tag_admins(_, m: Message):
 async def promote_usr(c: Alita, m: Message):
 
     if len(m.text.split()) == 1 and not m.reply_to_message:
-        await m.reply_text("I don't know who you're talking about, you're going to need to specify a user...!")
+        await m.reply_text("I don't know who you're talking about, you need to specify a user from this Chat...!")
         return
 
     try:
