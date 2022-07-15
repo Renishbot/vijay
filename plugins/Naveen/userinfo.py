@@ -64,7 +64,7 @@ async def get_chat_info(chat, already=False):
     return [caption, photo_id]
 
 
-@bot.on_message(filters.command("info"))
+@bot.on_message(filters.command("who"))
 async def info_func(_, message: Message):
     if message.reply_to_message:
         user = message.reply_to_message.from_user.id
