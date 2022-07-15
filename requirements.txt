@@ -6,6 +6,7 @@ marshmallow
 python-telegram-bot
 umongo
 emoji
+countryinfo
 telethon
 requests
 bs4
