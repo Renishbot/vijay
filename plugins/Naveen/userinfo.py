@@ -2,7 +2,7 @@ import os
 
 from pyrogram import filters, Client as bot
 from pyrogram.types import Message
-from nksama import DEV_USERS as dev_user
+from info import DEV_USERS as dev_user
 from plugins import section
 
 async def get_user_info(user, already=False):
