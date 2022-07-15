@@ -170,7 +170,7 @@ async def tag_admins(_, m: Message):
         ),
     )
 
-@Alita.on_command("promote", about={
+@Alita.on_message(filters.command("promote", about={
     'header': "use this to promote group members",
     'description': "Provides admin rights to the person in the supergroup.\n"
                    "you can also add custom title while promoting new admin.\n"
