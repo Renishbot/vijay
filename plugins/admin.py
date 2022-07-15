@@ -3,7 +3,6 @@ from asyncio import sleep
 from html import escape
 from os import remove
 from traceback import format_exc
-from typing import List, Dict, Tuple, Optional
 
 
 from pyrogram import filters
@@ -170,52 +169,110 @@ async def tag_admins(_, m: Message):
         ),
     )
 
-@Alita.on_message(filters.command("promote")), about={
-    'header': "use this to promote group members",
-    'description': "Provides admin rights to the person in the supergroup.\n"
-                   "you can also add custom title while promoting new admin.\n"
-                   "[NOTE: Requires proper admin rights in the chat!!!]",
-    'examples': [
-        "{tr}promote [username | userid] or [reply to user] :custom title (optional)",
-        "{tr}promote @someusername/userid/replytouser Staff (custom title)"]},
-    allow_channels=False, check_promote_perm=True)
-async def promote_usr(message: Message):
-    """ promote members in tg group """
-    user_id, custom_rank = message.extract_user_and_text
-    if not user_id:
-        await message.err("no valid user_id or message specified")
+@Alita.on_message(command("promote") & promote_filter)
+async def promote_usr(c: Alita, m: Message):
+
+    if len(m.text.split()) == 1 and not m.reply_to_message:
+        await m.reply_text(tlang(m, "admin.promote.no_target"))
         return
-    if custom_rank:
-        custom_rank = get_emoji_regexp().sub(u'', custom_rank)
-        if len(custom_rank) > 15:
-            custom_rank = custom_rank[:15]
 
-    await message.edit("`Trying to Promote User.. Hang on!! ⏳`")
-    chat_id = message.chat.id
     try:
-        await message.client.promote_chat_member(chat_id, user_id,
-                                                 ChatPrivileges(can_invite_users=True,
-                                                                can_pin_messages=True))
-        if custom_rank:
-            await asyncio.sleep(2)
-            await message.client.set_administrator_title(chat_id, user_id, custom_rank)
-    except UsernameInvalid:
-        await message.err("`invalid username, try again with valid info ⚠`")
-    except PeerIdInvalid:
-        await message.err("invalid username or userid, try again with valid info ⚠")
-    except UserIdInvalid:
-        await message.err("invalid userid, try again with valid info ⚠")
-    except Exception as e_f:
-        await message.err(f"something went wrong! 🤔\n\n`{e_f}`")
-    else:
-        await message.edit("`👑 Promoted Successfully..`", del_in=5)
-        user = await message.client.get_users(user_id)
-        await CHANNEL.log(
-            "#PROMOTE\n\n"
-            f"USER: [{user.first_name}](tg://user?id={user_id}) (`{user_id}`)\n"
-            f"CUSTOM TITLE: `{custom_rank or None}`\n"
-            f"CHAT: `{message.chat.title}` (`{chat_id}`)")
+        user_id, user_first_name, user_name = await extract_user(c, m)
+    except Exception:
+        return
 
+    bot = await c.get_chat_member(m.chat.id, Config.BOT_ID)
+
+    if user_id == Config.BOT_ID:
+        await m.reply_text("Huh, how can I even promote myself?")
+        return
+
+    if not bot.can_promote_members:
+        return await m.reply_text(
+            "I don't have enough permissions",
+        )  # This should be here
+    # If user is alreay admin
+    try:
+        admin_list = {i[0] for i in ADMIN_CACHE[m.chat.id]}
+    except KeyError:
+        admin_list = {
+            i[0] for i in (await admin_cache_reload(m, "promote_cache_update"))
+        }
+
+    if user_id in admin_list:
+        await m.reply_text(
+            "This user is already an admin, how am I supposed to re-promote them?",
+        )
+        return
+
+    try:
+        await m.chat.promote_member(
+            user_id=user_id,
+            can_change_info=bot.can_change_info,
+            can_invite_users=bot.can_invite_users,
+            can_delete_messages=bot.can_delete_messages,
+            can_restrict_members=bot.can_restrict_members,
+            can_pin_messages=bot.can_pin_messages,
+            can_manage_chat=bot.can_manage_chat,
+            can_manage_voice_chats=bot.can_manage_voice_chats,
+        )
+
+        title = ""  # Deafult title
+        if len(m.text.split()) == 3 and not m.reply_to_message:
+            title = m.text.split()[2]
+        elif len(m.text.split()) == 2 and m.reply_to_message:
+            title = m.text.split()[1]
+        if title and len(title) > 16:
+            title = title[:16]
+
+        try:
+            await c.set_administrator_title(m.chat.id, user_id, title)
+        except RPCError as e:
+            LOGGER.error(e)
+
+        LOGGER.info(
+            f"{m.from_user.id} promoted {user_id} in {m.chat.id} with title '{title}'",
+        )
+
+        await m.reply_text(
+            (tlang(m, "admin.promote.promoted_user")).format(
+                promoter=(await mention_html(m.from_user.first_name, m.from_user.id)),
+                promoted=(await mention_html(user_first_name, user_id)),
+                chat_title=f"{escape(m.chat.title)} title set to {title}"
+                if title
+                else f"{escape(m.chat.title)} title set to Admin",
+            ),
+        )
+
+        # If user is approved, disapprove them as they willbe promoted and get even more rights
+        if Approve(m.chat.id).check_approve(user_id):
+            Approve(m.chat.id).remove_approve(user_id)
+
+        # ----- Add admin to temp cache -----
+        try:
+            inp1 = user_name or user_first_name
+            admins_group = ADMIN_CACHE[m.chat.id]
+            admins_group.append((user_id, inp1))
+            ADMIN_CACHE[m.chat.id] = admins_group
+        except KeyError:
+            await admin_cache_reload(m, "promote_key_error")
+
+    except ChatAdminRequired:
+        await m.reply_text(tlang(m, "admin.not_admin"))
+    except RightForbidden:
+        await m.reply_text(tlang(m, "admin.promote.bot_no_right"))
+    except UserAdminInvalid:
+        await m.reply_text(tlang(m, "admin.user_admin_invalid"))
+    except RPCError as e:
+        await m.reply_text(
+            (tlang(m, "general.some_error")).format(
+                SUPPORT_GROUP=SUPPORT_GROUP,
+                ef=e,
+            ),
+        )
+        LOGGER.error(e)
+        LOGGER.error(format_exc())
+    return
 
 @Alita.on_message(command("demote") & promote_filter)
 async def demote_usr(c: Alita, m: Message):
