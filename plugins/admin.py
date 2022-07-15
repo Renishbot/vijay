@@ -3,6 +3,7 @@ from asyncio import sleep
 from html import escape
 from os import remove
 from traceback import format_exc
+from typing import List, Dict, Tuple, Optional
 
 
 from pyrogram import filters
