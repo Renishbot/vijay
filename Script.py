@@ -1,4 +1,4 @@
-class script(object):
+ class script(object):
     START_TXT = """𝙃𝙞 {},
 
 𝖭𝗂𝖼𝖾 𝗍𝗈 See 𝗒𝗈𝗎 Starting Me 
@@ -415,7 +415,9 @@ a bot to create a link to share text in the telegram.
 • /filters - <code>list all the filters of a chat</code>
 • /del - <code>delete a specific filter in chat</code>
 • /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
+
     SONG_TXT = """<b>🎼Song Download🎼</b>
+
 Song Download Module, For Those Who Love Music
 
 <b>🎈 Command 🎈</b>
@@ -423,21 +425,27 @@ Song Download Module, For Those Who Love Music
 - /song [Song Name] - To Download Music 😁
 
 <b>🌀Usage🌀</b>
+
 - Can Be Used By Everyone
 - Works in bot pm
 
-Made By <a href=https://t.me/+veUIdIW2CQ5mOGU5>𝐌𝐖 𝐔𝐩𝐝𝐚𝐭𝐞𝐬</a>"""
+Made By <a href=https://t.me/+vAX64oYJuWU1NjE1>𝐌𝐖 𝐔𝐩𝐝𝐚𝐭𝐞𝐬</a>"""
+
     SHARE_TXT = """Help: <b>Sharing Text Maker</b>
+
 a bot to create a link to share text in the telegram.
+
 <b>Commands and Usage:</b>
+
 • /share (text or reply to message)
+
 <b>NOTE:</b>
+
 • IMDb should have admin privillage.
 • These commands works on both pm and group.
 • These commands can be used by any group member."""
    
     PIN_TXT ="""<b>PIN MODULE</b>
-<b>Pin :</b>
 
 <b>All The Pin Related Commands Can Be Found Here; Keep Your Chat Up To Date On The Latest News With A Simple Pinned Message!</b>
 
