@@ -590,9 +590,15 @@ Group = @{} (<code>{}</code>)
 Total Members = <code>{}</code>
 Added By - {}
 """
-    BOYCOTT_TXT = """
+    BOYCOTT_TXT = """help: Boycott
+This command helps to Creates Boycott Image!
 
+➤ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐧𝐝 𝐔𝐬𝐚𝐠𝐞:
 
+Use /boycott ( reply to a image for using boycott )
+
+It Will Helps You To Kidd Your Friend 'X' 
+Refered codes from FridayUB."""
 
     LOG_TEXT_P = """#𝐍𝐞𝐰𝐔𝐬𝐞𝐫
     
@@ -606,6 +612,12 @@ Added By - {}
 ➤ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 𝐚𝐧𝐝 𝐔𝐬𝐚𝐠𝐞:
 
 ➪/report 𝗈𝗋 @admins - 𝖳𝗈 𝗋𝖾𝗉𝗈𝗋𝗍 𝖺 𝗎𝗌𝖾𝗋 𝗍𝗈 𝗍𝗁𝖾 𝖺𝖽𝗆𝗂𝗇𝗌 (𝗋𝖾𝗉𝗅𝗒 𝗍𝗈 𝖺 𝗆𝖾𝗌𝗌𝖺𝗀𝖾)."""
+
+    REPO_TXT = """help Git Repo Finder Module.
+
+Use /repo { Repo name } to Get a Repo of GitHub
+
+Example : /repo Eva Maria."""
 
     CORONA_TXT = """➤ 𝐇𝐞𝐥𝐩: 𝖢𝗈𝗏𝗂𝖽
 
@@ -628,6 +640,8 @@ Added By - {}
 
 ➛𝖤𝗑𝖺𝗆𝗉𝗅𝖾:
 /short https://t.me/+veUIdIW2CQ5mOGU5"""
+
+    IFSC_TXT ="""Help to Get ifsc Code Info."""
 
     VIDEO_TXT ="""𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾 𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳 𝚅𝙸𝙳𝙴𝙾 𝙵𝚁𝙾𝙼 𝚈𝙾𝚄𝚃𝚄𝙱𝙴.
 
