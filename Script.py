@@ -590,6 +590,10 @@ Group = @{} (<code>{}</code>)
 Total Members = <code>{}</code>
 Added By - {}
 """
+    BOYCOTT_TXT = """
+
+
+
     LOG_TEXT_P = """#𝐍𝐞𝐰𝐔𝐬𝐞𝐫
     
 <b>᚛› 𝐈𝐃 - <code>{}</code></b>
