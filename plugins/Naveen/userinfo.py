@@ -18,7 +18,7 @@ async def get_user_info(user, already=False):
     is_bot = user.is_bot
     #bio = userss.bio,
     photo_id = user.photo.big_file_id if user.photo else None
-    is_dev = user_id in dev_user
+    is_dev = "Yes" if user_id in dev_user else "No"
     body = { 
         "✪ ID": user_id,
         "✪ DC": dc_id,
