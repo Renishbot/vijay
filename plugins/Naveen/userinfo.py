@@ -16,7 +16,7 @@ async def get_user_info(user, already=False):
     mention = user.mention("Link")
     dc_id = user.dc_id
     is_bot = user.is_bot
-    bio = userss.bio,
+    #bio = userss.bio,
     photo_id = user.photo.big_file_id if user.photo else None
     is_dev = user_id in dev_user
     body = { 
@@ -27,7 +27,7 @@ async def get_user_info(user, already=False):
         "✪ Mention": [mention],
         "✪ Bot": is_bot,
         "✪ Developer": is_dev,
-        "✪ Bio": bio,
+        #"✪ Bio": bio,
     }
     caption = section("User info results", body)
     return [caption, photo_id]
