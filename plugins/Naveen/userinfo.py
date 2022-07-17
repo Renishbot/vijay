@@ -1,6 +1,6 @@
 import os
 
-from pyrogram import filters, client as bot
+from pyrogram import filters, Client as bot
 from pyrogram.types import Message
 from info import DEV_USERS as dev_user
 from plugins.sections import section
