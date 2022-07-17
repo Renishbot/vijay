@@ -3,7 +3,7 @@ import os
 from pyrogram import filters, client as bot
 from pyrogram.types import Message
 from info import DEV_USERS as dev_user
-from nksama.utils.sections import section
+from plugins.sections import section
 
 async def get_user_info(user, already=False):
     if not already:
