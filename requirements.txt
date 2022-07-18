@@ -2,6 +2,7 @@ git+https://github.com/subinps/pyrogram@inline-m
 tgcrypto
 pymongo[srv]
 motor
+asgiref
 marshmallow
 python-telegram-bot
 umongo
