@@ -28,7 +28,7 @@ async def song(client, message):
     try:
        args = message.text.split(None, 1)[1]
     except:
-        return await message.reply("/saavn requires an argument.")
+        return await message.reply("Give a Song Name To Find Out")
     if args.startswith(" "):
         await message.reply("/saavn requires an argument.")
         return ""
