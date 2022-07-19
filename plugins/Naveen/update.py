@@ -1,4 +1,4 @@
-import sys
+.import sys
 from datetime import datetime
 from os import environ, execle, path, remove
 from pyrogram import Client, filters
@@ -23,9 +23,7 @@ async def update_it(client, message):
     try:
         repo = Repo()
     except GitCommandError:
-        return await msg_.edit(
-            engine.get_string("Invalid git Command")
-        )
+        return await msg_.edit("Invalid git Command")
     except InvalidGitRepositoryError:
         repo = Repo.init()
         if "upstream" in repo.remotes:
