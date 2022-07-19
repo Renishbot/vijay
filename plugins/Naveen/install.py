@@ -25,10 +25,10 @@ async def installer(client, message):
     Escobar = await message.reply_to_message.download(file_name="./plugins/")
     base_name = os.path.basename(Escobar)
     file_n = base_name.split(".")[0]
-    try:
-        load_plugin(file_n)
-    except Exception as e:
-        await pablo.edit("ERROR_INSTALLING")
-        os.remove(Escobar)
-        return
+    #try:
+    load_plugin(file_n)
+    #except Exception as e:
+    await pablo.edit("ERROR_INSTALLING")
+    os.remove(Escobar)
+    return
     await pablo.edit("PLUGIN_INSTALLED").format(file_name)
