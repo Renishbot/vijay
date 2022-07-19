@@ -9,7 +9,7 @@ from plugins.helper_functions.basic_helpers import edit_or_reply
 async def installer(client, message):
     pablo = await message.reply_text("Processing...")
     if not message.reply_to_message:
-        await pablo.edit("NEEDS_REPLY").format("A Plugin")
+        await pablo.edit("NEEDS_REPLY")
         return
     if not message.reply_to_message.document:
         await pablo.edit("IS_NOT_DOC")
