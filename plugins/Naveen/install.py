@@ -28,7 +28,7 @@ async def installer(client, message):
     try:
         load_plugin(file_n)
     except Exception as e:
-        await pablo.edit("ERROR_INSTALLING").format(e)
+        await pablo.edit("ERROR_INSTALLING")
         os.remove(Escobar)
         return
     await pablo.edit("PLUGIN_INSTALLED").format(file_name)
