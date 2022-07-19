@@ -31,4 +31,4 @@ async def installer(client, message):
         await pablo.edit("ERROR_INSTALLING")
         os.remove(Escobar)
         return
-     await pablo.edit('PLUGIN_INSTALLED_SUCCESSFULLY')
+    await pablo.edit('PLUGIN_INSTALLED_SUCCESSFULLY')
