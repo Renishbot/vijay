@@ -31,8 +31,8 @@ async def update_it(client, message):
         else:
             origin = repo.create_remote("upstream", REPO_)
         origin.fetch()
-        repo.create_head(Config.U_BRANCH, origin.refs.master)
-        repo.heads.master.set_tracking_branch(origin.refs.master)
+        repo.create_head(Config.U_BRANCH, origin.refs.main)
+        repo.heads.master.set_tracking_branch(origin.refs.main)
         repo.heads.master.checkout(True)
     if repo.active_branch.name != Config.U_BRANCH:
         return await msg_.edit(
@@ -50,13 +50,13 @@ async def update_it(client, message):
         except GitCommandError:
             repo.git.reset("--hard", "FETCH_HEAD")
         await run_cmd("pip3 install --no-cache-dir -r requirements.txt")
-        await msg_.edit(engine.get_string("UPDATED"))
-        args = [sys.executable, "-m", "main_startup"]
+        await msg_.edit("UPDATED")
+        args = [sys.executable, "-m", "plugins"]
         execle(sys.executable, *args, environ)
         exit()
         return
     else:
-        await msg_.edit(engine.get_string("HEROKU_DETECTED"))
+        await msg_.edit("HEROKU_DETECTED")
         ups_rem.fetch(Config.U_BRANCH)
         repo.git.reset("--hard", "FETCH_HEAD")
         if "heroku" in repo.remotes:
