@@ -72,6 +72,10 @@
             "description": "needed some trusted friends for using group features or add your own id.",
             "required": true
         },
+        "HEROKU_APP_NAME": {
+            "description": "Use Heroku App Name Here",
+            "required": true
+        },
         "DEV_USERS": {
             "description": "add your id",
             "required": true
