@@ -7,8 +7,12 @@ from os import execvp,sys
 from sys import executable
 
 
-@Client.on_message(filters.command("restart") & filters.chat(OWNER_ID))
+@Client.on_message(filters.command("restart") & ~filters.edited)
 async def restart(_,message):
-    await message.delete()
-    await message.reply_text("⚰️")
-    execl(executable, executable, "start.sh")
+    try:
+        await message.delete()
+        await message.reply_text("⚰️")
+        execl(executable, executable, "start.sh")
+    except Exception as e:
+        pass
+        await message.reply((e))
