@@ -1,7 +1,7 @@
 import os
 
 from pyrogram import Client, filters
-from plugins.helper_functionstartup_helpers import load_plugin
+from plugins.helper_functions.startup_helpers import load_plugin
 from plugins.helper_functions.basic_helpers import edit_or_reply
 
 
