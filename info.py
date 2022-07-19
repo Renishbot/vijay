@@ -221,6 +221,8 @@ class Config((object)):
         "UPSTREAM_REPO", "https://github.com/Naveen-TG/MasterolicTG"
     )
     U_BRANCH = "main"
+    HEROKU_APP_NAME = environ.get("HEROKU_APP_NAME", None)
+
 OWNER_ID = Config.OWNER_ID
 DEV_USERS = Config.DEV_USERS
 SUDO_USERS = Config.SUDO_USERS
