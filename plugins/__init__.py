@@ -251,4 +251,4 @@ def decorator(func):
                         logging.error(text)
         add_handler(filterm, wrapper, cmd)
         return wrapper
-    return decorator
+        return decorator
