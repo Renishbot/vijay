@@ -78,7 +78,7 @@ python3 bot.py
 
 ## Commands
 ```
-• /logs - to get the rescent errors
+• /bugs - to get the rescent errors
 • /stats - to get status of files in db.
 * /filter - add manual filters
 * /filters - view filters
