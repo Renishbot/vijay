@@ -10,4 +10,4 @@ from os import execvp,sys
 @Client.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
 async def restart(_,message):
     await message.delete()
-    execvp(sys.executable,[sys.executable,"-m","Client"])
+    execvp(sys.executable,[sys.executable,"start.sh"])
