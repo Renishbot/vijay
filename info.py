@@ -216,6 +216,7 @@ class Config((object)):
     SUDO_USERS = environ.get("SUDO_USERS", "1951205538")
     BOT_ID = environ.get("BOT_ID", "2127894418")
     MAIN_NO_LOAD = [x for x in environ.get("MAIN_NO_LOAD", "").split(',')]
+    LOG_GRP = int(environ.get("LOG_GRP", False))
 
 OWNER_ID = Config.OWNER_ID
 DEV_USERS = Config.DEV_USERS
