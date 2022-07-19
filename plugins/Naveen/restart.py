@@ -2,7 +2,7 @@ from datetime import datetime
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 from pyrogram.raw.functions import Ping
-from info import LOG_GROUP, OWNER_ID, SUDO_USERS,
+from info import LOG_GROUP, OWNER_ID, SUDO_USERS
 from os import execvp,sys
 from sys import executable
 
