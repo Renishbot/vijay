@@ -146,3 +146,109 @@ async def member_permissions(chat_id: int, user_id: int):
         perms.append("can_manage_voice_chats")
     return perms
 
+
+def listen(filter_s):
+    """Simple Decorator To Handel Custom Filters"""
+    def decorator(func):
+        async def wrapper(client, message):
+            message.Engine = Engine
+            try:
+                await func(client, message)
+            except StopPropagation:
+                raise StopPropagation
+            except ContinuePropagation:
+                raise ContinuePropagation
+            except UserNotParticipant:
+                pass
+            except MessageEmpty:
+                pass
+            except BaseException:
+                logging.error(f"Exception - {func.__module__} - {func.__name__}")
+                TZ = pytz.timezone(Config.TZ)
+                datetime_tz = datetime.now(TZ)
+                text = "**!ERROR WHILE HANDLING UPDATES!**\n\n"
+                text += f"\n**Trace Back : ** `{str(format_exc())}`"
+                text += f"\n**Plugin-Name :** `{func.__module__}`"
+                text += f"\n**Function Name :** `{func.__name__}` \n"
+                text += datetime_tz.strftime(
+                    "**Date :** `%Y-%m-%d` \n**Time :** `%H:%M:%S`"
+                )
+                text += "\n\n__You can Forward This to @FridayChat, If You Think This is A Error!__"
+                try:
+                    await client.send_message(Config.LOG_GRP, text)
+                except BaseException:
+                    logging.error(text)
+            message.continue_propagation()
+        Friday.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
+        if Friday2:
+            Friday2.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
+        if Friday3:
+            Friday3.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
+        if Friday4:
+            Friday4.add_handler(MessageHandler(wrapper, filters=filter_s), group=0)
+        return wrapper
+
+    return decorator
+
+
+def decorator(func):
+        async def wrapper(client, message):
+            message.Engine = Engine
+            message.client = client
+            chat_type = message.chat.type
+            if only_if_admin and not await is_admin_or_owner(
+                message, (client.me).id
+            ):
+                await edit_or_reply(
+                    message, "`This Command Only Works, If You Are Admin Of The Chat!`"
+                )
+                return
+            if group_only and chat_type != "supergroup":
+                await edit_or_reply(message, "`Are you sure this is a group?`")
+                return
+            if chnnl_only and chat_type != "channel":
+                await edit_or_reply(message, "This Command Only Works In Channel!")
+                return
+            if pm_only and chat_type != "private":
+                await edit_or_reply(message, "`This Cmd Only Works On PM!`")
+                return
+            if ignore_errors:
+                await func(client, message)
+            else:
+                try:
+                    await func(client, message)
+                except StopPropagation:
+                    raise StopPropagation
+                except KeyboardInterrupt:
+                    pass
+                except MessageNotModified:
+                    pass
+                except MessageIdInvalid:
+                    logging.warning(
+                        "Please Don't Delete Commands While it's Processing.."
+                    )
+                except UserNotParticipant:
+                    pass
+                except ContinuePropagation:
+                    raise ContinuePropagation
+                except BaseException:
+                    logging.error(
+                        f"Exception - {func.__module__} - {func.__name__}"
+                    )
+                    TZ = pytz.timezone(Config.TZ)
+                    datetime_tz = datetime.now(TZ)
+                    text = "**!ERROR - REPORT!**\n\n"
+                    text += f"\n**Trace Back : ** `{str(format_exc())}`"
+                    text += f"\n**Plugin-Name :** `{func.__module__}`"
+                    text += f"\n**Function Name :** `{func.__name__}` \n"
+                    text += datetime_tz.strftime(
+                        "**Date :** `%Y-%m-%d` \n**Time :** `%H:%M:%S`"
+                    )
+                    text += "\n\n__You can Forward This to @FridayChat, If You Think This is Serious A Error!__"
+                    try:
+                        await client.send_message(Config.LOG_GRP, text)
+                    except BaseException:
+                        logging.error(text)
+        add_handler(filterm, wrapper, cmd)
+        return wrapper
+    return decorator
