@@ -4,10 +4,11 @@ from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 from pyrogram.raw.functions import Ping
 from info import LOG_GROUP, OWNER_ID, SUDO_USERS,
 from os import execvp,sys
+from sys import executable
 
 
-
-@Client.on_message(filters.command("restart") & filters.chat(OWNER_ID) & filters.private)
+@Client.on_message(filters.command("restart") & filters.chat(OWNER_ID))
 async def restart(_,message):
     await message.delete()
-    execvp(sys.executable,[sys.executable,"start.sh"])
+    await message.reply_text("⚰️")
+    execl(executable, executable, "start.sh")
