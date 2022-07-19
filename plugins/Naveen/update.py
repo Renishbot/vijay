@@ -1,4 +1,4 @@
-.import sys
+import sys
 from datetime import datetime
 from os import environ, execle, path, remove
 from pyrogram import Client, filters
