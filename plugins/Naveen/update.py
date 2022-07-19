@@ -6,27 +6,24 @@ import heroku3
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from main_startup.config_var import Config
-from main_startup.core.decorators import friday_on_cmd, listen
-from main_startup.core.startup_helpers import run_cmd
-from main_startup.helper_func.basic_helpers import edit_or_reply, get_text
-from main_startup.helper_func.logger_s import LogIt
+from info import Config
+from plugins import listen
+from plugins import run_cmd
+from plugins.helper_functions.basic_helpers import edit_or_reply, get_text
+from plugins.helper_functions.logger_s import LogIt
 
 REPO_ = Config.UPSTREAM_REPO
 BRANCH_ = Config.U_BRANCH
 
 
-@friday_on_cmd(
-    ["update"], cmd_help={"help": "Update Your UserBot!", "example": "{ch}update"}
-)
+@Client.on_message(filters.command('update'))
 async def update_it(client, message):
-    engine = message.Engine
-    msg_ = await edit_or_reply(message, engine.get_string("UPDATING_PLS_WAIT"))
+    msg_ = await message.reply_text("Updating Vijay please Wait")
     try:
         repo = Repo()
     except GitCommandError:
         return await msg_.edit(
-            engine.get_string("INVALID_GIT_CMD")
+            engine.get_string("Invalid git Command")
         )
     except InvalidGitRepositoryError:
         repo = Repo.init()
