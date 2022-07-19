@@ -3,7 +3,7 @@ from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 from pyrogram.raw.functions import Ping
 from info import OWNER_ID, SUDO_USERS
-from os import execvp,sys
+from os import execvp,sys,execl
 from sys import executable
 
 
