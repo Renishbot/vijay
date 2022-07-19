@@ -7,21 +7,20 @@ from plugins.helper_functions.basic_helpers import edit_or_reply
 
 @Client.on_message(filters.command('install'))
 async def installer(client, message):
-    engine = message.Engine
-    pablo = await edit_or_reply(message, engine.get_string("PROCESSING"))
+    pablo = await message.reply_text("Processing...")
     if not message.reply_to_message:
-        await pablo.edit(engine.get_string("NEEDS_REPLY").format("A Plugin"))
+        await pablo.edit("NEEDS_REPLY").format("A Plugin")
         return
     if not message.reply_to_message.document:
-        await pablo.edit(engine.get_string("IS_NOT_DOC"))
+        await pablo.edit("IS_NOT_DOC")
         return
     file_name = message.reply_to_message.document.file_name
     ext = file_name.split(".")[1]
     if os.path.exists(os.path.join("./plugins/", file_name)):
-        await pablo.edit(engine.get_string("ALREADY_INSTALLED"))
+        await pablo.edit("ALREADY_INSTALLED")
         return
     if ext.lower() != "py":
-        await pablo.edit(engine.get_string("ONLY_PY_FILES"))
+        await pablo.edit("ONLY_PY_FILES")
         return
     Escobar = await message.reply_to_message.download(file_name="./plugins/")
     base_name = os.path.basename(Escobar)
@@ -29,7 +28,7 @@ async def installer(client, message):
     try:
         load_plugin(file_n)
     except Exception as e:
-        await pablo.edit(engine.get_string("ERROR_INSTALLING").format(e))
+        await pablo.edit("ERROR_INSTALLING").format(e)
         os.remove(Escobar)
         return
-    await pablo.edit(engine.get_string("PLUGIN_INSTALLED").format(file_name))
+    await pablo.edit("PLUGIN_INSTALLED").format(file_name)
