@@ -12,7 +12,7 @@ async def restart(_,message):
     try:
         await message.delete()
         await message.reply_text("⚰️")
-        execl(executable, executable, "start.sh")
+        execl(executable, executable, "tigershroff.py")
     except Exception as e:
         pass
         await message.reply((e))
