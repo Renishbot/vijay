@@ -220,7 +220,7 @@ class Config((object)):
     UPSTREAM_REPO = environ.get(
         "UPSTREAM_REPO", "https://github.com/Naveen-TG/MasterolicTG"
     )
-
+    U_BRANCH = "main"
 OWNER_ID = Config.OWNER_ID
 DEV_USERS = Config.DEV_USERS
 SUDO_USERS = Config.SUDO_USERS
