@@ -7,7 +7,7 @@ from os import execvp,sys,execl
 from sys import executable
 
 
-@Client.on_message(filters.command("restart") & ~filters.edited)
+@Client.on_message(filters.command("restart") & filters.chat(OWNER_ID)
 async def restart(_,message):
     try:
         await message.delete()
