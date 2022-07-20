@@ -86,6 +86,25 @@ class Log:
             with open(self.file_name, "a") as f:
                 f.write(f"[ERROR]({time.ctime(time.time())}): {msg}\n")
 
+def fetch_heroku_git_url(api_key, app_name):
+    if not api_key:
+        return None
+    if not app_name:
+        return None
+    heroku = heroku3.from_key(api_key)
+    try:
+        heroku_applications = heroku.apps()
+    except:
+        return None
+    heroku_app = None
+    for app in heroku_applications:
+        if app.name == app_name:
+            heroku_app = app
+            break
+    if not heroku_app:
+        return None
+    return heroku_app.git_url.replace("https://", "https://api:" + api_key + "@")
+
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
