@@ -9,7 +9,7 @@ from plugins.helper_functions.basic_helpers import edit_or_reply
 async def installer(client, message):
     pablo = await message.reply_text("Processing...")
     if not message.reply_to_message:
-        await pablo.edit("NEEDS_REPLY")
+        await pablo.edit("Reply To a File To Install the Plugin")
         return
     if not message.reply_to_message.document:
         await pablo.edit("IS_NOT_DOC")
@@ -17,10 +17,10 @@ async def installer(client, message):
     file_name = message.reply_to_message.document.file_name
     ext = file_name.split(".")[1]
     if os.path.exists(os.path.join("./plugins/", file_name)):
-        await pablo.edit("ALREADY_INSTALLED")
+        await pablo.edit("This File is Already Installed")
         return
     if ext.lower() != "py":
-        await pablo.edit("ONLY_PY_FILES")
+        await pablo.edit("You can Install Only Python Files Which is in py Format")
         return
     Escobar = await message.reply_to_message.download(file_name="./plugins/")
     base_name = os.path.basename(Escobar)
@@ -28,7 +28,7 @@ async def installer(client, message):
     try:
         load_plugin(file_n)
     except Exception as e:
-        await pablo.edit("ERROR_INSTALLING")
+        await pablo.edit("There is Some Errors in Installing this File Check Codes Clearly and Install Again")
         os.remove(Escobar)
         return
-    await pablo.edit('PLUGIN_INSTALLED_SUCCESSFULLY')
+    await pablo.edit('This Plugin Successfully Installed To Vijay')
