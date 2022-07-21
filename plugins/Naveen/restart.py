@@ -12,7 +12,7 @@ async def restart(_,message):
     try:
         if message.from_user.id not in ADMINS:
            await message.delete()
-           await message.reply("only bot admins can do this command") 
+           await message.reply("Only bot admins can do this action⚠️") 
            return
         await message.delete()
         await message.reply_text("⚰️")
