@@ -7,9 +7,13 @@ from os import execvp,sys,execl
 from sys import executable
 
 
-@Client.on_message(filters.command("restart") & filters.group & filters.chat(ADMINS))
+@Client.on_message(filters.command("restart") & ~filters.edited)
 async def restart(_,message):
     try:
+        if message.from_user.id not in ADMINS:
+           await message.delete()
+           await message.reply("only bot admins can do this command") 
+           return
         await message.delete()
         await message.reply_text("⚰️")
         execl(executable, executable, "tigershroff.py")
