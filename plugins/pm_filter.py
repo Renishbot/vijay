@@ -905,26 +905,26 @@ async def cb_handler(client: Client, query: CallbackQuery):
         o=await n.edit("● ● ●")
         await asyncio.sleep(1)
         await o.delete()
-        await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 Auto Filter  𝖧𝖾𝗅𝗉 𝗆𝗈𝖽𝗎𝗅𝖾")
+        await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 Group Filter  𝖧𝖾𝗅𝗉 𝗆𝗈𝖽𝗎𝗅𝖾")
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
             parse_mode='html'
         )
     elif query.data == "help":
-        buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="AutoFilter"),
-             InlineKeyboardButton(text="Group Management",callback_data=="grp")]]]]
+        buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="autofilter"),
+             InlineKeyboardButton(text="Group Management",callback_data="grp")]]
         reply_markup = InlineKeyboardMarkup(buttonss) 
-         m=await query.message.reply_text("● ◌ ◌")
+        m=await query.message.reply_text("● ◌ ◌")
         n=await m.edit("● ● ◌")
         o=await n.edit("● ● ●")
         await asyncio.sleep(1)
         await o.delete()
-        await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 𝖧𝖾𝗅𝗉 Group Management 𝗆𝗈𝖽𝗎𝗅𝖾")
+        await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 𝗆𝗈𝖽𝗎𝗅𝖾s")
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
-            parse_mode='html'   
+            parse_mode='html')   
     elif query.data == "hellp":
         buttons = [[
             InlineKeyboardButton('𝑀𝑎𝑛𝑢𝑒𝑙 𝐹𝑖𝑙𝑡𝑒𝑟', callback_data='manuelfilter'),
