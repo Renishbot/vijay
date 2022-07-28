@@ -1,5 +1,5 @@
 from pyrogram import Client
-from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContect 
+from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent 
 
 @Client.on_inline_query()
 async def inlinemode(bot, query: InlineQuery):
@@ -8,7 +8,7 @@ async def inlinemode(bot, query: InlineQuery):
             InlineQueryResultArticle(
                 title="Naveen",
                 description="Click Here",
-                input_message_contect=InputTextMessageContect(
+                input_message_contect=InputTextMessageContent(
                     message_text="""Owner of the Bot"""
                 )
             )
