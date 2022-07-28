@@ -5,4 +5,6 @@ from pyrogram.types import InlineQuery, InlineQueryResultArticle
 async def inlinemode(bot, query: InlineQuery):
     await query.answer(
         results=[
-            InlineQueryResultArticle
+            InlineQueryResultArticle(
+                title="Naveen",
+                description="Click Here",
