@@ -12,4 +12,5 @@ async def inlinemode(bot, query: InlineQuery):
                     message_text="""Owner of the Bot"""
                 )
             )
-        )
+        ),
+        cecha_tine=0
