@@ -11,3 +11,4 @@ async def inlinemode(bot, query: InlineQuery):
                 input_message_contect=InlineTextMessageContect(
                     message_text="""Owner of the Bot"""
                 )
+            )
