@@ -1,13 +1,6 @@
 from pyrogram import Client
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup 
-try:
-    from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
-except ImportError:
-    pass
-    print(f"failed")
-except Exception as e:
-    pass
-    print(e)
+
 @Client.on_inline_query()
 async def inlinemode(bot, query: InlineQuery):
     await query.answer(
