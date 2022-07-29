@@ -1,5 +1,5 @@
 from pyrogram import Client
-from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent 
+from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup 
 
 @Client.on_inline_query()
 async def inlinemode(bot, query: InlineQuery):
@@ -12,6 +12,10 @@ async def inlinemode(bot, query: InlineQuery):
                 thumb_url="https://telegra.ph/file/a91ddf16775ec8ef0bd9e.jpg",
                 input_message_content=InputTextMessageContent(
                     message_text="""Owner of the Bot"""
+                )
+                reply_markup=InlinekeyboardMarkup([[
+                    Inlinekeyboardbutton("Onwer", url="t.me/Naveen_TG")
+                    ]]
                 )
             ),
 
