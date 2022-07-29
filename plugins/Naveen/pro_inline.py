@@ -2,6 +2,9 @@ from pyrogram import Client
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup 
 try:
     from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
+except ImportError:
+    pass
+    print(f"failed")
 except Exception as e:
     pass
     print(e)
@@ -17,8 +20,8 @@ async def inlinemode(bot, query: InlineQuery):
                 input_message_content=InputTextMessageContent(
                     message_text="""Owner of the Bot"""
                 ),
-                reply_markup=InlinekeyboardMarkup([[
-                    Inlinekeyboardbutton("Onwer", url="t.me/Naveen_TG")
+                reply_markup=InlineKeyboardMarkup([[
+                    Inlinekeyboardbutton("Owner", url="t.me/Naveen_TG")
                     ]]
                 )
             ),
