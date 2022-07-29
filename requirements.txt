@@ -1,4 +1,4 @@
-https://github.com/Naveen-TG/pyrogram/archive/refs/heads/master.zip
+git+https://github.com/subinps/pyrogram@inline-m
 tgcrypto
 pymongo[srv]
 motor
