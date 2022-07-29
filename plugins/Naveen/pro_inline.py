@@ -1,6 +1,10 @@
 from pyrogram import Client
 from pyrogram.types import InlineQuery, InlineQueryResultArticle, InputTextMessageContent, InlineKeyboardButton, InlineKeyboardMarkup 
-from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
+try:
+    from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
+except Exception as e:
+    pass
+    print(e)
 @Client.on_inline_query()
 async def inlinemode(bot, query: InlineQuery):
     await query.answer(
