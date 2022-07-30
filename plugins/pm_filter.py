@@ -1022,7 +1022,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons
+        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.IP_TXT,
             disable_web_page_preview=True,
@@ -1033,7 +1033,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons
+        reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.LYRICS_TXT,
             disable_web_page_preview=True,
