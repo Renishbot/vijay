@@ -31,6 +31,7 @@ async def inlinemode(bot, query: InlineQuery):
                     InlineKeyboardButton("Owner", callback_data='help')
                     ]]
             )
-        ]],
+        ],
         cache_time=0
     )
+    ]
