@@ -7,8 +7,8 @@ async def inlinemode(bot, query: InlineQuery):
         results=[
 
             InlineQueryResultArticle(
-                title="Naveen",
-                description="Click Here",
+                title="Bot Owner",
+                description="Don't Judge the Book with its Cover",
                 thumb_url="https://telegra.ph/file/a91ddf16775ec8ef0bd9e.jpg",
                 input_message_content=InputTextMessageContent(
                     message_text="""Owner of the Bot"""
@@ -26,6 +26,9 @@ async def inlinemode(bot, query: InlineQuery):
                 input_message_content=InputTextMessageContent(
                     message_text="""Here is the All Details of the BoT"""
                 )
+                reply_markup=InlineKeyboardMarkup([[
+                    InlineKeyboardButton("Owner", callback_data='help')
+                    ]]
             )
         ],
         cache_time=0
