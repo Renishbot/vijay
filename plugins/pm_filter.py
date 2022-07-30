@@ -811,11 +811,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ],[
             InlineKeyboardButton(text="𝖢𝗅𝗈𝗌𝖾", callback_data="close_data")
         ]]
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text="Select your required mode from below!",
@@ -900,11 +895,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('ᴄʟᴏsᴇ x', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
         await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 Group Filter  𝖧𝖾𝗅𝗉 𝗆𝗈𝖽𝗎𝗅𝖾")
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -915,11 +905,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="autofilter"),
              InlineKeyboardButton(text="Group Management",callback_data="grp")]]
         reply_markup = InlineKeyboardMarkup(buttonss) 
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
         await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 𝗆𝗈𝖽𝗎𝗅𝖾s")
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
@@ -966,22 +951,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝑆𝑡𝑎𝑡𝑢𝑠', callback_data='stats'),
             InlineKeyboardButton('𝐶𝑙𝑜𝑠𝑒 ✗', callback_data='close_data')
         ]]
-        reply1 = await query.message.reply_text(
-            text="▢▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply2 = await reply1.edit_text(
-            text="▣▢▢"
-        )
-        await asyncio.sleep(0.5)
-        reply3 = await reply2.edit_text(
-            text="▣▣▢"
-        )
-        await asyncio.sleep(0.5)
-        reply4 = await reply3.edit_text(
-            text="▣▣▣"
-        )
-        await reply4.delete()
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 𝖧𝖾𝗅𝗉 𝗆𝗈𝖽𝗎𝗅𝖾")
         await query.message.edit_text(
@@ -1010,11 +979,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
         await query.message.edit_text(
             text=script.LOCK_TXT,
             disable_web_page_preview=True,
@@ -1026,11 +990,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
         await query.message.edit_text(
             text=script.WARN_TXT,
             disable_web_page_preview=True,
@@ -1041,12 +1000,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
+        reply_markup = InlineKeyboardMarkup(buttons
         await query.message.edit_text(
             text=script.WIKIPEDIA_TXT,
             disable_web_page_preview=True,
@@ -1058,11 +1012,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
         await query.message.edit_text(
             text=script.SHAZAM_TXT,
             disable_web_page_preview=True,
@@ -1073,12 +1022,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
+        reply_markup = InlineKeyboardMarkup(buttons
         await query.message.edit_text(
             text=script.IP_TXT,
             disable_web_page_preview=True,
@@ -1089,12 +1033,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
+        reply_markup = InlineKeyboardMarkup(buttons
         await query.message.edit_text(
             text=script.LYRICS_TXT,
             disable_web_page_preview=True,
@@ -1106,11 +1045,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('« 𝐵𝑎𝑐𝑘', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
         await query.message.edit_text(
             text=script.CARBON_TXT,
             disable_web_page_preview=True,
