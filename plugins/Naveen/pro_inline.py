@@ -15,7 +15,7 @@ async def inlinemode(bot, query: InlineQuery):
                 ),
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton('🛠️ 𝙃𝙚𝙡𝙥', callback_data='helpq'),
-                    InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='about')
+                    InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='aboutq')
                     ]]
                 )
             ),
