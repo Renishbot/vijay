@@ -14,8 +14,8 @@ async def inlinemode(bot, query: InlineQuery):
                     message_text="""Owner of the Bot"""
                 ),
                 reply_markup=InlineKeyboardMarkup([[
-                    InlineKeyboardButton('🛠️ 𝙃𝙚𝙡𝙥', callback_data='helpq'),
-                    InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='aboutq')
+                    InlineKeyboardButton('🛠️ 𝙃𝙚𝙡𝙥', callback_data='inline_help'),
+                    InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='inline_about')
                     ]]
                 )
             ),
