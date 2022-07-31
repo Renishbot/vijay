@@ -769,7 +769,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "tools":
         buttons = [[
-            InlineKeyboardbutton('ekart', callback_data='ekart'),
+            InlineKeyboardButton('ekart', callback_data='ekart'),
             InlineKeyboardButton('boycott', callback_data='boycott'),
             InlineKeyboardButton('Carbon', callback_data='carbon'),
             ],[
