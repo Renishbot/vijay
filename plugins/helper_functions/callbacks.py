@@ -24,7 +24,7 @@ import logging
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
-elif query.data == "helpq":
+    elif query.data == "helpq":
         buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="autofilter"),
              InlineKeyboardButton(text="Group Management",callback_data="grp")]]
         reply_markup = InlineKeyboardMarkup(buttonss) 
