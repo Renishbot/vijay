@@ -769,7 +769,62 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "tools":
         buttons = [[
-            InlineKeyboardbutton(
+            InlineKeyboardbutton('ekart', callback_data='ekart'),
+            InlineKeyboardButton('boycott', callback_data='boycott'),
+            InlineKeyboardButton('Carbon', callback_data='carbon'),
+            ],[
+            InlineKeyboardButton('collage', callback_data='collage'),,
+            InlineKeyboardButton('ᴄᴏᴠɪᴅ', callback_data='corona'),
+            InlineKeyboardButton('ғᴜɴ', callback_data='fun'),
+            ],[
+            InlineKeyboardButton('Github', callback_data='github'),
+            InlineKeyboardButton('ɢ-ᴛʀᴀɴs', callback_data='gtrans'),
+            InlineKeyboardButton('IFSC', callback_data='ifsc'),
+            ],[
+            InlineKeyboardButton("ɪᴍᴀɢᴇ", callback_data='image'),
+            InlineKeyboardButton('IP Address', callback_data='ip'),
+            InlineKeyboardButton('Lyrics', callback_data='lyrics'),
+            ],[
+            InlineKeyboardButton('ᴍᴀʟʟᴜ ᴀᴜɴᴛʏ', callback_data='aunty'),
+            InlineKeyboardButton('ᴍᴀᴍᴍᴏᴋᴀ', callback_data='mammoka'),
+            InlineKeyboardButton("OCR", callback_data='ocr'),
+            ],[
+            InlineKeyboardButton('ᴘᴀsᴛᴇ', callback_data='pastes'),
+            InlineKeyboardButton('ᴘɪɴɢ', callback_data='pings'),
+            InlineKeyboardButton('sʜᴀʀᴇ-ᴛᴇxᴛ', callback_data='sharetext'),
+            ],[
+            InlineKeyboardButton('ᴘᴀssᴡᴏʀᴅ-ɢᴇɴ', callback_data='genpassword'),
+            ],[
+            InlineKeyboardButton('Shazam', callback_data='shazam'),
+            InlineKeyboardButton('sᴛɪᴄᴋᴇʀ-ɪᴅ', callback_data='sticker'),
+            InlineKeyboardButton('ՏTYᒪIՏᕼ ᖴOᑎTՏ', callback_data='fonts'),
+            ],[
+            InlineKeyboardButton('sᴏɴɢ', callback_data='songs'),
+            InlineKeyboardButton('sᴏᴜʀᴄᴇ', callback_data='source'),
+            InlineKeyboardButton('Text To Img', callback_data='img'),
+            ],[
+            InlineKeyboardButton('ᴛᴇʟᴇɢʀᴀᴘʜ', callback_data='tele'),
+            InlineKeyboardButton('ᴛᴏʀʀᴇɴᴛ', callback_data='torrent'),
+            InlineKeyboardButton('ᴛᴛs', callback_data='ttss'),
+            ],[
+            InlineKeyboardButton('ᴜʀʟ-sʜᴏʀᴛ', callback_data='urlshort'),
+            InlineKeyboardButton("ᴠɪᴅᴇᴏ", callback_data='video'),
+            InlineKeyboardButton('ᴡʜᴏɪs', callback_data='whois'),
+            ],[
+            InlineKeyboardButton('Wikipedia', callback_data='wikipedia'),
+            InlineKeyboardButton('ʏᴛ-ᴛʜᴜᴍʙ', callback_data='ytthumb'),
+            ],[
+            InlineKeyboardButton('ʙᴀᴄᴋ', callback_data='start'),
+            InlineKeyboardButton('sᴛᴀᴛᴜs', callback_data='stats'),
+            InlineKeyboardButton('ᴄʟᴏsᴇ x', callback_data='close_data')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 My Tools M𝗈𝖽𝗎𝗅𝖾s")
+        await query.message.edit_text(
+            text=script.HELP_TXT.format(query.from_user.mention),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        ) 
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ 𝘼𝙙𝙙 𝙈𝙚 𝙏𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
