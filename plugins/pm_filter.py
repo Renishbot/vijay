@@ -957,7 +957,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="autofilter"),
-             InlineKeyboardButton(text="Tools",callback_data="tools"),
+             InlineKeyboardButton(text="Tools",callback_data="tools")
+             ],[
              InlineKeyboardButton(text="Group Management",callback_data="grp")]]
         reply_markup = InlineKeyboardMarkup(buttonss) 
         await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 𝗆𝗈𝖽𝗎𝗅𝖾s")
