@@ -18,7 +18,7 @@ async def inlinemode(bot, query: InlineQuery):
                     InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='aboutq')
                     ]]
                 )
-            )
+            ),
 
             InlineQueryResultArticle(
                 title="About the Bot",
