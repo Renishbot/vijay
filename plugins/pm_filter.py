@@ -836,11 +836,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⭕️ 𝘼𝙗𝙤𝙪𝙩', callback_data='about')
         ]]          
         reply_markup = InlineKeyboardMarkup(buttons)
-        m=await query.message.reply_text("● ◌ ◌")
-        n=await m.edit("● ● ◌")
-        o=await n.edit("● ● ●")
-        await asyncio.sleep(1)
-        await o.delete()
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
@@ -962,6 +957,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="autofilter"),
+             InlineKeyboardButton(text="Tools",callback_data="tools"),
              InlineKeyboardButton(text="Group Management",callback_data="grp")]]
         reply_markup = InlineKeyboardMarkup(buttonss) 
         await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 𝗆𝗈𝖽𝗎𝗅𝖾s")
