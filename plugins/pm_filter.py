@@ -766,6 +766,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await removebg_sticker(client, query.message)
     elif query.data == "pages":
         await query.answer()
+    elif query.data == "tools":
+        buttons = [[
+            InlineKeyboardbutton(
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ 𝘼𝙙𝙙 𝙈𝙚 𝙏𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
@@ -974,7 +977,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-    elif query.data == "helpq":
+    elif query.data == "inline_help":
         buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="autofilter"),
              InlineKeyboardButton(text="Group Management",callback_data="grp")]]
         reply_markup = InlineKeyboardMarkup(buttonss) 
@@ -983,7 +986,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             text=script.HELP_TXT,
             reply_markup=reply_markup,
             parse_mode='html')
-    elif query.data == "aboutq":
+    elif query.data == "inline_about":
         buttons= [[
             InlineKeyboardButton('𝙂𝙞𝙩𝙝𝙪𝙗', url='https://github.com/Naveen-TG'),
             InlineKeyboardButton('𝙐𝙥𝙙𝙖𝙩𝙚𝙨', url='https://t.me/VijayTG_Updates'),
