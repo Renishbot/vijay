@@ -9,9 +9,9 @@ async def inlinemode(bot, query: InlineQuery):
             InlineQueryResultArticle(
                 title="Naveen",
                 description="Click Here",
-                thumb_url="https://telegra.ph/file/a91ddf16775ec8ef0bd9e.jpg",
+                thumb_url="https://telegra.ph/file/75c9be07bb6e2a9309041.jpg",
                 input_message_content=InputTextMessageContent(
-                    message_text="""Owner of the Bot"""
+                    message_text="""Main Menu of the Bot"""
                 ),
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton('🛠️ 𝙃𝙚𝙡𝙥', callback_data='inline_help'),
