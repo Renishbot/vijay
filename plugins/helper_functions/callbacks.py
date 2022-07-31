@@ -22,7 +22,7 @@ from database.filters_mdb import (
 )
 import logging
 
-    elif query.data == "helpq"
+elif query.data == "helpq":
         buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="autofilter"),
              InlineKeyboardButton(text="Group Management",callback_data="grp")]]
         reply_markup = InlineKeyboardMarkup(buttonss) 
@@ -32,7 +32,7 @@ import logging
             reply_markup=reply_markup,
             parse_mode='html')
 
-    elif query.data == "aboutq"
+elif query.data == "aboutq":
         buttons= [[
             InlineKeyboardButton('➕ 𝘼𝙙𝙙 𝙈𝙚 𝙏𝙤 𝙔𝙤𝙪𝙧 𝙂𝙧𝙤𝙪𝙥 ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
