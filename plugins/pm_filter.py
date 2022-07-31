@@ -909,6 +909,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.message.edit_text(
             text=script.HELP_TXT.format(query.from_user.mention),
             reply_markup=reply_markup,
+            parse_mode='html')
+    elif query.data == "helpq":
+        buttonss =[[InlineKeyboardButton(text="AutoFilter", callback_data="autofilter"),
+             InlineKeyboardButton(text="Group Management",callback_data="grp")]]
+        reply_markup = InlineKeyboardMarkup(buttonss) 
+        await query.answer("𝖶𝖾𝗅𝖼𝗈𝗆𝖾 𝗍𝗈 𝗆𝗒 𝗆𝗈𝖽𝗎𝗅𝖾s")
+        await query.edit_message_text(
+            text=script.HELP_TXT,
+            reply_markup=reply_markup,
             parse_mode='html')   
     elif query.data == "hellp":
         buttons = [[
