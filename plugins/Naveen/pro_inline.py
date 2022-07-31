@@ -23,7 +23,7 @@ async def inlinemode(bot, query: InlineQuery):
             InlineQueryResultArticle(
                 title="About the Bot",
                 description="Show the Details of the Bot and Show the Purpose of Vijay BoT",
-                thumb_url="https://telegra.ph/file/75c9be07bb6e2a9309041.jpg",
+                thumb_url="https://telegra.ph/file/6b541273159cc36fa11d4.jpg",
                 input_message_content=InputTextMessageContent(
                     message_text="""Here is the All Details of the BoT"""
                 )
