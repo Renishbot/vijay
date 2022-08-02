@@ -6,7 +6,7 @@ from countryinfo import CountryInfo
 
 
 
-@Client.on_message(filters.command("Countries"))
+@Client.on_message(filters.command("country"))
 async def country_(client, message):
     msg_ = await message.reply_text("Searching For Country...")
     lol = get_text(message)
