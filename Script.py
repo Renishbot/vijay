@@ -661,6 +661,10 @@ Example : /repo Eva Maria."""
 • 𝘌𝘹𝘢𝘮𝘱𝘭𝘦:
 /𝘮𝘱4 https://youtu.be/Your Link"""
 
+    COUNTRY_TXT = """➤ 𝐇𝐞𝐥𝐩: Country
+
+Just use /country ( Country Name ) for knowing the country info."""
+
     ZOMBIES_TXT = """𝙷𝙴𝙻𝙿 𝚈𝙾𝚄 𝚃𝙾 𝙺𝙸𝙲𝙺 𝚄𝚂𝙴𝚁𝚂
 
 <b>Kick incative members from group. Add me as admin with ban users permission in group.</b>
