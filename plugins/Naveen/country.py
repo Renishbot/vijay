@@ -8,16 +8,16 @@ from countryinfo import CountryInfo
 
 @Client.on_message(filters.command("Countries"))
 async def country_(client, message):
-    msg_ = await edit_or_reply(message, "`Searching For Country.....`")
+    msg_ = await message.reply_text("Searching For Country...")
     lol = get_text(message)
     if not lol:
-        await msg_.edit("`Please Give Input!`")
+        await msg_.edit("Please Give Input!")
         return
     country = CountryInfo(lol)
     try:
         a = country.info()
     except:
-        await msg_.edit("`Country Not Found. Maybe You Need to Learn Geography!`")
+        await msg_.edit("Country Not Found. Maybe You Need to Learn Geography!")
         return
     name = a.get("name")
     bb = a.get("altSpellings")
