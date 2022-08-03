@@ -8,15 +8,11 @@ from info import COMMAND_HAND_LER
 from plugins.helper_functions.cust_p_filters import f_onw_fliter
 
 # -- Constants -- #
-ALIVE = "Iam Not Dead still Alive.. You have no love on me now. Good.. You are not the same as you were before.‌‌.🙂‌" 
+🙂‌
 HELP = "Help! am in Shooting right NOW ......"
 REPO = "Oops The repo is Vanished Because of CopyCats"
 # -- Constants End -- #
 
-
-@Client.on_message(filters.command("alive", COMMAND_HAND_LER) & f_onw_fliter)
-async def check_alive(_, message):
-    await message.reply_text(ALIVE)
 
 
 @Client.on_message(filters.command("ping", COMMAND_HAND_LER) & f_onw_fliter)
