@@ -8,7 +8,6 @@ from info import COMMAND_HAND_LER
 from plugins.helper_functions.cust_p_filters import f_onw_fliter
 
 # -- Constants -- #
-🙂‌
 HELP = "Help! am in Shooting right NOW ......"
 REPO = "Oops The repo is Vanished Because of CopyCats"
 # -- Constants End -- #
