@@ -23,8 +23,8 @@ SOFTWARE.
 
 from telethon import Button
 
-from NekoRobot import telethn as tbot
-from NekoRobot.events import register
+from info import telethn as tbot
+from plugins.events import register
 
 PHOTO = "https://telegra.ph/file/a21731c0c4c7f27a3ec16.jpg"
 
