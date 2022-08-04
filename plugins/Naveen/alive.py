@@ -9,7 +9,7 @@ from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 from info import SUPPORT_CHAT, BOT_USERNAME
-from plugins.Naveen.dev_user import get_readable_time
+from plugins.Naveen.dev import get_readable_time
 from pyrogram.types import CallbackQuery
 
 
