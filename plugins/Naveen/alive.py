@@ -4,7 +4,6 @@ from telethon import __version__ as telethon_version
 from telegram import __version__ as ptbver
 import time
 StartTime = time.time()
-from pyrogram import enums
 from pyrogram.types import Message
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
