@@ -1,4 +1,4 @@
-from pyrogram import filters, __version__ as pyrogram_version
+from pyrogram import Client, filters, __version__ as pyrogram_version
 import random 
 from telethon import __version__ as telethon_version
 from telegram import __version__ as ptbver
@@ -12,7 +12,7 @@ from plugins.Naveen.dev import get_readable_time
 from pyrogram.types import CallbackQuery
 
 
-@bot.on_message(filters.command("alive"))
+@Client.on_message(filters.command("alive"))
 async def alive(_, m: Message):
     user = m.from_user
     uptime = get_readable_time((time.time() - StartTime))
