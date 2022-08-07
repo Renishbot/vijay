@@ -11,6 +11,9 @@ from pyrogram import *
 import pymongo
 from pymongo.errors import PyMongoError
 
+mongo_client = AsyncIOMotorClient(DATABASE_URI)
+db = mongo_client.wbb
+
 langdb = db.language
 
 mongo_client = motor.motor_asyncio.AsyncIOMotorClient(Config.DATABASE_URI)
