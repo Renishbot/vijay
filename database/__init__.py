@@ -4,6 +4,11 @@ import logging
 import motor.motor_asyncio as AsyncIOMotorClient
 from info import Config, DATABASE_URI 
 from info import DATABASE_URI
+from sys import exit as exiter
+from pymongo import MongoClient
+from info import DATABASE_URI as DB_URI
+from pyrogram import *
+import pymongo
 from pymongo.errors import PyMongoError
 
 langdb = db.language
