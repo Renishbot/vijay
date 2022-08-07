@@ -1,7 +1,8 @@
 import motor
 import logging
 import motor.motor_asyncio as AsyncIOMotorClient
-from info import Config, DATABASE_URI
+from info import Config, DATABASE_URI 
+from info import DATABASE_URI as MONGO_URI
 
 mongo_client = motor.motor_asyncio.AsyncIOMotorClient(Config.DATABASE_URI)
 
