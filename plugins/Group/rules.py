@@ -1,10 +1,10 @@
 from pyrogram import filters
 from pyrogram.types import Message
 from info import BOT_USERNAME
-from database.rulesdb import Rules
-from plugins.utils.custom_filters import admin_filter, command
-from plugins.utils.kbhelpers import rkb as ikb
-from plugins.utils.lang import language
+from database.rulestgdb import Rules
+from plugins.helper_functions.custom_filters import admin_filter, command
+from plugins.helper_functions.kbhelpers import rkb as ikb
+from plugins.helper_functions.lang import language
 
 
 @Client.on_message(command("rules") & filters.group)
