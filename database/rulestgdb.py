@@ -1,11 +1,11 @@
 from threading import RLock
 from time import time
-from database import MongoDB
+from database import DATABASE_URI
 
 INSERTION_LOCK = RLock()
 
 
-class Rules(MongoDB):
+class Rules(DATABASE_URI):
     db_name = "rules"
 
     def __init__(self, chat_id: int) -> None:
@@ -38,25 +38,25 @@ class Rules(MongoDB):
     @staticmethod
     def count_chats_with_rules():
         with INSERTION_LOCK:
-            collection = MongoDB(Rules.db_name)
+            collection = DATABASE_URI(Rules.db_name)
             return collection.count({"rules": {"$regex": ".*"}})
 
     @staticmethod
     def count_privrules_chats():
         with INSERTION_LOCK:
-            collection = MongoDB(Rules.db_name)
+            collection = DATABASE_URI(Rules.db_name)
             return collection.count({"privrules": True})
 
     @staticmethod
     def count_grouprules_chats():
         with INSERTION_LOCK:
-            collection = MongoDB(Rules.db_name)
+            collection = DATABASE_URI(Rules.db_name)
             return collection.count({"privrules": False})
 
     @staticmethod
     def load_from_db():
         with INSERTION_LOCK:
-            collection = MongoDB(Rules.db_name)
+            collection = DATABASE_URI(Rules.db_name)
             return collection.find_all()
 
     def __ensure_in_db(self):
