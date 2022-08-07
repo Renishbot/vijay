@@ -6,6 +6,8 @@ from info import Config, DATABASE_URI
 from info import DATABASE_URI
 from pymongo.errors import PyMongoError
 
+langdb = db.language
+
 mongo_client = motor.motor_asyncio.AsyncIOMotorClient(Config.DATABASE_URI)
 
 db_x = mongo_client["Vijay"]
