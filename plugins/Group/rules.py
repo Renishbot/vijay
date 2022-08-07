@@ -1,81 +1,135 @@
-from pyrogram import filters, Client
-from pyrogram.types import Message
-from info import BOT_USERNAME
-from database.rulestgdb import Rules
-from plugins.helper_functions.custom_filters import admin_filter, command
-from plugins.helper_functions.kbhelpers import rkb as ikb
-from plugins.helper_functions.lang import language
+from pyrogram import filters
+from pyrogram.types import CallbackQuery, Message
+from pyrogram import Client as Alita
+
+from info import LOGGER
+from plugins.Group.database.rules_db import Rules
+from plugins.Group.utils.custom_filters import admin_filter, command
+from plugins.Group.utils.kbhelpers import ikb
+from plugins.Group.tr_engine import tlang
 
 
-@Client.on_message(command("rules") & filters.group)
-@language
-async def get_rules(client, message: Message, _):
-    db = Rules(message.chat.id)
-    msg_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
+@Alita.on_message(command("rules") & filters.group)
+async def get_rules(_, m: Message):
+    db = Rules(m.chat.id)
+    msg_id = m.reply_to_message.message_id if m.reply_to_message else m.message_id
+
     rules = db.get_rules()
+    LOGGER.info(f"{m.from_user.id} fetched rules in {m.chat.id}")
+    if m and not m.from_user:
+        return
+
     if not rules:
-        return await message.reply_text(_["rules1"])
+        await m.reply_text("No Rules added in this Chat"),
+        return
+
     priv_rules_status = db.get_privrules()
+
     if priv_rules_status:
-        pm_kb = ikb([[("Rules",f"https://t.me/{BOT_USERNAME}?start=rules_{message.chat.id}","url")]])
-        return await message.reply_text(_["rules2"],
+        pm_kb = ikb(
+            [
+                [
+                    (
+                        "Rules",
+                        f"https://t.me/{Config.BOT_USERNAME}?start=rules_{m.chat.id}",
+                        "url",
+                    ),
+                ],
+            ],
+        )
+        await m.reply_text(
+            (tlang(m, "rules.pm_me")),
             quote=True,
             reply_markup=pm_kb,
             reply_to_message_id=msg_id,
         )
-    return await message.reply_text(f"The rules for <b>{message.chat.title} are:</b>\n {rules}",
-        disable_web_page_preview=True,
-        reply_to_message_id=msg_id,
-    )
-    
+        return
 
+     
+@Alita.on_message(command("setrules") & admin_filter)
+async def set_rules(_, m: Message):
+    db = Rules(m.chat.id)
+    if m and not m.from_user:
+        return
 
-@Client.on_message(command("setrules") & admin_filter)
-@language
-async def set_rules(client, message: Message, _):
-    db = Rules(message.chat.id)
-    if message.reply_to_message and message.reply_to_message.text:
-        rules = message.reply_to_message.text.markdown
-    elif (not message.reply_to_message) and len(message.text.split()) >= 2:
-        rules = message.text.split(None, 1)[1]
+    if m.reply_to_message and m.reply_to_message.text:
+        rules = m.reply_to_message.text.markdown
+    elif (not m.reply_to_message) and len(m.text.split()) >= 2:
+        rules = m.text.split(None, 1)[1]
     else:
-        return await message.reply_text(_["rules3"])
+        return await m.reply_text("Provide some text to set as rules !!")
+
+    if len(rules) > 4000:
+        rules = rules[0:3949]  # Split Rules if len > 4000 chars
+        await m.reply_text("Rules are truncated to 3950 characters!")
+
     db.set_rules(rules)
-    return await message.reply_text(_["rules4"])
-    
+    LOGGER.info(f"{m.from_user.id} set rules in {m.chat.id}")
+    await m.reply_text("Rules Successfully added to this Chat")
+    return
 
 
-@Client.on_message(command(["pmrules", "privaterules"]) & admin_filter)
-@language
-async def priv_rules(client, message: Message, _):
-    db = Rules(message.chat.id)
-    if len(message.text.split()) == 2:
-        option = (message.text.split())[1]
+@Alita.on_message(
+    command(["pmrules", "privaterules"]) & admin_filter,
+)
+async def priv_rules(_, m: Message):
+    db = Rules(m.chat.id)
+    if m and not m.from_user:
+        return
+
+    if len(m.text.split()) == 2:
+        option = (m.text.split())[1]
         if option in ("on", "yes"):
             db.set_privrules(True)
-            msg = f"Private Rules have been turned <b>on</b> for chat <b>{message.chat.title}</b>"
+            LOGGER.info(f"{m.from_user.id} enabled privaterules in {m.chat.id}")
+            msg = tlang(m, "rules.priv_rules.turned_on").format(chat_name=m.chat.title)
         elif option in ("off", "no"):
             db.set_privrules(False)
-            msg = f"Private Rules have been turned <b>off</b> for chat <b>{message.chat.title}</b>"
+            LOGGER.info(f"{m.from_user.id} disbaled privaterules in {m.chat.id}")
+            msg = tlang(m, "rules.priv_rules.turned_off").format(chat_name=m.chat.title)
         else:
-            msg = "Option not valid, choose from <code>on</code>, <code>yes</code>, <code>off</code>, <code>no</code>"
-        await message.reply_text(msg)
-    elif len(message.text.split()) == 1:
+            msg = tlang(m, "rules.priv_rules.no_option")
+        await m.reply_text(msg)
+    elif len(m.text.split()) == 1:
         curr_pref = db.get_privrules()
-        msg = f"Current Preference for Private rules in this chat is: <b>{curr_pref}</b>"
-        await message.reply_text(msg)
+        msg = tlang(m, "rules.priv_rules.current_preference").format(
+            current_option=curr_pref,
+        )
+        LOGGER.info(f"{m.from_user.id} fetched privaterules preference in {m.chat.id}")
+        await m.reply_text(msg)
     else:
-        return await message.replt_text(_["rules5"])
+        await m.replt_text(tlang(m, "general.check_help"))
+
+    return
 
 
-@Client.on_message(command("clearrules") & admin_filter)
-@language
-async def clear_rules(client, message: Message, _):
-    db = Rules(message.chat.id)
+@Alita.on_message(command("clearrules") & admin_filter)
+async def clear_rules(_, m: Message):
+    db = Rules(m.chat.id)
+    if m and not m.from_user:
+        return
+
     rules = db.get_rules()
     if not rules:
-        return await message.reply_text(_["rules1"])
-    return await message.reply_text("Are you sure you want to clear rules?",
-        reply_markup=ikb([[("⚠️ Confirm", "clear_rules"), ("❌ Cancel", "close_data")]]))
-    
+        await m.reply_text("Rules Cleared from this Chat")
+        return
 
+    await m.reply_text(
+        (tlang(m, "rules.clear_rules")),
+        reply_markup=ikb(
+            [[("⚠️ Confirm", "clear_rules"), ("❌ Cancel", "close_admin")]],
+        ),
+    )
+    return  
+
+@Alita.on_callback_query(filters.regex("^clear_rules$"))
+async def clearrules_callback(_, q: CallbackQuery):
+    Rules(q.message.chat.id).clear_rules()
+    await q.message.edit_text(tlang(q, "rules.cleared"))
+    LOGGER.info(f"{q.from_user.id} cleared rules in {q.message.chat.id}")
+    await q.answer("Rules for the chat have been cleared!", show_alert=True)
+    return
+
+
+__PLUGIN__ = "rules"
+__alt_name__ = ["rule"]
