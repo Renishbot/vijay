@@ -592,12 +592,13 @@ This module only works for my admins
 ➪ <b>Total Chats:</b> <code>{}</code>
 ➪ <b>Used Storage:</b> <code>{}</code> 
 ➪ <b>Free Storage:</b> <code>{}</code> """
-    LOG_TEXT_G = """#𝐍𝐞𝐰𝐆𝐫𝐨𝐮𝐩
-    
-Group = @{} (<code>{}</code>)
+
+    LOG_TEXT_G = """#NewGroup
+Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
 Added By - {}
 """
+   
     BOYCOTT_TXT = """help: Boycott
 This command helps to Creates Boycott Image!
 
@@ -608,11 +609,10 @@ Use /boycott ( reply to a image for using boycott )
 It Will Helps You To Kidd Your Friend 'X' 
 Refered codes from FridayUB."""
 
-    LOG_TEXT_P = """#𝐍𝐞𝐰𝐔𝐬𝐞𝐫
-    
-<b>᚛› 𝐈𝐃 - <code>{}</code></b>
-<b>᚛› 𝐍𝐚𝐦𝐞 - {}</b>
-"""
+    LOG_TEXT_P = """#NewUser
+ID - <code>{}</code>
+Name - {}"""
+
     REPORT_TXT = """➤ 𝐇𝐞𝐥𝐩: Rᴇᴘᴏʀᴛ ⚠️
 
 𝚃𝚑𝚒𝚜 𝚌𝚘𝚖𝚖𝚊𝚗𝚍 𝚑𝚎𝚕𝚙𝚜 𝚢𝚘𝚞 𝚝𝚘 𝚛𝚎𝚙𝚘𝚛𝚝 𝚊 𝚖𝚎𝚜𝚜𝚊𝚐𝚎 𝚘𝚛 𝚊 𝚞𝚜𝚎𝚛 𝚝𝚘 𝚝𝚑𝚎 𝚊𝚍𝚖𝚒𝚗𝚜 𝚘𝚏 𝚝𝚑𝚎 𝚛𝚎𝚜𝚙𝚎𝚌𝚝𝚒𝚟𝚎 𝚐𝚛𝚘𝚞𝚙. 𝙳𝚘𝚗'𝚝 𝚖𝚒𝚜𝚞𝚜𝚎 𝚝𝚑𝚒𝚜 𝚌𝚘𝚖𝚖𝚊𝚗𝚍.
