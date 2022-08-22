@@ -146,11 +146,18 @@ async def imdb_callback(bot: Client, query: CallbackQuery):
     btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{imdb.get('title')}",
+                    text=f"{imdb.get('title')} - {imdb.get('year')}",
                     url=imdb['url'],
                 )
-            ]
+            ],
+            [
+                InlineKeyboardButton(
+                    text=f"𝙈𝙤𝙫𝙞𝙚 𝙂𝙧𝙤𝙪𝙥",
+                    url="https://t.me/TamilMV_Collections"
+                )
+            ],
         ]
+    message = quer_y.message.reply_to_message or quer_y.message
     if imdb:
         caption = IMDB_TEMPLATE.format(
             query = imdb['title'],
