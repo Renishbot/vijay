@@ -5,11 +5,20 @@ import requests
 import socket
 from asyncio import get_running_loop
 from functools import partial
-from pyrogram import Client
+from kashmira import ADMINS as dev_user
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
+from pyrogram.types import Message
+from pyrogram import Client as bot
+from SafoneAPI import SafoneAPI
 
+Safone = SafoneAPI()
 
+from kashmira.functions.http import post as send
+
+BASE = "https://batbin.me/"
+    
+      
 def spacebin(text):
     url = "https://spaceb.in/api/v1/documents/"
     res = post(url, data={"content": text, "extension": "txt"})
@@ -35,44 +44,59 @@ async def ezup(content):
     )
     return link
 
-HASTEBIN_URL = "https://www.toptal.com/developers/hastebin/documents"
-HASTEBIN = "https://www.toptal.com/developers/hastebin/{}"
 
-@Client.on_message(filters.command('paste'))
+@bot.on_message(filters.command("batbin"))
+async def pastebin(_, m):
+          if m.reply_to_message:
+              content = m.reply_to_message.text or m.reply_to_message.caption
+              
+              button = [[ InlineKeyboardButton(text="BATBIN", url=link)]]
+              await m.reply_photo(photo=link,caption=link,reply_markup=InlineKeyboardMarkup(button))
+
+
+@bot.on_message(filters.command('paste'))
 async def paste(_, m):
+ try:
     reply = m.reply_to_message
     if not reply:
-           wrong_format = """ **Something You did wrong read the rules of paste:**\n
-        ~ Only text files or text only paste.
-        ~ Text file Only support lower then 1mb.
-        ~ You did Verything right but you got this msg most report on SupportChat
-        """
-           await m.reply_text(wrong_format)
+           await m.reply_text("Reply to Message or Text-File")
     if reply.document:
         doc = await m.reply_to_message.download()
         async with aiofiles.open(doc, mode="r") as f:
           file_text = await f.read()
         os.remove(doc)
+        msg = await m.reply("**Starting to Paste All**")
         spacebin_url = spacebin(file_text)
-        link = await ezup(file_text)
-        caption = f"[SPACEBIN]({spacebin_url}) | [EZUP.DEV]({link})"
-        await m.reply_text(text=caption,
+        safone_url = await Safone.paste(file_text)
+        
+        ezup_link = await ezup(file_text)
+        resp = await send(f"{BASE}api/v2/paste", data=file_text)
+        code = resp["message"]
+        bat_link = f"{BASE}{code}"
+        await msg.edit("**Process Completed**")                  
+        caption = f"Here is the Paste Hubs of @Dhanush_TG_BoT"
+        await m.reply_photo(photo=bat_link,caption=caption,
                       reply_markup=InlineKeyboardMarkup(
-                          [[InlineKeyboardButton("SPACEBIN", url=spacebin_url),
-                         ],[ InlineKeyboardButton("EZUP.DEV", url=link)]]),disable_web_page_preview=True)
+                          [[InlineKeyboardButton(text="BATBIN", url=bat_link),InlineKeyboardButton("SPACEBIN", url=spacebin_url),
+                         ],[ InlineKeyboardButton("EZUPBIN", url=ezup_link),InlineKeyboardButton(text="SIZUKI", url=safone_url.link),]]))
     elif reply.text or reply.caption:
           text = reply.text or reply.caption
+          msg = await m.reply("**Starting to Past All**")                
           spacebin_url = spacebin(text)
           link = await ezup(text)
-          key = requests.post(HASTEBIN_URL, data=text.encode("UTF-8"), ).json()
-          key = key.get("key") 
-          url = HASTEBIN.format(key)
-          caption = f"[SPACEBIN]({spacebin_url}) | [EZUP.DEV]({link})\n         [HASTEBIN]({url})"
-          await m.reply_text(text=caption,
+          safone_url = await Safone.paste(text)
+          resp = await send(f"{BASE}api/v2/paste", data=text)
+          code = resp["message"]
+          bat_link = f"{BASE}{code}"
+          await msg.edit("**Process Completed**")                 
+          caption = f"Here are the Paste Webs of Requested Paste"
+          await m.reply_photo(photo=bat_link,caption=caption,
                       reply_markup=InlineKeyboardMarkup(
-                          [[InlineKeyboardButton("SPACEBIN", url=spacebin_url),
-                           ],[InlineKeyboardButton("HASTEBIN", url=url),
-                           ],[ InlineKeyboardButton("EZUP.DEV", url=link)]]),disable_web_page_preview=True)
+                          [[InlineKeyboardButton(text="BATBIN", url=bat_link),],[InlineKeyboardButton(text="SIZUKI", url=safone_url.link), ],[ InlineKeyboardButton("SPACEBIN", url=spacebin_url),
+                           ],[ InlineKeyboardButton("EZUP.DEV", url=link)]]))
     
         
         
+
+ except Exception as e:
+       await m.reply(f"**ERROR**: {e}")
