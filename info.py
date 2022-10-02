@@ -5,6 +5,7 @@ import time
 import json
 import pymongo
 import motor.motor_asyncio
+from aiohttp import ClientSession
 from collections import defaultdict
 from motor.motor_asyncio import AsyncIOMotorClient as MongoClient
 from typing import Dict, List, Union
@@ -105,6 +106,7 @@ def fetch_heroku_git_url(api_key, app_name):
         return None
     return heroku_app.git_url.replace("https://", "https://api:" + api_key + "@")
 
+aiohttpsession = ClientSession()
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
