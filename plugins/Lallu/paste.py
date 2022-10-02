@@ -5,7 +5,7 @@ import requests
 import socket
 from asyncio import get_running_loop
 from functools import partial
-from kashmira import ADMINS as dev_user
+from info import ADMINS as dev_user
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from pyrogram.types import Message
