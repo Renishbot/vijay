@@ -14,7 +14,7 @@ from SafoneAPI import SafoneAPI
 
 Safone = SafoneAPI()
 
-from kashmira.functions.http import post as send
+from plugins.helper_functions.http import post as send
 
 BASE = "https://batbin.me/"
     
